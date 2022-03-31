@@ -1969,7 +1969,7 @@ break
                     {buttonId: `tiktokmp3 ${text}`, buttonText: {displayText: '♫ Audio'}, type: 1}
                 ]
                 let buttonMessage = {
-                    video: { anu.result.nowatermark },
+                    video: {anu.result.nowatermark},
                     caption: `Download From ${text}`,
                     footer: 'Press The Button Below',
                     buttons: buttons,
@@ -2062,7 +2062,7 @@ break
                     {buttonId: `twittermp3 ${text}`, buttonText: {displayText: '► Audio'}, type: 1}
                 ]
                 let buttonMessage = {
-                    video: { anu.result.HD || anu.result.SD },
+                    video: {anu.result.HD || anu.result.SD},
                     caption: util.format(anu.result),
                     footer: 'Press The Button Below',
                     buttons: buttons,
