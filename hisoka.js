@@ -2514,7 +2514,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 case 'coba':
 if (!text) throw 'Masukkan Query Link!'
                 let anu = await fetchJson(`https://zenzapi.xyz/downloader/tiktok?url=${text}&apikey=0af8c9e45d`)
-            hasill = ${anu.result.nowatermark}
+            hasill = (`${anu.result.nowatermark}`)
                 m.reply(hasill)
 break
             case 'list': case 'menu': case 'help': case '?': {
