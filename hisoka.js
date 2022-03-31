@@ -1969,8 +1969,7 @@ break
                 ]
                 await hisoka.sendButtonText(m.chat, buttons, `\`\`\`PILIH JENIS FILE DIBAWAH INI!\`\`\``)
             break
-            
-             case 'watermark': case 'nowatermark':{
+            case 'nowatermark': case 'watermark': {
                 if (!text) throw 'Masukkan Query Link!'
                 let ttnowm = await fetchJson(`https://zenzapi.xyz/downloader/tiktok?url=${text}&apikey=0af8c9e45d`)
             wmnott = (`${ttnowm.result.${command}}`)
