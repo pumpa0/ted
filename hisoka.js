@@ -1978,7 +1978,6 @@ break
             case 'tiktokmp3': case 'tiktokaudio': {
                 if (!text) throw 'Masukkan Query Link!'
                 let anu = await fetchJson(api('zenz', '/downloader/tiktok', { url: text }, 'apikey'))
-                
 		let { toAudio } = require('./lib/converter')
 		let nganu = await getBuffer(anu.result.nowatermark)
 		let cnvrt = await toAudio(nganu, 'mp4')
@@ -2482,7 +2481,6 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 hisoka.sendContact(m.chat, global.owner, m)
             }
             break
-
             case 'list': case 'menu': case 'help': case '?': {
                 anu = `┌──⭓ *Group Menu*
 │
