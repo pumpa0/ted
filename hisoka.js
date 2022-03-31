@@ -606,7 +606,7 @@ m.reply(sawer)
                     let anu = await fetchJson('https://fatiharridho.github.io/tebaklagu.json')
                     let result = anu[Math.floor(Math.random() * anu.length)]
                     let msg = await hisoka.sendMessage(m.chat, { audio: { url: result.link_song }, mimetype: 'audio/mpeg' }, { quoted: m })
-                    hisoka.sendText(m.chat, `Lagu Tersebut Adalah Lagu dari?\n\nArtist : ${result.artist}\nWaktu : 60s`, msg).then(() => {
+                    hisoka.sendText(m.chat, `Judul Lagu Tersebut Adalah?\n\nArtist : ${result.artist}\nWaktu : 60s`, msg).then(() => {
                     tebaklagu[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
                     })
                     await sleep(60000)
@@ -860,7 +860,7 @@ let teks = `══✪〘 *Tag All* 〙✪══
 		let { styletext } = require('./lib/scraper')
 		if (!text) throw 'Masukkan Query text!'
                 let anu = await styletext(text)
-                let teks = `Srtle Text From ${text}\n\n`
+                let teks = `Style Text From ${text}\n\n`
                 for (let i of anu) {
                     teks += `⭔ *${i.name}* : ${i.result}\n\n`
                 }
@@ -869,7 +869,8 @@ let teks = `══✪〘 *Tag All* 〙✪══
 	    break
                case 'vote': {
             if (!m.isGroup) throw mess.group
-            if (m.chat in vote) throw `_Masih ada vote di chat ini!_\n\n*${prefix}hapusvote* - untuk menghapus vote`
+            if (!isAdmins) throw mess.admin
+            if (m.chat in vote) throw `_Masih ada vote di grup ini!_\n\n*${prefix}hapusvote* - untuk menghapus vote`
             if (!text) throw `Masukkan Alasan Melakukan Vote, Example: *${prefix + command} Owner Ganteng*`
             m.reply(`Vote dimulai!\n\n*${prefix}upvote* - untuk ya\n*${prefix}devote* - untuk tidak\n*${prefix}cekvote* - untuk mengecek vote\n*${prefix}hapusvote* - untuk menghapus vote`)
             vote[m.chat] = [q, [], []]
@@ -996,6 +997,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                  
 case 'cekvote':
 if (!m.isGroup) throw mess.group
+if (!isAdmins) throw mess.admin
 if (!(m.chat in vote)) throw `_*tidak ada voting digrup ini!*_\n\n*${prefix}vote* - untuk memulai vote`
 teks_vote = `*「 VOTE 」*
 
@@ -1024,6 +1026,7 @@ hisoka.sendTextWithMentions(m.chat, teks_vote, m)
 break
 		case 'deletevote': case'delvote': case 'hapusvote': {
             if (!m.isGroup) throw mess.group
+            if (!isAdmins) throw mess.admin
             if (!(m.chat in vote)) throw `_*tidak ada voting digrup ini!*_\n\n*${prefix}vote* - untuk memulai vote`
             delete vote[m.chat]
             m.reply('Berhasil Menghapus Sesi Vote Di Grup Ini')
@@ -1438,8 +1441,8 @@ break
                 let buttonMessage = {
                     image: { url: images },
                     caption: `*-------「 GIMAGE SEARCH 」-------*
-🤠 *Query* : ${text}
-🔗 *Media Url* : ${images}`,
+*Query* : ${text}
+*Media Url* : ${images}`,
                     footer: hisoka.user.name,
                     buttons: buttons,
                     headerType: 4
@@ -1960,7 +1963,7 @@ break
 	        case 'tiktok': case 'tiktoknowm': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
-                let anu = await fetchJson(api(`https://zenzapi.xyz/downloader/tiktok?url=${text}&apikey=0af8c9e45d`))
+                let anu = await fetchJson(`https://zenzapi.xyz/downloader/tiktok?url=${text}&apikey=0af8c9e45d`))
                 let buttons = [
                     {buttonId: `tiktokwm ${text}`, buttonText: {displayText: '► With Watermark'}, type: 1},
                     {buttonId: `tiktokmp3 ${text}`, buttonText: {displayText: '♫ Audio'}, type: 1}
@@ -2054,7 +2057,7 @@ break
 	        case 'twitdl': case 'twitter': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
-                let anu = await fetchJson(`https://zenzapi.xyz/downloader/twitter?url={text}&apikey=apikey`)
+                let anu = await fetchJson(`https://zenzapi.xyz/downloader/twitter?url=${text}&apikey=apikey`)
                 let buttons = [
                     {buttonId: `twittermp3 ${text}`, buttonText: {displayText: '► Audio'}, type: 1}
                 ]
@@ -2235,10 +2238,10 @@ ${id}`)
                 if (/bass/.test(command)) set = '-af equalizer=f=54:width_type=o:width=2:g=20'
                 if (/blown/.test(command)) set = '-af acrusher=.1:1:64:0:log'
                 if (/deep/.test(command)) set = '-af atempo=4/4,asetrate=44500*2/3'
-                if (/earrape/.test(command)) set = '-af volume=12'
+                if (/earrape/.test(command)) set = '-af volume=9'
                 if (/fast/.test(command)) set = '-filter:a "atempo=1.63,asetrate=44100"'
                 if (/fat/.test(command)) set = '-filter:a "atempo=1.6,asetrate=22100"'
-                if (/nightcore/.test(command)) set = '-filter:a atempo=1.06,asetrate=44100*1.25'
+                if (/nightcore/.test(command)) set = '-filter:a atempo=1.06,asetrate=44100*1.10'
                 if (/reverse/.test(command)) set = '-filter_complex "areverse"'
                 if (/robot/.test(command)) set = '-filter_complex "afftfilt=real=\'hypot(re,im)*sin(0)\':imag=\'hypot(re,im)*cos(0)\':win_size=512:overlap=0.75"'
                 if (/slow/.test(command)) set = '-filter:a "atempo=0.7,asetrate=44100"'
@@ -2351,6 +2354,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 			break
             case 'keluar': case 'leave': {
                 if (m.isGroup) return m.reply('Fitur Tidak Dapat Digunakan Untuk Group!')
+                if (!isCreator) throw
                 this.anonymous = this.anonymous ? this.anonymous : {}
                 let room = Object.values(this.anonymous).find(room => room.check(m.sender))
                 if (!room) {
@@ -2568,11 +2572,9 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 │⭔ ${prefix}google [query]
 │⭔ ${prefix}gimage [query]
 │⭔ ${prefix}pinterest [query]
-│⭔ ${prefix}wallpaper [query]
 │⭔ ${prefix}wikimedia [query]
 │⭔ ${prefix}ytsearch [query]
 │⭔ ${prefix}ringtone [query]
-│⭔ ${prefix}stalk [option] [query]
 │
 └───────⭓
 
@@ -2632,7 +2634,6 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 ┌──⭓ *Convert Menu*
 │
 │⭔ ${prefix}toimage
-│⭔ ${prefix}removebg
 │⭔ ${prefix}sticker
 │⭔ ${prefix}emojimix
 │⭔ ${prefix}tovideo
@@ -2641,8 +2642,6 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 │⭔ ${prefix}tovn
 │⭔ ${prefix}tomp3
 │⭔ ${prefix}toaudio
-│⭔ ${prefix}ebinary
-│⭔ ${prefix}dbinary
 │⭔ ${prefix}styletext
 │
 └───────⭓
