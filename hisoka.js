@@ -2515,13 +2515,13 @@ case 'coba':
 if (!text) throw 'Masukkan Query Link!'
                 let anu = await fetchJson(`https://zenzapi.xyz/downloader/tiktok?url=${text}&apikey=0af8c9e45d`)
             hasill = (`${anu.result.nowatermark}`)
-                m.reply(hasill)
+                m.reply(hasil)
 break
 case 'coba2':
 if (!text) throw 'Masukkan Query Link!'
-                let anu = await fetchJson(`https://zenzapi.xyz/downloader/tiktok?url=${text}&apikey=0af8c9e45d`)
-            hasill = (`${anu.result.nowatermark}`)
-                await hisoka.sendMessage(m.chat, { video: { url: hasill, caption: `Tiktok From ${text}` } }, { quoted: m })
+                let anu2 = await fetchJson(`https://zenzapi.xyz/downloader/tiktok?url=${text}&apikey=0af8c9e45d`)
+            hasill2 = (`${anu2.result.nowatermark}`)
+                await hisoka.sendMessage(m.chat, { video: { url: hasill2, caption: `Tiktok From ${text}` } }, { quoted: m })
 break
             case 'list': case 'menu': case 'help': case '?': {
                 anu = `┌──⭓ *Group Menu*
