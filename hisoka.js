@@ -2517,6 +2517,12 @@ if (!text) throw 'Masukkan Query Link!'
             hasill = (`${anu.result.nowatermark}`)
                 m.reply(hasill)
 break
+case 'coba2':
+if (!text) throw 'Masukkan Query Link!'
+                let anu = await fetchJson(`https://zenzapi.xyz/downloader/tiktok?url=${text}&apikey=0af8c9e45d`)
+            hasill = (`${anu.result.nowatermark}`)
+                await hisoka.sendMessage(m.chat, { video: { url: hasill, caption: `Tiktok From ${text}` } }, { quoted: m })
+break
             case 'list': case 'menu': case 'help': case '?': {
                 anu = `┌──⭓ *Group Menu*
 │
