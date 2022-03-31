@@ -1983,7 +1983,6 @@ case 'tiktoknowm': {
             wmnott = (`${ttnowm.result.nowatermark}`)
                 await hisoka.sendMessage(m.chat, { video: { url: wmnott, caption: `Tiktok From ${text}` } }, { quoted: m })
 break
-            break
             case 'tiktokmp3': case 'tiktokaudio': {
                 if (!text) throw 'Masukkan Query Link!'
                 let anu = await fetchJson(api('zenz', '/downloader/tiktok', { url: text }, 'apikey'))
