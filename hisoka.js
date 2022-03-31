@@ -1969,9 +1969,8 @@ break
                     {buttonId: `tiktokmp3 ${text}`, buttonText: {displayText: '♫ Audio'}, type: 1}
                 ]
                 await hisoka.sendButtonText(m.chat, buttons, `\`\`\`PILIH JENIS FILE DIBAWAH INI!\`\`\``)
-         
             break
-            case 'tiktokwm': {
+case 'tiktokwm': {
                 if (!text) throw 'Masukkan Query Link!'
                 let ttwm = await fetchJson(`https://zenzapi.xyz/downloader/tiktok?url=${text}&apikey=0af8c9e45d`)
             wmtt = (`${ttwm.result.watermark}`)
