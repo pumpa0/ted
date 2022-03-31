@@ -2353,8 +2353,8 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
             }
 			break
             case 'keluar': case 'leave': {
+            	if (!isCreator) return
                 if (m.isGroup) return m.reply('Fitur Tidak Dapat Digunakan Untuk Group!')
-                if (!isCreator) throw
                 this.anonymous = this.anonymous ? this.anonymous : {}
                 let room = Object.values(this.anonymous).find(room => room.check(m.sender))
                 if (!room) {
