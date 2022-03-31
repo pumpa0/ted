@@ -1963,13 +1963,13 @@ break
 	        case 'tiktok': case 'tiktoknowm': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
-                let anu = await fetchJson(`https://zenzapi.xyz/downloader/tiktok?url={text}&apikey=0af8c9e45d`)
+                let anu = await fetchJson(`https://zenzapi.xyz/downloader/tiktok?url=${text}&apikey=0af8c9e45d`)
                 let buttons = [
                     {buttonId: `tiktokwm ${text}`, buttonText: {displayText: '► With Watermark'}, type: 1},
                     {buttonId: `tiktokmp3 ${text}`, buttonText: {displayText: '♫ Audio'}, type: 1}
                 ]
                 let buttonMessage = {
-                    video: { url: anu.result.nowatermark },
+                    video: { anu.result.nowatermark },
                     caption: `Download From ${text}`,
                     footer: 'Press The Button Below',
                     buttons: buttons,
@@ -2057,12 +2057,12 @@ break
 	        case 'twitdl': case 'twitter': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
-                let anu = await fetchJson(`https://zenzapi.xyz/downloader/twitter?url={text}&apikey=apikey`)
+                let anu = await fetchJson(`https://zenzapi.xyz/downloader/twitter?url=${text}&apikey=apikey`)
                 let buttons = [
                     {buttonId: `twittermp3 ${text}`, buttonText: {displayText: '► Audio'}, type: 1}
                 ]
                 let buttonMessage = {
-                    video: { url: anu.result.HD || anu.result.SD },
+                    video: { anu.result.HD || anu.result.SD },
                     caption: util.format(anu.result),
                     footer: 'Press The Button Below',
                     buttons: buttons,
