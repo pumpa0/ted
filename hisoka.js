@@ -1960,21 +1960,6 @@ break
                 }
             }
             break
-	        case 'tiktok': case 'tt': {
-                if (!text) throw 'Masukkan Query Link!'
-                let buttons = [
-                    {buttonId: `watermark ${text}`, buttonText: {displayText: '► With Watermark'}, type: 1},
-                    {buttonId: `nowatermark ${text}`, buttonText: {displayText: '► No Watermark'}, type: 1},
-                    {buttonId: `tiktokmp3 ${text}`, buttonText: {displayText: '♫ Audio'}, type: 1}
-                ]
-                await hisoka.sendButtonText(m.chat, buttons, `\`\`\`PILIH JENIS FILE DIBAWAH INI!\`\`\``)
-            break
-            case 'nowatermark': case 'watermark': {
-                if (!text) throw 'Masukkan Query Link!'
-                let ttnowm = await fetchJson(`https://zenzapi.xyz/downloader/tiktok?url=${text}&apikey=0af8c9e45d`)
-            wmnott = (`${ttnowm.result.${command}}`)
-                await hisoka.sendMessage(m.chat, { video: { url: wmnott, caption: `Tiktok From ${text}` } }, { quoted: m })
-            break
             case 'tiktokmp3': case 'tiktokaudio': {
                 if (!text) throw 'Masukkan Query Link!'
                 let anu = await fetchJson(api('zenz', '/downloader/tiktok', { url: text }, 'apikey'))
@@ -2694,6 +2679,22 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                         hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
                      }
             break
+case case 'tiktok': case 'tt': {
+                if (!text) throw 'Masukkan Query Link!'
+                let buttons = [
+                    {buttonId: `watermark ${text}`, buttonText: {displayText: '► With Watermark'}, type: 1},
+                    {buttonId: `nowatermark ${text}`, buttonText: {displayText: '► No Watermark'}, type: 1},
+                    {buttonId: `tiktokmp3 ${text}`, buttonText: {displayText: '♫ Audio'}, type: 1}
+                ]
+                await hisoka.sendButtonText(m.chat, buttons, `\`\`\`PILIH JENIS FILE DIBAWAH INI!\`\`\``)
+            break
+            case 'nowatermark': case 'watermark': {
+                if (!text) throw 'Masukkan Query Link!'
+                let ttnowm = await fetchJson(`https://zenzapi.xyz/downloader/tiktok?url=${text}&apikey=0af8c9e45d`)
+            wmnott = (`${ttnowm.result.${command}}`)
+                await hisoka.sendMessage(m.chat, { video: { url: wmnott, caption: `Tiktok From ${text}` } }, { quoted: m })
+            break
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
             default:
                 if (budy.startsWith('=>')) {
                     if (!isCreator) return m.reply(mess.owner)
