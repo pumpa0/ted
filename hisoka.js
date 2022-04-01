@@ -2679,7 +2679,8 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                         hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
                      }
             break
-case 'tiktok': case 'tt': {
+case 'tiktok':
+case 'tt': {
                 if (!text) throw 'Masukkan Query Link!'
                 let buttons = [
                     {buttonId: `watermark ${text}`, buttonText: {displayText: '► With Watermark'}, type: 1},
@@ -2688,7 +2689,8 @@ case 'tiktok': case 'tt': {
                 ]
                 await hisoka.sendButtonText(m.chat, buttons, `\`\`\`PILIH JENIS FILE DIBAWAH INI!\`\`\``)
             break
-            case 'nowatermark': case 'watermark': {
+case 'nowatermark':
+case 'watermark': {
                 if (!text) throw 'Masukkan Query Link!'
                 let ttnowm = await fetchJson(`https://zenzapi.xyz/downloader/tiktok?url=${text}&apikey=0af8c9e45d`)
             wmnott = (`${ttnowm.result.${command}}`)
