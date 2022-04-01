@@ -1963,13 +1963,13 @@ break
 case 'tiktok': case 'tiktoknowm': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
-                let anu = await fetchJson(api('zenz', '/downloader/tiktok', { url: text }, 'apikey'))
+                let ttnowm = await fetchJson(`https://zenzapi.xyz/downloader/tiktok?url=${text}&apikey=0af8c9e45d`)
                 let buttons = [
                     {buttonId: `tiktokwm ${text}`, buttonText: {displayText: '► With Watermark'}, type: 1},
                     {buttonId: `tiktokmp3 ${text}`, buttonText: {displayText: '♫ Audio'}, type: 1}
                 ]
                 let buttonMessage = {
-                    video: { url: anu.result.nowatermark },
+                    video: { url: ttnowm.result.nowatermark },
                     caption: `Download From ${text}`,
                     footer: 'Press The Button Below',
                     buttons: buttons,
@@ -1981,13 +1981,14 @@ case 'tiktok': case 'tiktoknowm': {
             case 'tiktokwm': case 'tiktokwatermark': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
-                let anu = await fetchJson(api('zenz', '/downloader/tiktok', { url: text }, 'apikey'))
+                if (!text) throw 'Masukkan Query Link!'
+                let ttwm = await fetchJson(`https://zenzapi.xyz/downloader/tiktok?url=${text}&apikey=0af8c9e45d`)
                 let buttons = [
                     {buttonId: `tiktoknowm ${text}`, buttonText: {displayText: '► No Watermark'}, type: 1},
                     {buttonId: `tiktokmp3 ${text}`, buttonText: {displayText: '♫ Audio'}, type: 1}
                 ]
                 let buttonMessage = {
-                    video: { url: anu.result.watermark },
+                    video: { url: ttwm.result.watermark },
                     caption: `Download From ${text}`,
                     footer: 'Press The Button Below',
                     buttons: buttons,
@@ -1998,11 +1999,20 @@ case 'tiktok': case 'tiktoknowm': {
             break
             case 'tiktokmp3': case 'tiktokaudio': {
                 if (!text) throw 'Masukkan Query Link!'
-                let anu = await fetchJson(api('zenz', '/downloader/tiktok', { url: text }, 'apikey'))
-		let { toAudio } = require('./lib/converter')
-		let nganu = await getBuffer(anu.result.nowatermark)
-		let cnvrt = await toAudio(nganu, 'mp4')
-                hisoka.sendMessage(m.chat, { audio: cnvrt, mimetype: 'audio/mpeg'}, { quoted: m })
+                m.reply(mess.wait)
+                let ttmp = await fetchJson(`https://zenzapi.xyz/downloader/tiktok?url=${text}&apikey=0af8c9e45d`)
+                let buttons = [
+                    {buttonId: `tiktoknowm ${text}`, buttonText: {displayText: '► No Watermark'}, type: 1},
+                    {buttonId: `tiktokwm ${text}`, buttonText: {displayText: '► With Watermark'}, type: 1}
+                ]
+                let buttonMessage = {
+                    text: `Download From ${text}`,
+                    footer: 'Press The Button Below',
+                    buttons: buttons,
+                    headerType: 2
+                }
+                let msg = await hisoka.sendMessage(m.chat, buttonMessage, { quoted: m })
+                hisoka.sendMessage(m.chat, { audio: { url: ttmp.result.audio }, mimetype: 'audio/mpeg'}, { quoted: msg })
             }
             break
 	        case 'instagram': case 'ig': case 'igdl': {
