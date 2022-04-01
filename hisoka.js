@@ -2592,7 +2592,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                      }
             break
 case 'tiktoknowm':
-                    if (args.length == 0) return reply(`Example: ${prefix + command} https://vt.tiktok.com/ZSwWCk5o/`)
+                    if (args.length == 0) return m.reply(`Example: ${prefix + command} https://vt.tiktok.com/ZSwWCk5o/`)
                     ini_url = args[0]
                     ini_url = `https://api.lolhuman.xyz/api/tiktok?apikey=${apikey}&url=${ini_url}`
                     get_result = await fetchJson(ini_url)
@@ -2600,13 +2600,13 @@ case 'tiktoknowm':
                     await hisoka.sendMessage(m.chat, ini_buffer, video, { quoted: m })
                     break
                 case 'tiktokmusic':
-                    if (args.length == 0) return reply(`Example: ${prefix + command} https://vt.tiktok.com/ZSwWCk5o/`)
+                    if (args.length == 0) return m.reply(`Example: ${prefix + command} https://vt.tiktok.com/ZSwWCk5o/`)
                     ini_link = args[0]
                     get_audio = await getBuffer(`https://api.lolhuman.xyz/api/tiktokmusic?apikey=${apikey}&url=${ini_link}`)
                     await hisoka.sendMessage(m.chat, get_audio, audio, { mimetype: Mimetype.mp4Audio, quoted: m })
                     break
                 case 'spotify':
-                    if (args.length == 0) return reply(`Example: ${prefix + command} https://open.spotify.com/track/0ZEYRVISCaqz5yamWZWzaA`)
+                    if (args.length == 0) return m.reply(`Example: ${prefix + command} https://open.spotify.com/track/0ZEYRVISCaqz5yamWZWzaA`)
                     url = args[0]
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/spotify?apikey=${apikey}&url=${url}`)
                     get_result = get_result.result
@@ -2621,7 +2621,7 @@ case 'tiktoknowm':
                     await hisoka.sendMessage(m.chat, get_audio, audio, { mimetype: 'audio/mp4', filename: `${get_result.title}.mp3`, quoted: m })
                     break
                 case 'spotifysearch':
-                    if (args.length == 0) return reply(`Example: ${prefix + command} Melukis Senja`)
+                    if (args.length == 0) return m.reply(`Example: ${prefix + command} Melukis Senja`)
                     query = args.join(" ")
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/spotifysearch?apikey=${apikey}&query=${query}`)
                     get_result = get_result.result
@@ -2636,7 +2636,7 @@ case 'tiktoknowm':
                     reply(ini_txt)
                     break
                 case 'jooxplay':
-                    if (args.length == 0) return reply(`Example: ${prefix + command} Melukis Senja`)
+                    if (args.length == 0) return m.reply(`Example: ${prefix + command} Melukis Senja`)
                     query = args.join(" ")
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/jooxplay?apikey=${apikey}&query=${query}`)
                     get_result = get_result.result
@@ -2652,7 +2652,7 @@ case 'tiktoknowm':
                     await hisoka.sendMessage(m.chat, get_audio, audio, { mimetype: 'audio/mp4', filename: `${get_result.info.song}.mp3`, quoted: m })
                     break
                 case 'igdl':
-                    if (args.length == 0) return reply(`Example: ${prefix + command} https://www.instagram.com/p/CJ8XKFmJ4al/?igshid=1acpcqo44kgkn`)
+                    if (args.length == 0) return m.reply(`Example: ${prefix + command} https://www.instagram.com/p/CJ8XKFmJ4al/?igshid=1acpcqo44kgkn`)
                     ini_url = args[0]
                     ini_url = await fetchJson(`https://api.lolhuman.xyz/api/instagram?apikey=${apikey}&url=${ini_url}`)
                     ini_url = ini_url.result
@@ -2662,7 +2662,7 @@ case 'tiktoknowm':
                     await hisoka.sendMessage(m.chat, ini_buffer, ini_type, { quoted: m })
                     break
                 case 'igdl2':
-                    if (args.length == 0) return reply(`Example: ${prefix + command} https://www.instagram.com/p/CJ8XKFmJ4al/?igshid=1acpcqo44kgkn`)
+                    if (args.length == 0) return m.reply(`Example: ${prefix + command} https://www.instagram.com/p/CJ8XKFmJ4al/?igshid=1acpcqo44kgkn`)
                     ini_url = args[0]
                     ini_url = await fetchJson(`https://api.lolhuman.xyz/api/instagram2?apikey=${apikey}&url=${ini_url}`)
                     ini_result = ini_url.result.media
@@ -2674,7 +2674,7 @@ case 'tiktoknowm':
                     }
                     break
                 case 'twtdl':
-                    if (args.length == 0) return reply(`Example: ${prefix + command} https://twitter.com/gofoodindonesia/status/1229369819511709697`)
+                    if (args.length == 0) return m.reply(`Example: ${prefix + command} https://twitter.com/gofoodindonesia/status/1229369819511709697`)
                     ini_url = args[0]
                     ini_url = await fetchJson(`https://api.lolhuman.xyz/api/twitter?apikey=${apikey}&url=${ini_url}`)
                     ini_url = ini_url.result
@@ -2683,7 +2683,7 @@ case 'tiktoknowm':
                     await hisoka.sendMessage(m.chat, ini_buffer, video, { quoted: m })
                     break
                 case 'fbdl':
-                    if (args.length == 0) return reply(`Example: ${prefix + command} https://id-id.facebook.com/SamsungGulf/videos/video-bokeh/561108457758458/`)
+                    if (args.length == 0) return m.reply(`Example: ${prefix + command} https://id-id.facebook.com/SamsungGulf/videos/video-bokeh/561108457758458/`)
                     ini_url = args[0]
                     ini_url = await fetchJson(`https://api.lolhuman.xyz/api/facebook?apikey=${apikey}&url=${ini_url}`)
                     ini_url = ini_url.result[0].link
@@ -2691,7 +2691,7 @@ case 'tiktoknowm':
                     await hisoka.sendMessage(m.chat, ini_buffer, video, { quoted: m })
                     break
                 case 'zippyshare':
-                    if (args.length == 0) return reply(`Example: ${prefix + command} https://www51.zippyshare.com/v/5W0TOBz1/file.html`)
+                    if (args.length == 0) return m.reply(`Example: ${prefix + command} https://www51.zippyshare.com/v/5W0TOBz1/file.html`)
                     ini_url = args[0]
                     ini_url = await fetchJson(`https://api.lolhuman.xyz/api/zippyshare?apikey=${apikey}&url=${ini_url}`)
                     ini_url = ini_url.result
@@ -2702,7 +2702,7 @@ case 'tiktoknowm':
                     reply(ini_txt)
                     break
                 case 'pinterest':
-                    if (args.length == 0) return reply(`Example: ${prefix + command} loli kawaii`)
+                    if (args.length == 0) return m.reply(`Example: ${prefix + command} loli kawaii`)
                     query = args.join(" ")
                     ini_url = await fetchJson(`https://api.lolhuman.xyz/api/pinterest?apikey=${apikey}&query=${query}`)
                     ini_url = ini_url.result
@@ -2710,7 +2710,7 @@ case 'tiktoknowm':
                     await hisoka.sendMessage(m.chat, ini_buffer, image, { quoted: m })
                     break
                 case 'pinterest2':
-                    if (args.length == 0) return reply(`Example: ${prefix + command} loli kawaii`)
+                    if (args.length == 0) return m.reply(`Example: ${prefix + command} loli kawaii`)
                     query = args.join(" ")
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/pinterest2?apikey=${apikey}&query=${query}`)
                     get_result = get_result.result
@@ -2720,7 +2720,7 @@ case 'tiktoknowm':
                     }
                     break
                 case 'pinterestdl':
-                    if (args.length == 0) return reply(`Example: ${prefix + command} https://id.pinterest.com/pin/696580267364426905/`)
+                    if (args.length == 0) return m.reply(`Example: ${prefix + command} https://id.pinterest.com/pin/696580267364426905/`)
                     ini_url = args[0]
                     ini_url = await fetchJson(`https://api.lolhuman.xyz/api/pinterestdl?apikey=${apikey}&url=${ini_url}`)
                     ini_url = ini_url.result[0]
@@ -2728,13 +2728,13 @@ case 'tiktoknowm':
                     await hisoka.sendMessage(m.chat, ini_buffer, image, { quoted: m })
                     break
                 case 'pixiv':
-                    if (args.length == 0) return reply(`Example: ${prefix + command} loli kawaii`)
+                    if (args.length == 0) return m.reply(`Example: ${prefix + command} loli kawaii`)
                     query = args.join(" ")
                     ini_buffer = await getBuffer(`https://api.lolhuman.xyz/api/pixiv?apikey=${apikey}&query=${query}`)
                     await hisoka.sendMessage(m.chat, ini_buffer, image, { quoted: m })
                     break
                 case 'pixivdl':
-                    if (args.length == 0) return reply(`Example: ${prefix + command} 63456028`)
+                    if (args.length == 0) return m.reply(`Example: ${prefix + command} 63456028`)
                     query = args[0]
                     ini_buffer = await getBuffer(`https://api.lolhuman.xyz/api/pixivdl/${pixivid}?apikey=${apikey}`)
                     await hisoka.sendMessage(m.chat, ini_buffer, image, { quoted: m })
