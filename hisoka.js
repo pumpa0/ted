@@ -1203,8 +1203,12 @@ break
                                 quickReplyButton: {
                                     displayText: 'Donasi',
                                     id: 'donasi'
-                                }  
-                            }]
+                                }
+                            }, {
+                                quickReplyButton: {
+                                    displayText: 'Menu',
+                                    id: 'menu'
+                                }  ]
                       let txt = `「 Broadcast Bot 」\n\n${text}`
                       hisoka.send5ButImg(yoi, txt, hisoka.user.name, global.thumb, btn)
 		}
@@ -2741,7 +2745,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                      }
             break
 case 'twtdl':
-                    if (args.length == 0) return reply(`Example: ${prefix + command} https://twitter.com/gofoodindonesia/status/1229369819511709697`)
+                    if (args.length == 0) return m.reply(`Example: ${prefix + command} https://twitter.com/gofoodindonesia/status/1229369819511709697`)
                     ini_url = args[0]
                     ini_url = await fetchJson(`https://api.lolhuman.xyz/api/twitter?apikey=${apikey}&url=${ini_url}`)
                     ini_url = ini_url.result
