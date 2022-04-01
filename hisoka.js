@@ -2592,6 +2592,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                      }
             break
 case 'tiktoknowm':
+case 'tiktok':
                     if (args.length == 0) return m.reply(`Example: ${prefix + command} https://vt.tiktok.com/ZSwWCk5o/`)
                     ini_url = args[0]
                     ini_url = `https://api.lolhuman.xyz/api/tiktok?apikey=${apikey}&url=${ini_url}`
@@ -2599,11 +2600,18 @@ case 'tiktoknowm':
                     ini_buffer = await getBuffer(get_result.result.link)
                     await hisoka.sendMessage(m.chat, ini_buffer, video, { quoted: m })
                     break
+case 'tiktokwm':
+                    if (args.length == 0) return m.reply(`Example: ${prefix + command} https://vt.tiktok.com/ZSwWCk5o/`)
+                    ini_url = args[0]
+                    ini_url = `https://api.lolhuman.xyz/api/tiktokwm?apikey=${apikey}&url=${ini_url}`
+                    ini_buffer = await getBuffer(ini_url)
+                    await hisoka.sendMessage(m.chat, ini_buffer, video, { quoted: m })
+                    break
                 case 'tiktokmusic':
                     if (args.length == 0) return m.reply(`Example: ${prefix + command} https://vt.tiktok.com/ZSwWCk5o/`)
                     ini_link = args[0]
                     get_audio = await getBuffer(`https://api.lolhuman.xyz/api/tiktokmusic?apikey=${apikey}&url=${ini_link}`)
-                    await hisoka.sendMessage(m.chat, get_audio, audio, { mimetype: Mimetype.mp4Audio, quoted: m })
+                    hisoka.sendMessage(m.chat, { audio: { url: get_audio }, mimetype: 'audio/mpeg'}, { quoted: m })
                     break
                 case 'spotify':
                     if (args.length == 0) return m.reply(`Example: ${prefix + command} https://open.spotify.com/track/0ZEYRVISCaqz5yamWZWzaA`)
