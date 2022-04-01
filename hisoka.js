@@ -26,7 +26,7 @@ const { Primbon } = require('scrape-primbon')
 const primbon = new Primbon()
 const { smsg, formatp, tanggal, formatDate, getTime, isUrl, sleep, clockString, runtime, fetchJson, getBuffer, jsonformat, format, parseMention, getRandom } = require('./lib/myfunc')
 
-apikey = '91a94b6424cc565c88ce7ee8'
+let apikey = 'HanBotzApi'
 
 // read database
 global.db = JSON.parse(fs.readFileSync('./src/database.json'))
@@ -68,7 +68,6 @@ module.exports = hisoka = async (hisoka, m, chatUpdate, store) => {
         const quoted = m.quoted ? m.quoted : m
         const mime = (quoted.msg || quoted).mimetype || ''
 	    const isMedia = /image|video|sticker|audio/.test(mime)
-	const { image, video, sticker, document, audio } = MessageType
         // Group
         const groupMetadata = m.isGroup ? await hisoka.groupMetadata(m.chat).catch(e => {}) : ''
         const groupName = m.isGroup ? groupMetadata.subject : ''
@@ -1499,8 +1498,8 @@ break
             break
             case 'ytmp4': case 'ytvideo': {
                 let { ytv } = require('./lib/y2mate')
-                if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 360p`
-                let quality = args[1] ? args[1] : '360p'
+                if (!text) throw `Example : ${prefix + command} https://youtube.com/***`
+                let quality = args[1] ? args[1] : '480'
                 let media = await ytv(text, quality)
                 if (media.filesize >= 100000) return m.reply('File Melebihi Batas '+util.format(media))
                 hisoka.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `⭔ Title : ${media.title}\n⭔ File Size : ${media.filesizeF}\n⭔ Url : ${isUrl(text)}\n⭔ Ext : MP3\n⭔ Resolusi : ${args[1] || '360p'}` }, { quoted: m })
@@ -1527,7 +1526,7 @@ break
                 if (!m.quoted.isBaileys) throw `Hanya Bisa Membalas Pesan Dari Bot`
                 let urls = quoted.text.match(new RegExp(/(?:https?:\/\/)?(?:youtu\.be\/|(?:www\.|m\.)?youtube\.com\/(?:watch|v|embed|shorts)(?:\.php)?(?:\?.*v=|\/))([a-zA-Z0-9\_-]+)/, 'gi'))
                 if (!urls) throw `Mungkin pesan yang anda reply tidak mengandung result ytsearch`
-                let quality = args[1] ? args[1] : '360p'
+                let quality = args[1] ? args[1] : '480p'
                 let media = await ytv(urls[text - 1], quality)
                 if (media.filesize >= 100000) return m.reply('File Melebihi Batas '+util.format(media))
                 hisoka.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `⭔ Title : ${media.title}\n⭔ File Size : ${media.filesizeF}\n⭔ Url : ${urls[text - 1]}\n⭔ Ext : MP3\n⭔ Resolusi : ${args[1] || '360p'}` }, { quoted: m })
@@ -1972,8 +1971,7 @@ case 'tiktok': case 'tiktoknowm': {
                 m.reply(mess.wait)
                 let anu = await fetchJson(`https://api.lolhuman.xyz/api/tiktok?apikey=HanBotzApi&url=${text}`)
                 let buttons = [
-                    {buttonId: `tiktokwm ${text}`, buttonText: {displayText: '► With Watermark'}, type: 1},
-                    {buttonId: `tiktokmp3 ${text}`, buttonText: {displayText: '♫ Audio'}, type: 1}
+                    {buttonId: `tomp3`, buttonText: {displayText: '♫ Audio'}, type: 1}
                 ]
                 let buttonMessage = {
                     video: { url: anu.result.link },
@@ -2025,7 +2023,7 @@ case 'tiktokmusic':
                     if (args.length == 0) return reply(`Example: ${prefix + command} https://vt.tiktok.com/ZSwWCk5o/`)
                     ini_link = args[0]
                     get_audio = await getBuffer(`https://api.lolhuman.xyz/api/tiktokmusic?apikey=${apikey}&url=${ini_link}`)
-                    await hisoka.sendMessage(m.chat, get_audio, audio, { mimetype: Mimetype.mp4Audio, quoted: m })
+                    await hisoka.sendMessage(m.chat, get_audio, isMedia, { mimetype: Mimetype.mp4Audio, quoted: m })
                     break
 	        case 'instagram': case 'ig': case 'igdl': {
                 if (!text) throw 'No Query Url!'
@@ -2742,7 +2740,15 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                         hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
                      }
             break
-
+case 'twtdl':
+                    if (args.length == 0) return reply(`Example: ${prefix + command} https://twitter.com/gofoodindonesia/status/1229369819511709697`)
+                    ini_url = args[0]
+                    ini_url = await fetchJson(`https://api.lolhuman.xyz/api/twitter?apikey=${apikey}&url=${ini_url}`)
+                    ini_url = ini_url.result
+                    ini_url = ini_url[ini_url.length - 1].link
+                    ini_buffer = await getBuffer(ini_url)
+                    hisoka.sendMessage(m.chat, { video: { url: ini_url }, mimetype: 'video/mp4', { quoted: m })
+                    break
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
             default:
                 if (budy.startsWith('=>')) {
