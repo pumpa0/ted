@@ -1983,8 +1983,7 @@ case 'tiktok': case 'tiktoknowm': {
             case 'tiktokwm': case 'tiktokwatermark': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
-                let anu = await fetchJson(`https://api.lolhuman.xyz/api/tiktokwm?apikey=HanBotzApi&url=${text}`)
-                let ana = await getBuffer(anu)
+                let ana = await getBuffer(`https://api.lolhuman.xyz/api/tiktokwm?apikey=HanBotzApi&url=${text}`)
                 let buttons = [
                     {buttonId: `tiktoknowm ${text}`, buttonText: {displayText: '► No Watermark'}, type: 1},
                     {buttonId: `tiktokmp3 ${text}`, buttonText: {displayText: '♫ Audio'}, type: 1}
@@ -2003,7 +2002,6 @@ case 'tiktok': case 'tiktoknowm': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
                 let anu = await getBuffer(`https://api.lolhuman.xyz/api/tiktokmusic?apikey=HanBotzApi&url=${text}`)
-                let ana = await getBuffer(anu)
                 let buttons = [
                     {buttonId: `tiktoknowm ${text}`, buttonText: {displayText: '► No Watermark'}, type: 1},
                     {buttonId: `tiktokwm ${text}`, buttonText: {displayText: '► With Watermark'}, type: 1}
@@ -2015,7 +2013,7 @@ case 'tiktok': case 'tiktoknowm': {
                     headerType: 2
                 }
                 let msg = await hisoka.sendMessage(m.chat, buttonMessage, { quoted: m })
-                hisoka.sendMessage(m.chat, { audio: { url: ana }, mimetype: 'audio/mpeg'}, { quoted: msg })
+                hisoka.sendMessage(m.chat, { audio: { url: anu }, mimetype: 'audio/mpeg'}, { quoted: msg })
             }
             break
 	        case 'instagram': case 'ig': case 'igdl': {
