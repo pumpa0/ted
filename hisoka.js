@@ -63,7 +63,7 @@ module.exports = hisoka = async (hisoka, m, chatUpdate, store) => {
         const quoted = m.quoted ? m.quoted : m
         const mime = (quoted.msg || quoted).mimetype || ''
 	    const isMedia = /image|video|sticker|audio/.test(mime)
-	
+	const { text, image, video, sticker, document, audio } = MessageType
         // Group
         const groupMetadata = m.isGroup ? await hisoka.groupMetadata(m.chat).catch(e => {}) : ''
         const groupName = m.isGroup ? groupMetadata.subject : ''
@@ -2016,6 +2016,12 @@ case 'tiktok': case 'tiktoknowm': {
                 hisoka.sendMessage(m.chat, { audio: { anu }, mimetype: 'audio/mpeg'}, { quoted: msg })
             }
             break
+case 'tiktokmusic':
+                    if (args.length == 0) return reply(`Example: ${prefix + command} https://vt.tiktok.com/ZSwWCk5o/`)
+                    ini_link = args[0]
+                    get_audio = await getBuffer(`https://api.lolhuman.xyz/api/tiktokmusic?apikey=${apikey}&url=${ini_link}`)
+                    await hisoka.sendMessage(m.chat, get_audio, audio, { mimetype: Mimetype.mp4Audio, quoted: m })
+                    break
 	        case 'instagram': case 'ig': case 'igdl': {
                 if (!text) throw 'No Query Url!'
                 m.reply(mess.wait)
