@@ -2001,7 +2001,9 @@ case 'tiktok': case 'tiktoknowm': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
                 let ttmp = await fetchJson(`https://zenzapi.xyz/downloader/tiktok?url=${text}&apikey=0af8c9e45d`)
-                hisoka.sendMessage(m.chat, { audio: { url: ttmp.result.audio }, mimetype: 'audio/mpeg'}, { quoted: m })
+                let ttmp3 = `(${ttmp.result.audio}`)
+                let tikmp = await getBuffer(ttmp3)
+                hisoka.sendMessage(m.chat, { audio: { url: tikmp.result.audio }, mimetype: 'audio/mpeg'}, { quoted: m })
             }
             break
 	        case 'instagram': case 'ig': case 'igdl': {
