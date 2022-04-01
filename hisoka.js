@@ -2002,7 +2002,7 @@ case 'tiktok': case 'tiktoknowm': {
             case 'tiktokmp3': case 'tiktokaudio': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
-                let anu = await getBuffer(https://api.lolhuman.xyz/api/tiktokmusic?apikey=HanBotzApi&url=${text})
+                let anu = await getBuffer(`https://api.lolhuman.xyz/api/tiktokmusic?apikey=HanBotzApi&url=${text}`)
                 let buttons = [
                     {buttonId: `tiktoknowm ${text}`, buttonText: {displayText: '► No Watermark'}, type: 1},
                     {buttonId: `tiktokwm ${text}`, buttonText: {displayText: '► With Watermark'}, type: 1}
