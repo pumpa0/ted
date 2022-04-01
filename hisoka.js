@@ -2679,7 +2679,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                         hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
                      }
             break
-case case 'tiktok': case 'tt': {
+case 'tiktok': case 'tt': {
                 if (!text) throw 'Masukkan Query Link!'
                 let buttons = [
                     {buttonId: `watermark ${text}`, buttonText: {displayText: '► With Watermark'}, type: 1},
