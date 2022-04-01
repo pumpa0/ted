@@ -1962,6 +1962,147 @@ break
                 }
             }
             break
+case 'tiktok': case 'tiktoknowm': {
+                if (!text) throw 'Masukkan Query Link!'
+                m.reply(mess.wait)
+                let anu = await fetchJson(`https://api.lolhuman.xyz/api/tiktok?apikey=HanBotzApi&url=${text}`)
+                let buttons = [
+                    {buttonId: `tiktokwm ${text}`, buttonText: {displayText: '► With Watermark'}, type: 1},
+                    {buttonId: `tiktokmp3 ${text}`, buttonText: {displayText: '♫ Audio'}, type: 1}
+                ]
+                let buttonMessage = {
+                    video: { url: anu.result.link },
+                    caption: `Download From ${text}`,
+                    footer: 'Press The Button Below',
+                    buttons: buttons,
+                    headerType: 5
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: m })
+            }
+            break
+            case 'tiktokwm': case 'tiktokwatermark': {
+                if (!text) throw 'Masukkan Query Link!'
+                m.reply(mess.wait)
+                let anu = await fetchJson(`https://api.lolhuman.xyz/api/tiktokwm?apikey=HanBotzApi&url=${text}`)
+                let ana = await getBuffer(anu)
+                let buttons = [
+                    {buttonId: `tiktoknowm ${text}`, buttonText: {displayText: '► No Watermark'}, type: 1},
+                    {buttonId: `tiktokmp3 ${text}`, buttonText: {displayText: '♫ Audio'}, type: 1}
+                ]
+                let buttonMessage = {
+                    video: { ana },
+                    caption: `Download From ${text}`,
+                    footer: 'Press The Button Below',
+                    buttons: buttons,
+                    headerType: 5
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: m })
+            }
+            break
+            case 'tiktokmp3': case 'tiktokaudio': {
+                if (!text) throw 'Masukkan Query Link!'
+                m.reply(mess.wait)
+                let anu = await getBuffer(https://api.lolhuman.xyz/api/tiktokmusic?apikey=HanBotzApi&url=${text})
+                let buttons = [
+                    {buttonId: `tiktoknowm ${text}`, buttonText: {displayText: '► No Watermark'}, type: 1},
+                    {buttonId: `tiktokwm ${text}`, buttonText: {displayText: '► With Watermark'}, type: 1}
+                ]
+                let buttonMessage = {
+                    text: `Download From ${text}`,
+                    footer: 'Press The Button Below',
+                    buttons: buttons,
+                    headerType: 2
+                }
+                let msg = await hisoka.sendMessage(m.chat, buttonMessage, { quoted: m })
+                hisoka.sendMessage(m.chat, { audio: { url: anu.result.audio }, mimetype: 'audio/mpeg'}, { quoted: msg })
+            }
+            break
+	        case 'instagram': case 'ig': case 'igdl': {
+                if (!text) throw 'No Query Url!'
+                m.reply(mess.wait)
+                if (/(?:\/p\/|\/reel\/|\/tv\/)([^\s&]+)/.test(isUrl(text)[0])) {
+                    let anu = await fetchJson(api('zenz', '/downloader/instagram2', { url: isUrl(text)[0] }, 'apikey'))
+                    for (let media of anu.data) hisoka.sendMedia(m.chat, media, '', `Download Url Instagram From ${isUrl(text)[0]}`, m)
+                } else if (/\/stories\/([^\s&]+)/.test(isUrl(text)[0])) {
+                    let anu = await fetchJson(api('zenz', '/downloader/instastory', { url: isUrl(text)[0] }, 'apikey'))
+                    hisoka.sendMedia(m.chat, anu.media[0].url, '', `Download Url Instagram From ${isUrl(text)[0]}`, m)
+                }
+            }
+            break
+		/** Backup misal yg atas ga keluar video **/
+		case 'igeh': case 'instagram2': case 'ig2': case 'igdl2': {
+                if (!text) throw 'Masukkan Query Link!'
+                m.reply(mess.wait)
+                
+                let anu = await fetchJson(api('zenz', '/downloader/instagram2', { url:text }, 'apikey'))
+                hisoka.sendMessage(m.chat, { video: { url: anu.data[0] } }, { quoted: m })
+            }
+            break
+            case 'joox': case 'jooxdl': {
+                if (!text) throw 'No Query Title'
+                m.reply(mess.wait)
+                let anu = await fetchJson(api('zenz', '/downloader/joox', { query: text }, 'apikey'))
+                let msg = await hisoka.sendImage(m.chat, anu.result.img, `⭔ Title : ${anu.result.lagu}\n⭔ Album : ${anu.result.album}\n⭔ Singer : ${anu.result.penyanyi}\n⭔ Publish : ${anu.result.publish}\n⭔ Lirik :\n${anu.result.lirik.result}`, m)
+                hisoka.sendMessage(m.chat, { audio: { url: anu.result.mp4aLink }, mimetype: 'audio/mpeg', fileName: anu.result.lagu+'.m4a' }, { quoted: msg })
+            }
+            break
+            case 'soundcloud': case 'scdl': {
+                if (!text) throw 'No Query Title'
+                m.reply(mess.wait)
+                let anu = await fetchJson(api('zenz', '/downloader/soundcloud', { url: isUrl(text)[0] }, 'apikey'))
+                let msg = await hisoka.sendImage(m.chat, anu.result.thumb, `⭔ Title : ${anu.result.title}\n⭔ Url : ${isUrl(text)[0]}`)
+                hisoka.sendMessage(m.chat, { audio: { url: anu.result.url }, mimetype: 'audio/mpeg', fileName: anu.result.title+'.m4a' }, { quoted: msg })
+            }
+            break
+	        case 'twitdl': case 'twitter': {
+                if (!text) throw 'Masukkan Query Link!'
+                m.reply(mess.wait)
+                let anu = await fetchJson(api('zenz', '/api/downloader/twitter', { url: text }, 'apikey'))
+                let buttons = [
+                    {buttonId: `twittermp3 ${text}`, buttonText: {displayText: '► Audio'}, type: 1}
+                ]
+                let buttonMessage = {
+                    video: { url: anu.result.HD || anu.result.SD },
+                    caption: util.format(anu.result),
+                    footer: 'Press The Button Below',
+                    buttons: buttons,
+                    headerType: 5
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: m })
+            }
+            break
+            case 'twittermp3': case 'twitteraudio': {
+                if (!text) throw 'Masukkan Query Link!'
+                m.reply(mess.wait)
+                let anu = await fetchJson(api('zenz', '/api/downloader/twitter', { url: text }, 'apikey'))
+                let buttons = [
+                    {buttonId: `twitter ${text}`, buttonText: {displayText: '► Video'}, type: 1}
+                ]
+                let buttonMessage = {
+		    image: { url: anu.result.thumb },
+                    caption: util.format(anu.result),
+                    footer: 'Press The Button Below',
+                    buttons: buttons,
+                    headerType: 4
+                }
+                let msg = await hisoka.sendMessage(m.chat, buttonMessage, { quoted: m })
+                hisoka.sendMessage(m.chat, { audio: { url: anu.result.audio } }, { quoted: msg })
+            }
+            break
+	        case 'fbdl': case 'fb': case 'facebook': {
+                if (!text) throw 'Masukkan Query Link!'
+                m.reply(mess.wait)
+                let anu = await fetchJson(api('zenz', '/api/downloader/facebook', { url: text }, 'apikey'))
+                hisoka.sendMessage(m.chat, { video: { url: anu.result.url }, caption: `⭔ Title : ${anu.result.title}`}, { quoted: m })
+            }
+            break
+	        case 'pindl': case 'pinterestdl': {
+                if (!text) throw 'Masukkan Query Link!'
+                m.reply(mess.wait)
+                let anu = await fetchJson(api('zenz', '/api/downloader/pinterestdl', { url: text }, 'apikey'))
+                hisoka.sendMessage(m.chat, { video: { url: anu.result }, caption: `Download From ${text}` }, { quoted: m })
+            }
+            break
             case 'umma': case 'ummadl': {
 	        if (!text) throw `Example : ${prefix + command} https://umma.id/channel/video/post/gus-arafat-sumber-kecewa-84464612933698`
                 let { umma } = require('./lib) scraper')
@@ -2591,162 +2732,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                         hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
                      }
             break
-case 'tiktoknowm':
-case 'tiktok':
-                    if (args.length == 0) return m.reply(`Example: ${prefix + command} https://vt.tiktok.com/ZSwWCk5o/`)
-                    ini_url = args[0]
-                    ini_url = `https://api.lolhuman.xyz/api/tiktok?apikey=${apikey}&url=${ini_url}`
-                    get_result = await fetchJson(ini_url)
-                    ini_buffer = await getBuffer(get_result.result.link)
-                    await hisoka.sendMessage(m.chat, ini_buffer, video, { quoted: m })
-                    break
-case 'tiktokwm':
-                    if (args.length == 0) return m.reply(`Example: ${prefix + command} https://vt.tiktok.com/ZSwWCk5o/`)
-                    ini_url = args[0]
-                    ini_url = `https://api.lolhuman.xyz/api/tiktokwm?apikey=${apikey}&url=${ini_url}`
-                    ini_buffer = await getBuffer(ini_url)
-                    await hisoka.sendMessage(m.chat, ini_buffer, video, { quoted: m })
-                    break
-                case 'tiktokmusic':
-                    if (args.length == 0) return m.reply(`Example: ${prefix + command} https://vt.tiktok.com/ZSwWCk5o/`)
-                    ini_link = args[0]
-                    get_audio = await getBuffer(`https://api.lolhuman.xyz/api/tiktokmusic?apikey=${apikey}&url=${ini_link}`)
-                    hisoka.sendMessage(m.chat, { audio: { url: get_audio }, mimetype: 'audio/mpeg'}, { quoted: m })
-                    break
-                case 'spotify':
-                    if (args.length == 0) return m.reply(`Example: ${prefix + command} https://open.spotify.com/track/0ZEYRVISCaqz5yamWZWzaA`)
-                    url = args[0]
-                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/spotify?apikey=${apikey}&url=${url}`)
-                    get_result = get_result.result
-                    ini_txt = `Title : ${get_result.title}\n`
-                    ini_txt += `Artists : ${get_result.artists}\n`
-                    ini_txt += `Duration : ${get_result.duration}\n`
-                    ini_txt += `Popularity : ${get_result.popularity}\n`
-                    ini_txt += `Preview : ${get_result.preview_url}\n`
-                    thumbnail = await getBuffer(get_result.thumbnail)
-                    await hisoka.sendMessage(m.chat, thumbnail, image, { quoted: m, caption: ini_txt })
-                    get_audio = await getBuffer(get_result.link)
-                    await hisoka.sendMessage(m.chat, get_audio, audio, { mimetype: 'audio/mp4', filename: `${get_result.title}.mp3`, quoted: m })
-                    break
-                case 'spotifysearch':
-                    if (args.length == 0) return m.reply(`Example: ${prefix + command} Melukis Senja`)
-                    query = args.join(" ")
-                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/spotifysearch?apikey=${apikey}&query=${query}`)
-                    get_result = get_result.result
-                    ini_txt = ""
-                    for (var x of get_result) {
-                        ini_txt += `Title : ${x.title}\n`
-                        ini_txt += `Artists : ${x.artists}\n`
-                        ini_txt += `Duration : ${x.duration}\n`
-                        ini_txt += `Link : ${x.link}\n`
-                        ini_txt += `Preview : ${x.preview_url}\n\n\n`
-                    }
-                    reply(ini_txt)
-                    break
-                case 'jooxplay':
-                    if (args.length == 0) return m.reply(`Example: ${prefix + command} Melukis Senja`)
-                    query = args.join(" ")
-                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/jooxplay?apikey=${apikey}&query=${query}`)
-                    get_result = get_result.result
-                    ini_txt = `Title : ${get_result.info.song}\n`
-                    ini_txt += `Artists : ${get_result.info.singer}\n`
-                    ini_txt += `Duration : ${get_result.info.duration}\n`
-                    ini_txt += `Album : ${get_result.info.album}\n`
-                    ini_txt += `Uploaded : ${get_result.info.date}\n`
-                    ini_txt += `Lirik :\n ${get_result.lirik}\n`
-                    thumbnail = await getBuffer(get_result.image)
-                    await hisoka.sendMessage(m.chat, thumbnail, image, { quoted: m, caption: ini_txt })
-                    get_audio = await getBuffer(get_result.audio[0].link)
-                    await hisoka.sendMessage(m.chat, get_audio, audio, { mimetype: 'audio/mp4', filename: `${get_result.info.song}.mp3`, quoted: m })
-                    break
-                case 'igdl':
-                    if (args.length == 0) return m.reply(`Example: ${prefix + command} https://www.instagram.com/p/CJ8XKFmJ4al/?igshid=1acpcqo44kgkn`)
-                    ini_url = args[0]
-                    ini_url = await fetchJson(`https://api.lolhuman.xyz/api/instagram?apikey=${apikey}&url=${ini_url}`)
-                    ini_url = ini_url.result
-                    ini_type = image
-                    if (ini_url.includes(".mp4")) ini_type = video
-                    ini_buffer = await getBuffer(ini_url)
-                    await hisoka.sendMessage(m.chat, ini_buffer, ini_type, { quoted: m })
-                    break
-                case 'igdl2':
-                    if (args.length == 0) return m.reply(`Example: ${prefix + command} https://www.instagram.com/p/CJ8XKFmJ4al/?igshid=1acpcqo44kgkn`)
-                    ini_url = args[0]
-                    ini_url = await fetchJson(`https://api.lolhuman.xyz/api/instagram2?apikey=${apikey}&url=${ini_url}`)
-                    ini_result = ini_url.result.media
-                    for (var x of ini_result) {
-                        ini_type = image
-                        if (x.includes(".mp4")) ini_type = video
-                        ini_buffer = await getBuffer(x)
-                        await hisoka.sendMessage(m.chat, ini_buffer, ini_type, { quoted: m })
-                    }
-                    break
-                case 'twtdl':
-                    if (args.length == 0) return m.reply(`Example: ${prefix + command} https://twitter.com/gofoodindonesia/status/1229369819511709697`)
-                    ini_url = args[0]
-                    ini_url = await fetchJson(`https://api.lolhuman.xyz/api/twitter?apikey=${apikey}&url=${ini_url}`)
-                    ini_url = ini_url.result
-                    ini_url = ini_url[ini_url.length - 1].link
-                    ini_buffer = await getBuffer(ini_url)
-                    await hisoka.sendMessage(m.chat, ini_buffer, video, { quoted: m })
-                    break
-                case 'fbdl':
-                    if (args.length == 0) return m.reply(`Example: ${prefix + command} https://id-id.facebook.com/SamsungGulf/videos/video-bokeh/561108457758458/`)
-                    ini_url = args[0]
-                    ini_url = await fetchJson(`https://api.lolhuman.xyz/api/facebook?apikey=${apikey}&url=${ini_url}`)
-                    ini_url = ini_url.result[0].link
-                    ini_buffer = await getBuffer(ini_url)
-                    await hisoka.sendMessage(m.chat, ini_buffer, video, { quoted: m })
-                    break
-                case 'zippyshare':
-                    if (args.length == 0) return m.reply(`Example: ${prefix + command} https://www51.zippyshare.com/v/5W0TOBz1/file.html`)
-                    ini_url = args[0]
-                    ini_url = await fetchJson(`https://api.lolhuman.xyz/api/zippyshare?apikey=${apikey}&url=${ini_url}`)
-                    ini_url = ini_url.result
-                    ini_txt = `File Name : ${ini_url.name_file}\n`
-                    ini_txt += `Size : ${ini_url.size}\n`
-                    ini_txt += `Date Upload : ${ini_url.date_upload}\n`
-                    ini_txt += `Download Url : ${ini_url.download_url}`
-                    reply(ini_txt)
-                    break
-                case 'pinterest':
-                    if (args.length == 0) return m.reply(`Example: ${prefix + command} loli kawaii`)
-                    query = args.join(" ")
-                    ini_url = await fetchJson(`https://api.lolhuman.xyz/api/pinterest?apikey=${apikey}&query=${query}`)
-                    ini_url = ini_url.result
-                    ini_buffer = await getBuffer(ini_url)
-                    await hisoka.sendMessage(m.chat, ini_buffer, image, { quoted: m })
-                    break
-                case 'pinterest2':
-                    if (args.length == 0) return m.reply(`Example: ${prefix + command} loli kawaii`)
-                    query = args.join(" ")
-                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/pinterest2?apikey=${apikey}&query=${query}`)
-                    get_result = get_result.result
-                    for (var x = 0; x <= 5; x++) {
-                        var ini_buffer = await getBuffer(get_result[x])
-                        await hisoka.sendMessage(m.chat, ini_buffer, image)
-                    }
-                    break
-                case 'pinterestdl':
-                    if (args.length == 0) return m.reply(`Example: ${prefix + command} https://id.pinterest.com/pin/696580267364426905/`)
-                    ini_url = args[0]
-                    ini_url = await fetchJson(`https://api.lolhuman.xyz/api/pinterestdl?apikey=${apikey}&url=${ini_url}`)
-                    ini_url = ini_url.result[0]
-                    ini_buffer = await getBuffer(ini_url)
-                    await hisoka.sendMessage(m.chat, ini_buffer, image, { quoted: m })
-                    break
-                case 'pixiv':
-                    if (args.length == 0) return m.reply(`Example: ${prefix + command} loli kawaii`)
-                    query = args.join(" ")
-                    ini_buffer = await getBuffer(`https://api.lolhuman.xyz/api/pixiv?apikey=${apikey}&query=${query}`)
-                    await hisoka.sendMessage(m.chat, ini_buffer, image, { quoted: m })
-                    break
-                case 'pixivdl':
-                    if (args.length == 0) return m.reply(`Example: ${prefix + command} 63456028`)
-                    query = args[0]
-                    ini_buffer = await getBuffer(`https://api.lolhuman.xyz/api/pixivdl/${pixivid}?apikey=${apikey}`)
-                    await hisoka.sendMessage(m.chat, ini_buffer, image, { quoted: m })
-                    break
+
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
             default:
                 if (budy.startsWith('=>')) {
