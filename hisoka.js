@@ -2747,7 +2747,7 @@ case 'twtdl':
                     ini_url = ini_url.result
                     ini_url = ini_url[ini_url.length - 1].link
                     ini_buffer = await getBuffer(ini_url)
-                    hisoka.sendMessage(m.chat, { video: { url: ini_url }, mimetype: 'video/mp4', { quoted: m })
+                    hisoka.sendMessage(m.chat, { video: { url: ini_url }, mimetype: 'video/mp4'}, { quoted: m })
                     break
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
             default:
