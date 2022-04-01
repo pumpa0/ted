@@ -1208,7 +1208,8 @@ break
                                 quickReplyButton: {
                                     displayText: 'Menu',
                                     id: 'menu'
-                                }  ]
+                                }
+                             }]
                       let txt = `「 Broadcast Bot 」\n\n${text}`
                       hisoka.send5ButImg(yoi, txt, hisoka.user.name, global.thumb, btn)
 		}
