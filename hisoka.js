@@ -2003,7 +2003,7 @@ case 'tiktok': case 'tiktoknowm': {
                 let ttmp = await fetchJson(`https://zenzapi.xyz/downloader/tiktok?url=${text}&apikey=0af8c9e45d`)
                 let ttmp3 = (`${ttmp.result.audio}`)
                 let tikmp = await getBuffer(ttmp3)
-                hisoka.sendMessage(m.chat, { audio: { url: tikmp.result.audio }, mimetype: 'audio/mpeg'}, { quoted: m })
+                hisoka.sendMessage(m.chat, { audio: { url: tikmp }, mimetype: 'audio/mpeg'}, { quoted: m })
             }
             break
 	        case 'instagram': case 'ig': case 'igdl': {
