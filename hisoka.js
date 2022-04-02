@@ -2071,7 +2071,7 @@ case 'tiktok': case 'tiktoknowm': {
                 ]
                 let buttonMessage = {
                     video: { url: anu.result.HD || anu.result.SD },
-                    caption: { url: anu.result.desc },
+                    caption: util.format(anu.result.desc),
                     footer: 'HanBotz',
                     buttons: buttons,
                     headerType: 5
@@ -2088,13 +2088,13 @@ case 'tiktok': case 'tiktoknowm': {
                 ]
                 let buttonMessage = {
 		    image: { url: anu.result.thumb },
-                    caption: { url: anu.result.desc },
+                    caption: util.format(anu.result.desc),
                     footer: 'HanBotz',
                     buttons: buttons,
                     headerType: 4
                 }
                 let msg = await hisoka.sendMessage(m.chat, buttonMessage, { quoted: m })
-                hisoka.sendMessage(m.chat, { audio: { url: anu.result.audio } }, { quoted: msg })
+                hisoka.sendMessage(m.chat, { audio: { url: anu.result.audio } }, { quoted: m })
             }
             break
 	        case 'fbdl': case 'fb': case 'facebook': {
@@ -2892,7 +2892,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
         
 
     } catch (err) {
-        m.reply(error)
+        m.reply(`error`)
     }
 }
 
