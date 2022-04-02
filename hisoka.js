@@ -1617,7 +1617,7 @@ break
                 ]
                 let buttonMessage = {
                     text: `~_${result.quotes}_\n\nBy '${result.karakter}', ${result.anime}\n\n- ${result.up_at}`,
-                    footer: 'Press The Button Below',
+                    footer: 'HanBotz',
                     buttons: buttons,
                     headerType: 2
                 }
@@ -1631,7 +1631,7 @@ break
                 ]
                 let buttonMessage = {
                     text: anu.result.message,
-                    footer: 'Press The Button Below',
+                    footer: 'HanBotz',
                     buttons: buttons,
                     headerType: 2
                 }
@@ -1982,7 +1982,7 @@ case 'tiktok': case 'tiktoknowm': {
                 let buttonMessage = {
                     video: { url: anu.result.nowatermark },
                     caption: `Download From ${text}`,
-                    footer: 'Press The Button Below',
+                    footer: 'HanBotz',
                     buttons: buttons,
                     headerType: 5
                 }
@@ -2000,7 +2000,7 @@ case 'tiktok': case 'tiktoknowm': {
                 let buttonMessage = {
                     video: { url: anu.result.watermark },
                     caption: `Download From ${text}`,
-                    footer: 'Press The Button Below',
+                    footer: 'HanBotz',
                     buttons: buttons,
                     headerType: 5
                 }
@@ -2017,7 +2017,7 @@ case 'tiktok': case 'tiktoknowm': {
                 ]
                 let buttonMessage = {
                     text: `Download From ${text}`,
-                    footer: 'Press The Button Below',
+                    footer: 'HanBotz',
                     buttons: buttons,
                     headerType: 2
                 }
@@ -2025,12 +2025,6 @@ case 'tiktok': case 'tiktoknowm': {
                 hisoka.sendMessage(m.chat, { audio: { url: anu.result.audio }, mimetype: 'audio/mpeg'}, { quoted: msg })
             }
             break
-case 'tiktokmusic':
-                    if (args.length == 0) return reply(`Example: ${prefix + command} https://vt.tiktok.com/ZSwWCk5o/`)
-                    ini_link = args[0]
-                    get_audio = await getBuffer(`https://api.lolhuman.xyz/api/tiktokmusic?apikey=${apikey}&url=${ini_link}`)
-                    await hisoka.sendMessage(m.chat, get_audio, isMedia, { mimetype: Mimetype.mp4Audio, quoted: m })
-                    break
 	        case 'instagram': case 'ig': case 'igdl': {
                 if (!text) throw 'No Query Url!'
                 m.reply(mess.wait)
@@ -2077,8 +2071,8 @@ case 'tiktokmusic':
                 ]
                 let buttonMessage = {
                     video: { url: anu.result.HD || anu.result.SD },
-                    caption: util.format(anu.result),
-                    footer: 'Press The Button Below',
+                    caption: { url: anu.result.desc },
+                    footer: 'HanBotz',
                     buttons: buttons,
                     headerType: 5
                 }
@@ -2088,14 +2082,14 @@ case 'tiktokmusic':
             case 'twittermp3': case 'twitteraudio': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
-                let anu = await fetchJson(api('zenz', '/api/downloader/twitter', { url: text }, 'apikey'))
+                let anu = await fetchJson(`https://zenzapi.xyz/downloader/twitter?url=${text}&apikey=ApiHanBotz`)
                 let buttons = [
                     {buttonId: `twitter ${text}`, buttonText: {displayText: '► Video'}, type: 1}
                 ]
                 let buttonMessage = {
 		    image: { url: anu.result.thumb },
-                    caption: util.format(anu.result),
-                    footer: 'Press The Button Below',
+                    caption: { url: anu.result.desc },
+                    footer: 'HanBotz',
                     buttons: buttons,
                     headerType: 4
                 }
