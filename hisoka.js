@@ -26,7 +26,6 @@ const { Primbon } = require('scrape-primbon')
 const primbon = new Primbon()
 const { smsg, formatp, tanggal, formatDate, getTime, isUrl, sleep, clockString, runtime, fetchJson, getBuffer, jsonformat, format, parseMention, getRandom } = require('./lib/myfunc')
 
-let apikey = 'HanBotzApi'
 
 // read database
 global.db = JSON.parse(fs.readFileSync('./src/database.json'))
@@ -51,6 +50,8 @@ let tebakkalimat = db.game.kalimat = []
 let tebaklirik = db.game.lirik = []
 let tebaktebakan = db.game.tebakan = []
 let vote = db.others.vote = []
+
+
 
 module.exports = hisoka = async (hisoka, m, chatUpdate, store) => {
     try {
@@ -454,6 +455,14 @@ Selama ${clockString(new Date - user.afkTime)}
             user.afkReason = ''
         }
 	    
+	let fakegrup = [{
+                                urlButton: {
+                                    displayText: 'Group HanBotz',
+                                    url: 'https://chat.whatsapp.com/IKcqBMcirblBbc9SqpKuPu'
+                                }]
+
+	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+	
         switch(command) {
 	    case 'afk': {
                 let user = global.db.users[m.sender]
@@ -1986,7 +1995,7 @@ case 'tiktok': case 'tiktoknowm': {
                     buttons: buttons,
                     headerType: 5
                 }
-                hisoka.sendMessage(m.chat, buttonMessage, { quoted: m })
+                hisoka.sendMessage(m.chat, { video: { url: anu.result.nowatermark }, { quoted: m })
             }
             break
             case 'tiktokwm': case 'tiktokwatermark': {
@@ -2004,7 +2013,7 @@ case 'tiktok': case 'tiktoknowm': {
                     buttons: buttons,
                     headerType: 5
                 }
-                hisoka.sendMessage(m.chat, buttonMessage, { quoted: m })
+                hisoka.sendMessage(m.chat, { video: { url: anu.result.watermark }, { quoted: m })
             }
             break
             case 'tiktokmp3': case 'tiktokaudio': {
@@ -2022,7 +2031,7 @@ case 'tiktok': case 'tiktoknowm': {
                     headerType: 2
                 }
                 let msg = await hisoka.sendMessage(m.chat, buttonMessage, { quoted: m })
-                hisoka.sendMessage(m.chat, { audio: { url: anu.result.audio }, mimetype: 'audio/mpeg'}, { quoted: msg })
+                hisoka.sendMessage(m.chat, { audio: { url: anu.result.audio }, mimetype: 'audio/mpeg'}, { quoted: m })
             }
             break
 	        case 'instagram': case 'ig': case 'igdl': {
@@ -2076,14 +2085,13 @@ case 'tiktok': case 'tiktoknowm': {
                     buttons: buttons,
                     headerType: 5
                 }
-                hisoka.sendMessage(m.chat, buttonMessage, { quoted: m })
+                hisoka.sendMessage(m.chat, { video: { url: anu.result.HD || anu.result.SD }, { quoted: m })
             }
             break
             case 'twittermp3': case 'twitteraudio': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
                 let anu = await fetchJson(`https://zenzapi.xyz/downloader/twitter?url=${text}&apikey=ApiHanBotz`)
-                
                 hisoka.sendMessage(m.chat, { audio: { url: anu.result.audio }, mimetype: 'audio/mpeg'}, { quoted: m })
             }
             break
