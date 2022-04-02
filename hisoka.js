@@ -2084,7 +2084,7 @@ case 'tiktok': case 'tiktoknowm': {
                 m.reply(mess.wait)
                 let anu = await fetchJson(`https://zenzapi.xyz/downloader/twitter?url=${text}&apikey=ApiHanBotz`)
                 
-                hisoka.sendMessage(m.chat, { audio: { url: anu.result.audio } }, { quoted: m })
+                hisoka.sendMessage(m.chat, { audio: { url: anu.result.audio }, mimetype: 'audio/mpeg'}, { quoted: m })
             }
             break
 	        case 'fbdl': case 'fb': case 'facebook': {
