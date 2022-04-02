@@ -1,7 +1,7 @@
 /**
-   * Create By Dika Ardnt.
+   * Create By Han Ardnt.
    * Contact Me on wa.me/6288292024190
-   * Follow https://github.com/DikaArdnt
+   * Follow https://github.com/HanArdnt
 */
 
 require('./config')
@@ -1264,7 +1264,7 @@ break
                     hisoka.sendText(m.chat, 'List Online:\n\n' + online.map(v => '⭔ @' + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
              }
              break
-            case 'sticker': case 's': case 'stickergif': case 'sgif': {
+            case 'stiker': case 'sticker': case 's': case 'stickergif': case 'sgif': {
             if (!quoted) throw `Balas Video/Image Dengan Caption ${prefix + command}`
             m.reply(mess.wait)
                     if (/image/.test(mime)) {
@@ -1334,8 +1334,8 @@ break
             }
             break
             case 'toaud': case 'toaudio': {
-            if (!/video/.test(mime) && !/audio/.test(mime)) throw `Kirim/Reply Video/Audio Yang Ingin Dijadikan Audio Dengan Caption ${prefix + command}`
-            if (!quoted) throw `Kirim/Reply Video/Audio Yang Ingin Dijadikan Audio Dengan Caption ${prefix + command}`
+            if (!/video/.test(mime) && !/audio/.test(mime)) throw `Kirim/Reply Video/Audio Yang Ingin DijaHann Audio Dengan Caption ${prefix + command}`
+            if (!quoted) throw `Kirim/Reply Video/Audio Yang Ingin DijaHann Audio Dengan Caption ${prefix + command}`
             m.reply(mess.wait)
             let media = await quoted.download()
             let { toAudio } = require('./lib/converter')
@@ -1344,9 +1344,9 @@ break
             }
             break
             case 'tomp3': {
-            if (/document/.test(mime)) throw `Kirim/Reply Video/Audio Yang Ingin Dijadikan MP3 Dengan Caption ${prefix + command}`
-            if (!/video/.test(mime) && !/audio/.test(mime)) throw `Kirim/Reply Video/Audio Yang Ingin Dijadikan MP3 Dengan Caption ${prefix + command}`
-            if (!quoted) throw `Kirim/Reply Video/Audio Yang Ingin Dijadikan MP3 Dengan Caption ${prefix + command}`
+            if (/document/.test(mime)) throw `Kirim/Reply Video/Audio Yang Ingin DijaHann MP3 Dengan Caption ${prefix + command}`
+            if (!/video/.test(mime) && !/audio/.test(mime)) throw `Kirim/Reply Video/Audio Yang Ingin DijaHann MP3 Dengan Caption ${prefix + command}`
+            if (!quoted) throw `Kirim/Reply Video/Audio Yang Ingin DijaHann MP3 Dengan Caption ${prefix + command}`
             m.reply(mess.wait)
             let media = await quoted.download()
             let { toAudio } = require('./lib/converter')
@@ -1355,8 +1355,8 @@ break
             }
             break
             case 'tovn': case 'toptt': {
-            if (!/video/.test(mime) && !/audio/.test(mime)) throw `Reply Video/Audio Yang Ingin Dijadikan VN Dengan Caption ${prefix + command}`
-            if (!quoted) throw `Reply Video/Audio Yang Ingin Dijadikan VN Dengan Caption ${prefix + command}`
+            if (!/video/.test(mime) && !/audio/.test(mime)) throw `Reply Video/Audio Yang Ingin DijaHann VN Dengan Caption ${prefix + command}`
+            if (!quoted) throw `Reply Video/Audio Yang Ingin DijaHann VN Dengan Caption ${prefix + command}`
             m.reply(mess.wait)
             let media = await quoted.download()
             let { toPTT } = require('./lib/converter')
@@ -1504,10 +1504,10 @@ break
             case 'ytmp4': case 'ytvideo': {
                 let { ytv } = require('./lib/y2mate')
                 if (!text) throw `Example : ${prefix + command} https://youtube.com/***`
-                let quality = args[1] ? args[1] : '480'
+                let quality = args[1] ? args[1] : '360'
                 let media = await ytv(text, quality)
                 if (media.filesize >= 100000) return m.reply('File Melebihi Batas '+util.format(media))
-                hisoka.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `⭔ Title : ${media.title}\n⭔ File Size : ${media.filesizeF}\n⭔ Url : ${isUrl(text)}\n⭔ Ext : MP3\n⭔ Resolusi : ${args[1] || '360p'}` }, { quoted: m })
+                hisoka.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `⭔ Title : ${media.title}\n⭔ File Size : ${media.filesizeF}\n⭔ Url : ${isUrl(text)}\n⭔ Ext : MP4\n⭔ Resolusi : ${args[1] || '360p'}` }, { quoted: m })
             }
             break
 	    case 'getmusic': {
@@ -1671,7 +1671,7 @@ break
             }
             break
             case 'ramalanjodoh': case 'ramaljodoh': {
-                if (!text) throw `Example : ${prefix + command} Dika, 7, 7, 2005, Novia, 16, 11, 2004`
+                if (!text) throw `Example : ${prefix + command} Han, 7, 7, 2005, loli, 16, 11, 2004`
                 let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
                 let anu = await primbon.ramalan_jodoh(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
                 if (anu.status == false) return m.reply(anu.message)
@@ -1679,7 +1679,7 @@ break
             }
             break
             case 'ramalanjodohbali': case 'ramaljodohbali': {
-                if (!text) throw `Example : ${prefix + command} Dika, 7, 7, 2005, Novia, 16, 11, 2004`
+                if (!text) throw `Example : ${prefix + command} Han, 7, 7, 2005, loli, 16, 11, 2004`
                 let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
                 let anu = await primbon.ramalan_jodoh_bali(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
                 if (anu.status == false) return m.reply(anu.message)
@@ -1687,7 +1687,7 @@ break
             }
             break
             case 'suamiistri': {
-                if (!text) throw `Example : ${prefix + command} Dika, 7, 7, 2005, Novia, 16, 11, 2004`
+                if (!text) throw `Example : ${prefix + command} Han, 7, 7, 2005, loli, 16, 11, 2004`
                 let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
                 let anu = await primbon.suami_istri(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
                 if (anu.status == false) return m.reply(anu.message)
@@ -1695,7 +1695,7 @@ break
             }
             break
             case 'ramalancinta': case 'ramalcinta': {
-                if (!text) throw `Example : ${prefix + command} Dika, 7, 7, 2005, Novia, 16, 11, 2004`
+                if (!text) throw `Example : ${prefix + command} Han, 7, 7, 2005, loli, 16, 11, 2004`
                 let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
                 let anu = await primbon.ramalan_cinta(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
                 if (anu.status == false) return m.reply(anu.message)
@@ -1703,14 +1703,14 @@ break
             }
             break
             case 'artinama': {
-                if (!text) throw `Example : ${prefix + command} Dika Ardianta`
+                if (!text) throw `Example : ${prefix + command} Han Ardianta`
                 let anu = await primbon.arti_nama(text)
                 if (anu.status == false) return m.reply(anu.message)
                 hisoka.sendText(m.chat, `⭔ *Nama :* ${anu.message.nama}\n⭔ *Arti :* ${anu.message.arti}\n⭔ *Catatan :* ${anu.message.catatan}`, m)
             }
             break
             case 'kecocokannama': case 'cocoknama': {
-                if (!text) throw `Example : ${prefix + command} Dika, 7, 7, 2005`
+                if (!text) throw `Example : ${prefix + command} Han, 7, 7, 2005`
                 let [nama, tgl, bln, thn] = text.split`,`
                 let anu = await primbon.kecocokan_nama(nama, tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
@@ -1718,7 +1718,7 @@ break
             }
             break
             case 'kecocokanpasangan': case 'cocokpasangan': case 'pasangan': {
-                if (!text) throw `Example : ${prefix + command} Dika|Novia`
+                if (!text) throw `Example : ${prefix + command} Han|loli`
                 let [nama1, nama2] = text.split`|`
                 let anu = await primbon.kecocokan_nama_pasangan(nama1, nama2)
                 if (anu.status == false) return m.reply(anu.message)
@@ -1782,7 +1782,7 @@ break
             }
             break
             case 'fengshui': {
-                if (!text) throw `Example : ${prefix + command} Dika, 1, 2005\n\nNote : ${prefix + command} Nama, gender, tahun lahir\nGender : 1 untuk laki-laki & 2 untuk perempuan`
+                if (!text) throw `Example : ${prefix + command} Han, 1, 2005\n\nNote : ${prefix + command} Nama, gender, tahun lahir\nGender : 1 untuk laki-laki & 2 untuk perempuan`
                 let [nama, gender, tahun] = text.split`,`
                 let anu = await primbon.perhitungan_feng_shui(nama, gender, tahun)
                 if (anu.status == false) return m.reply(anu.message)
@@ -1830,7 +1830,7 @@ break
             }
             break
             case 'peruntungan': {
-                if (!text) throw `Example : ${prefix + command} DIka, 7, 7, 2005, 2022\n\nNote : ${prefix + command} Nama, tanggal lahir, bulan lahir, tahun lahir, untuk tahun`
+                if (!text) throw `Example : ${prefix + command} Han, 7, 7, 2005, 2022\n\nNote : ${prefix + command} Nama, tanggal lahir, bulan lahir, tahun lahir, untuk tahun`
                 let [nama, tgl, bln, thn, untuk] = text.split`,`
                 let anu = await primbon.ramalan_peruntungan(nama, tgl, bln, thn, untuk)
                 if (anu.status == false) return m.reply(anu.message)
@@ -1846,7 +1846,7 @@ break
             }
             break
             case 'sifat': case 'karakter': {
-                if (!text) throw `Example : ${prefix + command} Dika, 7, 7, 2005`
+                if (!text) throw `Example : ${prefix + command} Han, 7, 7, 2005`
                 let [nama, tgl, bln, thn] = text.split`,`
                 let anu = await primbon.sifat_karakter_tanggal_lahir(nama, tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
@@ -1854,7 +1854,7 @@ break
             }
             break
             case 'keberuntungan': {
-                if (!text) throw `Example : ${prefix + command} Dika, 7, 7, 2005`
+                if (!text) throw `Example : ${prefix + command} Han, 7, 7, 2005`
                 let [nama, tgl, bln, thn] = text.split`,`
                 let anu = await primbon.potensi_keberuntungan(nama, tgl, bln, thn)
                 if (anu.status == false) return m.reply(anu.message)
@@ -1974,12 +1974,13 @@ break
 case 'tiktok': case 'tiktoknowm': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
-                let anu = await fetchJson(`https://api.lolhuman.xyz/api/tiktok?apikey=HanBotzApi&url=${text}`)
+                let anu = await fetchJson(api('zenz', '/downloader/tiktok', { url: text }, 'apikey'))
                 let buttons = [
-                    {buttonId: `tomp3`, buttonText: {displayText: '♫ Audio'}, type: 1}
+                    {buttonId: `tiktokwm ${text}`, buttonText: {displayText: '► With Watermark'}, type: 1},
+                    {buttonId: `tiktokmp3 ${text}`, buttonText: {displayText: '♫ Audio'}, type: 1}
                 ]
                 let buttonMessage = {
-                    video: { url: anu.result.link },
+                    video: { url: anu.result.nowatermark },
                     caption: `Download From ${text}`,
                     footer: 'Press The Button Below',
                     buttons: buttons,
@@ -1991,13 +1992,13 @@ case 'tiktok': case 'tiktoknowm': {
             case 'tiktokwm': case 'tiktokwatermark': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
-                let ana = await getBuffer(`https://api.lolhuman.xyz/api/tiktokwm?apikey=HanBotzApi&url=${text}`)
+                let anu = await fetchJson(api('zenz', '/downloader/tiktok', { url: text }, 'apikey'))
                 let buttons = [
                     {buttonId: `tiktoknowm ${text}`, buttonText: {displayText: '► No Watermark'}, type: 1},
                     {buttonId: `tiktokmp3 ${text}`, buttonText: {displayText: '♫ Audio'}, type: 1}
                 ]
                 let buttonMessage = {
-                    video: { ana },
+                    video: { url: anu.result.watermark },
                     caption: `Download From ${text}`,
                     footer: 'Press The Button Below',
                     buttons: buttons,
@@ -2009,7 +2010,7 @@ case 'tiktok': case 'tiktoknowm': {
             case 'tiktokmp3': case 'tiktokaudio': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
-                let anu = await getBuffer(`https://api.lolhuman.xyz/api/tiktokmusic?apikey=HanBotzApi&url=${text}`)
+                let anu = await fetchJson(api('zenz', '/downloader/musically', { url: text }, 'apikey'))
                 let buttons = [
                     {buttonId: `tiktoknowm ${text}`, buttonText: {displayText: '► No Watermark'}, type: 1},
                     {buttonId: `tiktokwm ${text}`, buttonText: {displayText: '► With Watermark'}, type: 1}
@@ -2021,7 +2022,7 @@ case 'tiktok': case 'tiktoknowm': {
                     headerType: 2
                 }
                 let msg = await hisoka.sendMessage(m.chat, buttonMessage, { quoted: m })
-                hisoka.sendMessage(m.chat, { audio: { anu }, mimetype: 'audio/mpeg'}, { quoted: msg })
+                hisoka.sendMessage(m.chat, { audio: { url: anu.result.audio }, mimetype: 'audio/mpeg'}, { quoted: msg })
             }
             break
 case 'tiktokmusic':
@@ -2745,15 +2746,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                         hisoka.send5ButImg(m.chat, anu, hisoka.user.name, global.thumb, btn)
                      }
             break
-case 'twtdl':
-                    if (args.length == 0) return m.reply(`Example: ${prefix + command} https://twitter.com/gofoodindonesia/status/1229369819511709697`)
-                    ini_url = args[0]
-                    ini_url = await fetchJson(`https://api.lolhuman.xyz/api/twitter?apikey=${apikey}&url=${ini_url}`)
-                    ini_url = ini_url.result
-                    ini_url = ini_url[ini_url.length - 1].link
-                    ini_buffer = await getBuffer(ini_url)
-                    hisoka.sendMessage(m.chat, { video: { url: ini_url }, mimetype: 'video/mp4'}, { quoted: m })
-                    break
+
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
             default:
                 if (budy.startsWith('=>')) {
