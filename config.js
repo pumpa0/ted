@@ -14,7 +14,7 @@ global.APIs = {
 
 // Apikey Website Api
 global.APIKeys = {
-	'https://zenzapi.xyz': '0af8c9e45d',
+	'https://zenzapi.xyz': 'ApiHanBotz',
 }
 
 // Other
@@ -38,7 +38,7 @@ global.mess = {
 }
 global.limitawal = {
     premium: "Infinity",
-    free: 100
+    free: 25
 }
 global.thumb = fs.readFileSync('./lib/hisoka.jpg')
 
