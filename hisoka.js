@@ -455,11 +455,7 @@ Selama ${clockString(new Date - user.afkTime)}
             user.afkReason = ''
         }
 	    
-	let fakegrup = [{
-                                urlButton: {
-                                    displayText: 'Group HanBotz',
-                                    url: 'https://chat.whatsapp.com/IKcqBMcirblBbc9SqpKuPu'
-                                }]
+	
 
 	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 	
@@ -564,7 +560,11 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
             }
             break
 	    case 'donasi': case 'sewabot': case 'sewa': case 'buypremium': case 'donate': 
-	sawer = `https://saweria.co/HanBotz`
+	sawer = `*Donate For HanBotz
+https://saweria.co/HanBotz
+
+_sewa bot hubungi owner_
+wa.me/6285731855426`
 m.reply(sawer)
             break
             case 'sc': {
