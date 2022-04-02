@@ -2083,17 +2083,7 @@ case 'tiktok': case 'tiktoknowm': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
                 let anu = await fetchJson(`https://zenzapi.xyz/downloader/twitter?url=${text}&apikey=ApiHanBotz`)
-                let buttons = [
-                    {buttonId: `twitter ${text}`, buttonText: {displayText: '► Video'}, type: 1}
-                ]
-                let buttonMessage = {
-		    image: { url: anu.result.thumb },
-                    caption: util.format(anu.result.desc),
-                    footer: 'HanBotz',
-                    buttons: buttons,
-                    headerType: 4
-                }
-                let msg = await hisoka.sendMessage(m.chat, buttonMessage, { quoted: m })
+                
                 hisoka.sendMessage(m.chat, { audio: { url: anu.result.audio } }, { quoted: m })
             }
             break
