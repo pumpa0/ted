@@ -754,12 +754,12 @@ m.reply(sawer)
                 if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) throw 'Link Invalid!'
                 
                 let result = args[0].split('https://chat.whatsapp.com/')[1]
-                await hanbotz.groupAcceptInvite(result).then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
+                await hanbotz.groupAcceptInvite(result).then((res) => m.reply(mess.success)).catch((err) => m.reply(jsonformat(err)))
             }
             break
             case 'leave': {
                 if (!isCreator) throw mess.owner
-                await hanbotz.groupLeave(m.chat).then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
+                await hanbotz.groupLeave(m.chat).then((res) => m.reply(mess.success)).catch((err) => m.reply(jsonformat(err)))
             }
             break
             case 'setexif': {
@@ -773,51 +773,51 @@ m.reply(sawer)
 	case 'kick': {
 		if (!m.isGroup) throw mess.group
                 if (!isBotAdmins) throw mess.botAdmin
-                if (!isAdmins) throw mess.admin
+                if (!isAdmins && !isCreator) throw mess.admin
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await hanbotz.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
+		await hanbotz.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => m.reply(mess.success)).catch((err) => m.reply(jsonformat(err)))
 	}
 	break
 	case 'add': {
 		if (!m.isGroup) throw mess.group
                 if (!isBotAdmins) throw mess.botAdmin
-                if (!isAdmins) throw mess.admin
+                if (!isAdmins && !isCreator) throw mess.admin
 		let users = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await hanbotz.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
+		await hanbotz.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => m.reply(mess.success)).catch((err) => m.reply(jsonformat(err)))
 	}
 	break
 	case 'promote': {
 		if (!m.isGroup) throw mess.group
                 if (!isBotAdmins) throw mess.botAdmin
-                if (!isAdmins) throw mess.admin
+                if (!isAdmins && !isCreator) throw mess.admin
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await hanbotz.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
+		await hanbotz.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => m.reply(mess.success)).catch((err) => m.reply(jsonformat(err)))
 	}
 	break
 	case 'demote': {
 		if (!m.isGroup) throw mess.group
                 if (!isBotAdmins) throw mess.botAdmin
-                if (!isAdmins) throw mess.admin
+                if (!isAdmins && !isCreator) throw mess.admin
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await hanbotz.groupParticipantsUpdate(m.chat, [users], 'demote').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
+		await hanbotz.groupParticipantsUpdate(m.chat, [users], 'demote').then((res) => m.reply(mess.success)).catch((err) => m.reply(jsonformat(err)))
 	}
 	break
         case 'block': {
 		if (!isCreator) throw mess.owner
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await hanbotz.updateBlockStatus(users, 'block').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
+		await hanbotz.updateBlockStatus(users, 'block').then((res) => m.reply(mess.success)).catch((err) => m.reply(jsonformat(err)))
 	}
 	break
         case 'unblock': {
 		if (!isCreator) throw mess.owner
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await hanbotz.updateBlockStatus(users, 'unblock').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
+		await hanbotz.updateBlockStatus(users, 'unblock').then((res) => m.reply(mess.success)).catch((err) => m.reply(jsonformat(err)))
 	}
 	break
 	    case 'setname': case 'setsubject': {
                 if (!m.isGroup) throw mess.group
                 if (!isBotAdmins) throw mess.botAdmin
-                if (!isAdmins) throw mess.admin
+                if (!isAdmins && !isCreator) throw mess.admin
                 if (!text) throw 'Text ?'
                 await hanbotz.groupUpdateSubject(m.chat, text).then((res) => m.reply(mess.success)).catch((err) => m.reply(jsonformat(err)))
             }
@@ -825,7 +825,7 @@ m.reply(sawer)
           case 'setdesc': case 'setdesk': {
                 if (!m.isGroup) throw mess.group
                 if (!isBotAdmins) throw mess.botAdmin
-                if (!isAdmins) throw mess.admin
+                if (!isAdmins && !isCreator) throw mess.admin
                 if (!text) throw 'Text ?'
                 await hanbotz.groupUpdateDescription(m.chat, text).then((res) => m.reply(mess.success)).catch((err) => m.reply(jsonformat(err)))
             }
@@ -842,7 +842,7 @@ m.reply(sawer)
                 break
            case 'setppgroup': case 'setppgrup': case 'setppgc': {
                 if (!m.isGroup) throw mess.group
-                if (!isAdmins) throw mess.admin
+                if (!isAdmins && !isCreator) throw mess.admin
                 if (!quoted) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
                 if (!/image/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
                 if (/webp/.test(mime)) throw `Kirim/Reply Image Dengan Caption ${prefix + command}`
@@ -854,7 +854,7 @@ m.reply(sawer)
             case 'tagall': {
                 if (!m.isGroup) throw mess.group
                 if (!isBotAdmins) throw mess.botAdmin
-                if (!isAdmins) throw mess.admin
+                if (!isAdmins && !isCreator) throw mess.admin
 let teks = `══✪〘 *Tag All* 〙✪══
  
  ➲ *Pesan : ${q ? q : '🗿'}*\n\n`
@@ -867,7 +867,7 @@ let teks = `══✪〘 *Tag All* 〙✪══
                 case 'hidetag': {
             if (!m.isGroup) throw mess.group
             if (!isBotAdmins) throw mess.botAdmin
-            if (!isAdmins) throw mess.admin
+            if (!isAdmins && !isCreator) throw mess.admin
             hanbotz.sendMessage(m.chat, { text : q ? q : '' , mentions: participants.map(a => a.id)}, { quoted: m })
             }
             break
@@ -886,7 +886,7 @@ let teks = `══✪〘 *Tag All* 〙✪══
 	    break
                case 'vote': {
             if (!m.isGroup) throw mess.group
-            if (!isAdmins) throw mess.admin
+            if (!isAdmins && !isCreator) throw mess.admin
             if (m.chat in vote) throw `_Masih ada vote di grup ini!_\n\n*${prefix}hapusvote* - untuk menghapus vote`
             if (!text) throw `Masukkan Alasan Melakukan Vote, Example: *${prefix + command} Owner Ganteng*`
             m.reply(`Vote dimulai!\n\n*${prefix}upvote* - untuk ya\n*${prefix}devote* - untuk tidak\n*${prefix}cekvote* - untuk mengecek vote\n*${prefix}hapusvote* - untuk menghapus vote`)
@@ -1014,7 +1014,7 @@ ${vote[m.chat][2].map((v, i) => `├ ${i + 1}. @${v.split`@`[0]}`).join('\n')}
                  
 case 'cekvote':
 if (!m.isGroup) throw mess.group
-if (!isAdmins) throw mess.admin
+if (!isAdmins && !isCreator) throw mess.admin
 if (!(m.chat in vote)) throw `_*tidak ada voting digrup ini!*_\n\n*${prefix}vote* - untuk memulai vote`
 teks_vote = `*「 VOTE 」*
 
@@ -1043,7 +1043,7 @@ hanbotz.sendTextWithMentions(m.chat, teks_vote, m)
 break
 		case 'deletevote': case'delvote': case 'hapusvote': {
             if (!m.isGroup) throw mess.group
-            if (!isAdmins) throw mess.admin
+            if (!isAdmins && !isCreator) throw mess.admin
             if (!(m.chat in vote)) throw `_*tidak ada voting digrup ini!*_\n\n*${prefix}vote* - untuk memulai vote`
             delete vote[m.chat]
             m.reply('Berhasil Menghapus Sesi Vote Di Grup Ini')
@@ -1052,7 +1052,7 @@ break
                case 'group': case 'grup': {
                 if (!m.isGroup) throw mess.group
                 if (!isBotAdmins) throw mess.botAdmin
-                if (!isAdmins) throw mess.admin
+                if (!isAdmins && !isCreator) throw mess.admin
                 if (args[0] === 'close'){
                     await hanbotz.groupSettingUpdate(m.chat, 'announcement').then((res) => m.reply(`Sukses Menutup Group`)).catch((err) => m.reply(jsonformat(err)))
                 } else if (args[0] === 'open'){
@@ -1070,7 +1070,7 @@ break
             case 'editinfo': {
                 if (!m.isGroup) throw mess.group
                 if (!isBotAdmins) throw mess.botAdmin
-                if (!isAdmins) throw mess.admin
+                if (!isAdmins && !isCreator) throw mess.admin
              if (args[0] === 'open'){
                 await hanbotz.groupSettingUpdate(m.chat, 'unlocked').then((res) => m.reply(`Sukses Membuka Edit Info Group`)).catch((err) => m.reply(jsonformat(err)))
              } else if (args[0] === 'close'){
@@ -1088,7 +1088,7 @@ break
             case 'antilink': {
                 if (!m.isGroup) throw mess.group
                 if (!isBotAdmins) throw mess.botAdmin
-                if (!isAdmins) throw mess.admin
+                if (!isAdmins && !isCreator) throw mess.admin
                 if (args[0] === "on") {
                 if (db.chats[m.chat].antilink) return m.reply(`Sudah Aktif Sebelumnya`)
                 db.chats[m.chat].antilink = true
@@ -1109,7 +1109,7 @@ break
              case 'mute': {
                 if (!m.isGroup) throw mess.group
                 if (!isBotAdmins) throw mess.botAdmin
-                if (!isAdmins) throw mess.admin
+                if (!isAdmins && !isCreator) throw mess.admin
                 if (args[0] === "on") {
                 if (db.chats[m.chat].mute) return m.reply(`Sudah Aktif Sebelumnya`)
                 db.chats[m.chat].mute = true
@@ -1129,6 +1129,7 @@ break
              break
             case 'linkgroup': case 'linkgc': {
                 if (!m.isGroup) throw mess.group
+                if (!isBotAdmins) throw mess.botAdmin
                 let response = await hanbotz.groupInviteCode(m.chat)
                 hanbotz.sendText(m.chat, `https://chat.whatsapp.com/${response}\n\nLink Group : ${groupMetadata.subject}`, m, { detectLink: true })
             }
@@ -1136,7 +1137,7 @@ break
             case 'ephemeral': {
                 if (!m.isGroup) throw mess.group
                 if (!isBotAdmins) throw mess.botAdmin
-                if (!isAdmins) throw mess.admin
+                if (!isAdmins && !isCreator) throw mess.admin
                 if (!text) throw 'Masukkan value enable/disable'
                 if (args[0] === 'enable') {
                     await hanbotz.sendMessage(m.chat, { disappearingMessagesInChat: WA_DEFAULT_EPHEMERAL }).then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
@@ -1146,6 +1147,7 @@ break
             }
             break
             case 'delete': case 'del': {
+            	if (!isAdmins && !isCreator) mess.admin
                 if (!m.quoted) throw false
                 let { chat, fromMe, id, isBaileys } = m.quoted
                 if (!isBaileys) throw 'Pesan tersebut bukan dikirim oleh bot!'
@@ -1321,7 +1323,7 @@ break
             case 'toimage': case 'toimg': {
                 if (!quoted) throw 'Reply Image'
                 if (!/webp/.test(mime)) throw `balas stiker dengan caption *${prefix + command}*`
-                
+                m.reply(`wait...`)
                 let media = await hanbotz.downloadAndSaveMediaMessage(quoted)
                 let ran = await getRandom('.png')
                 exec(`ffmpeg -i ${media} ${ran}`, (err) => {
@@ -1333,10 +1335,10 @@ break
                 })
             }
             break
-	        case 'tomp4': case 'tovideo': {
+	        case 'tomp4': case 'tovideo': case 'tovid':{
                 if (!quoted) throw 'Reply Image'
                 if (!/webp/.test(mime)) throw `balas stiker dengan caption *${prefix + command}*`
-                
+                m.reply(`wait...`)
 		let { webp2mp4File } = require('./lib/uploader')
                 let media = await hanbotz.downloadAndSaveMediaMessage(quoted)
                 let webpToMp4 = await webp2mp4File(media)
@@ -1347,7 +1349,7 @@ break
             case 'toaud': case 'toaudio': {
             if (!/video/.test(mime) && !/audio/.test(mime)) throw `Kirim/Reply Video/Audio Yang Ingin DijaHann Audio Dengan Caption ${prefix + command}`
             if (!quoted) throw `Kirim/Reply Video/Audio Yang Ingin DijaHann Audio Dengan Caption ${prefix + command}`
-            
+            m.reply(`wait...`)
             let media = await quoted.download()
             let { toAudio } = require('./lib/converter')
             let audio = await toAudio(media, 'mp4')
@@ -1358,7 +1360,7 @@ break
             if (/document/.test(mime)) throw `Kirim/Reply Video/Audio Yang Ingin DijaHann MP3 Dengan Caption ${prefix + command}`
             if (!/video/.test(mime) && !/audio/.test(mime)) throw `Kirim/Reply Video/Audio Yang Ingin DijaHann MP3 Dengan Caption ${prefix + command}`
             if (!quoted) throw `Kirim/Reply Video/Audio Yang Ingin DijaHann MP3 Dengan Caption ${prefix + command}`
-            
+            m.reply(`wait...`)
             let media = await quoted.download()
             let { toAudio } = require('./lib/converter')
             let audio = await toAudio(media, 'mp4')
@@ -1368,7 +1370,7 @@ break
             case 'tovn': case 'toptt': {
             if (!/video/.test(mime) && !/audio/.test(mime)) throw `Reply Video/Audio Yang Ingin DijaHann VN Dengan Caption ${prefix + command}`
             if (!quoted) throw `Reply Video/Audio Yang Ingin DijaHann VN Dengan Caption ${prefix + command}`
-            
+            m.reply(`wait...`)
             let media = await quoted.download()
             let { toPTT } = require('./lib/converter')
             let audio = await toPTT(media, 'mp4')
@@ -1378,7 +1380,7 @@ break
             case 'togif': {
                 if (!quoted) throw 'Reply Image'
                 if (!/webp/.test(mime)) throw `balas stiker dengan caption *${prefix + command}*`
-                
+                m.reply(`wait...`)
 		let { webp2mp4File } = require('./lib/uploader')
                 let media = await hanbotz.downloadAndSaveMediaMessage(quoted)
                 let webpToMp4 = await webp2mp4File(media)
@@ -1387,7 +1389,7 @@ break
             }
             break
 	        case 'tourl': {
-                
+                m.reply(`wait...`)
 		let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader')
                 let media = await hanbotz.downloadAndSaveMediaMessage(quoted)
                 if (/image/.test(mime)) {
@@ -1427,6 +1429,7 @@ break
 	    break
 	    case 'yts': case 'ytsearch': {
                 if (!text) throw `Example : ${prefix + command} story wa anime`
+                m.reply(`searching...`)
                 let yts = require("yt-search")
                 let search = await yts(text)
                 let teks = 'YouTube Search\n\n Result From '+text+'\n\n'
@@ -1438,7 +1441,8 @@ break
             }
             break
         case 'google': {
-                if (!text) throw `Example : ${prefix + command} fatih arridho`
+                if (!text) throw `Example : ${prefix + command} kenapa wibu bau bawang`
+                m.reply(`searching...`)
                 let google = require('google-it')
                 google({'query': text}).then(res => {
                 let teks = `Google Search From : ${text}\n\n`
@@ -1453,6 +1457,7 @@ break
                 break
         case 'gimage': {
         if (!text) throw `Example : ${prefix + command} kaori cicak`
+        m.reply(`searching...`)
         let gis = require('g-i-s')
         gis(text, async (error, result) => {
         n = result
@@ -1475,6 +1480,7 @@ break
         break
 	    case 'play': case 'ytplay': {
                 if (!text) throw `Example : ${prefix + command} story wa anime`
+                m.reply(`searching...`)
                 let yts = require("yt-search")
                 let search = await yts(text)
                 let anu = search.videos[Math.floor(Math.random() * search.videos.length)]
@@ -1504,7 +1510,8 @@ break
             break
 	    case 'ytmp3': case 'ytaudio': {
                 let { yta } = require('./lib/y2mate')
-                if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`
+                if (!text) throw `Example : ${prefix + command} https://youtube.com/*** 128kbps`
+                m.reply(`searching...`)
                 let quality = args[1] ? args[1] : '128kbps'
                 let media = await yta(text, quality)
                 if (media.filesize >= 100000) return m.reply('File Melebihi Batas '+util.format(media))
@@ -1514,11 +1521,12 @@ break
             break
             case 'ytmp4': case 'ytvideo': {
                 let { ytv } = require('./lib/y2mate')
-                if (!text) throw `Example : ${prefix + command} https://youtube.com/***`
-                let quality = args[1] ? args[1] : '360'
+                if (!text) throw `Example : ${prefix + command} https://youtube.com/*** 720`
+                m.reply(`searching...`)
+                let quality = args[1] ? args[1] : '720'
                 let media = await ytv(text, quality)
                 if (media.filesize >= 100000) return m.reply('File Melebihi Batas '+util.format(media))
-                hanbotz.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `⭔ Title : ${media.title}\n⭔ File Size : ${media.filesizeF}\n⭔ Url : ${isUrl(text)}\n⭔ Ext : MP4\n⭔ Resolusi : ${args[1] || '360p'}` }, { quoted: m })
+                hanbotz.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `⭔ Title : ${media.title}\n⭔ File Size : ${media.filesizeF}\n⭔ Url : ${isUrl(text)}\n⭔ Ext : MP4\n⭔ Resolusi : ${args[1] || '720p'}` }, { quoted: m })
             }
             break
 	    case 'getmusic': {
@@ -2038,7 +2046,7 @@ case 'tiktok': case 'tiktoknowm': {
             break
 	        case 'instagram': case 'ig': case 'igdl': {
                 if (!text) throw 'No Query Url!'
-                m.reply(mess.wait)
+               
                 if (/(?:\/p\/|\/reel\/|\/tv\/)([^\s&]+)/.test(isUrl(text)[0])) {
                     let anu = await fetchJson(api('zenz', '/downloader/instagram2', { url: isUrl(text)[0] }, 'apikey'))
                     for (let media of anu.data) hanbotz.sendMedia(m.chat, media, '', `Download Url Instagram From ${isUrl(text)[0]}`, m)
@@ -2525,7 +2533,7 @@ RAM: ${formatp(os.totalmem() - os.freemem())} / ${formatp(os.totalmem())}
 
 _NodeJS Memory Usaage_
 ${Object.keys(used).map((key, _, arr) => `${key.padEnd(Math.max(...arr.map(v=>v.length)),' ')}: ${formatp(used[key])}`).join('\n')}
-
+${readmore}
 ${cpus[0] ? `_Total CPU Usage_
 ${cpus[0].model.trim()} (${cpu.speed} MHZ)\n${Object.keys(cpu.times).map(type => `- *${(type + '*').padEnd(6)}: ${(100 * cpu.times[type] / cpu.total).toFixed(2)}%`).join('\n')}
 _CPU Core(s) Usage (${cpus.length} Core CPU)_
@@ -2538,7 +2546,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 hanbotz.sendContact(m.chat, global.owner, m)
             }
             break
-            case 'list': case 'menu': case 'help': case '?': {
+            case 'menu': case 'help': {
                 anu = `
 ᴜꜱᴇʀ ɪɴꜰᴏ
 Name : *${pushname}*
@@ -2549,7 +2557,7 @@ Name : *HanBotz*
 Prefix : [ *${prefix}* ]
 Runtime : *${runtime(process.uptime())}*
 
-Time : *${jmn}*
+Time Server : *${jmn}* WIB
 Calendar : *${date}*
 
 ${readmore}
@@ -2844,7 +2852,7 @@ ${readmore}
         
 
     } catch (err) {
-        m.reply(util.format(err))
+        m.reply(util.format(err)\n\nReport Ke Owner\nwa.me/6285731855426)
     }
 }
 
