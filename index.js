@@ -489,10 +489,10 @@ async function startHisoka() {
 
     }
 
-    return hisoka
+    return HanBotz
 }
 
-startHisoka()
+startHanBotz()
 
 
 let file = require.resolve(__filename)
