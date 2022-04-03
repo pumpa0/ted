@@ -2847,7 +2847,7 @@ ${readmore}
         
 
     } catch (err) {
-        m.reply(`error`)
+        m.reply(util.format(err))
     }
 }
 
