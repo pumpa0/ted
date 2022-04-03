@@ -2107,6 +2107,7 @@ case 'tiktok': case 'tiktoknowm': {
                 }
                 let msg = await hisoka.sendMessage(m.chat, buttonMessage, { quoted: m })
                 hisoka.sendMessage(m.chat, { audio: { url: anu.result.audio } }, { quoted: msg })
+                break
 	        case 'fbdl': case 'fb': case 'facebook': {
                 if (!text) throw 'Masukkan Query Link!'
                 
