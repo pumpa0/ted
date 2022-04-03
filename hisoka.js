@@ -1985,7 +1985,7 @@ break
             break
 case 'tiktok': case 'tiktoknowm': {
                 if (!text) throw 'Masukkan Query Link!'
-                
+                m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/downloader/tiktok', { url: text }, 'apikey'))
                 let buttons = [
                     {buttonId: `tiktokwm ${text}`, buttonText: {displayText: '► With Watermark'}, type: 1},
@@ -1993,7 +1993,7 @@ case 'tiktok': case 'tiktoknowm': {
                 ]
                 let buttonMessage = {
                     video: { url: anu.result.nowatermark },
-                    caption: `Download From\n${text}`,
+                    caption: `Download From ${text}`,
                     footer: 'HanBotz',
                     buttons: buttons,
                     headerType: 5
@@ -2003,7 +2003,7 @@ case 'tiktok': case 'tiktoknowm': {
             break
             case 'tiktokwm': case 'tiktokwatermark': {
                 if (!text) throw 'Masukkan Query Link!'
-                
+                m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/downloader/tiktok', { url: text }, 'apikey'))
                 let buttons = [
                     {buttonId: `tiktoknowm ${text}`, buttonText: {displayText: '► No Watermark'}, type: 1},
@@ -2011,7 +2011,7 @@ case 'tiktok': case 'tiktoknowm': {
                 ]
                 let buttonMessage = {
                     video: { url: anu.result.watermark },
-                    caption: `Download From\n${text}`,
+                    caption: `Download From ${text}`,
                     footer: 'HanBotz',
                     buttons: buttons,
                     headerType: 5
@@ -2021,14 +2021,14 @@ case 'tiktok': case 'tiktoknowm': {
             break
             case 'tiktokmp3': case 'tiktokaudio': {
                 if (!text) throw 'Masukkan Query Link!'
-                
+                m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/downloader/musically', { url: text }, 'apikey'))
                 let buttons = [
                     {buttonId: `tiktoknowm ${text}`, buttonText: {displayText: '► No Watermark'}, type: 1},
                     {buttonId: `tiktokwm ${text}`, buttonText: {displayText: '► With Watermark'}, type: 1}
                 ]
                 let buttonMessage = {
-                    text: `Download From\n${text}`,
+                    text: `Download From ${text}`,
                     footer: 'HanBotz',
                     buttons: buttons,
                     headerType: 2
@@ -2039,10 +2039,10 @@ case 'tiktok': case 'tiktoknowm': {
             break
 	        case 'instagram': case 'ig': case 'igdl': {
                 if (!text) throw 'No Query Url!'
-                
+                m.reply(mess.wait)
                 if (/(?:\/p\/|\/reel\/|\/tv\/)([^\s&]+)/.test(isUrl(text)[0])) {
                     let anu = await fetchJson(api('zenz', '/downloader/instagram2', { url: isUrl(text)[0] }, 'apikey'))
-                    for (let media of anu.data) hisoka.sendMedia(m.chat, media, '', `HanBotz`, m)
+                    for (let media of anu.data) hisoka.sendMedia(m.chat, media, '', `Download Url Instagram From ${isUrl(text)[0]}`, m)
                 } else if (/\/stories\/([^\s&]+)/.test(isUrl(text)[0])) {
                     let anu = await fetchJson(api('zenz', '/downloader/instastory', { url: isUrl(text)[0] }, 'apikey'))
                     hisoka.sendMedia(m.chat, anu.media[0].url, '', `Download Url Instagram From ${isUrl(text)[0]}`, m)
@@ -2052,7 +2052,7 @@ case 'tiktok': case 'tiktoknowm': {
 		/** Backup misal yg atas ga keluar video **/
 		case 'igeh': case 'instagram2': case 'ig2': case 'igdl2': {
                 if (!text) throw 'Masukkan Query Link!'
-                
+                m.reply(mess.wait)
                 
                 let anu = await fetchJson(api('zenz', '/downloader/instagram2', { url:text }, 'apikey'))
                 hisoka.sendMessage(m.chat, { video: { url: anu.data[0] } }, { quoted: m })
@@ -2060,7 +2060,7 @@ case 'tiktok': case 'tiktoknowm': {
             break
             case 'joox': case 'jooxdl': {
                 if (!text) throw 'No Query Title'
-                
+                m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/downloader/joox', { query: text }, 'apikey'))
                 let msg = await hisoka.sendImage(m.chat, anu.result.img, `⭔ Title : ${anu.result.lagu}\n⭔ Album : ${anu.result.album}\n⭔ Singer : ${anu.result.penyanyi}\n⭔ Publish : ${anu.result.publish}\n⭔ Lirik :\n${anu.result.lirik.result}`, m)
                 hisoka.sendMessage(m.chat, { audio: { url: anu.result.mp4aLink }, mimetype: 'audio/mpeg', fileName: anu.result.lagu+'.m4a' }, { quoted: msg })
@@ -2068,7 +2068,7 @@ case 'tiktok': case 'tiktoknowm': {
             break
             case 'soundcloud': case 'scdl': {
                 if (!text) throw 'No Query Title'
-                
+                m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/downloader/soundcloud', { url: isUrl(text)[0] }, 'apikey'))
                 let msg = await hisoka.sendImage(m.chat, anu.result.thumb, `⭔ Title : ${anu.result.title}\n⭔ Url : ${isUrl(text)[0]}`)
                 hisoka.sendMessage(m.chat, { audio: { url: anu.result.url }, mimetype: 'audio/mpeg', fileName: anu.result.title+'.m4a' }, { quoted: msg })
@@ -2076,25 +2076,25 @@ case 'tiktok': case 'tiktoknowm': {
             break
 	        case 'twitdl': case 'twitter': {
                 if (!text) throw 'Masukkan Query Link!'
-                
-                let anu = await fetchJson(`https://zenzapi.xyz/downloader/twitter?url=${text}&apikey=ApiHanBotz`)
+                m.reply(mess.wait)
+                let anu = await fetchJson(api('zenz', '/api/downloader/twitter', { url: text }, 'apikey'))
                 let buttons = [
-                    {buttonId: `twittermp3 ${text}`, buttonText: {displayText: '► Audio'}, type: 1}
+                    {buttonId: `tomp3`, buttonText: {displayText: '► Audio'}, type: 1}
                 ]
                 let buttonMessage = {
                     video: { url: anu.result.HD || anu.result.SD },
-                    caption: util.format(anu.result.desc),
+                    caption: util.format(anu.result),
                     footer: 'HanBotz',
                     buttons: buttons,
                     headerType: 5
                 }
-                hisoka.sendMessage(m.chat, { video: { url: anu.result.HD || anu.result.SD }, caption: `${anu.result.desc}`}, { quoted: m })
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
             case 'twittermp3': case 'twitteraudio': {
                 if (!text) throw 'Masukkan Query Link!'
-              
-                let anu = await fetchJson(`https://zenzapi.xyz/downloader/twitter?url=${text}&apikey=ApiHanBotz`)
+                m.reply(mess.wait)
+                let anu = await fetchJson(api('zenz', '/api/downloader/twitter', { url: text }, 'apikey'))
                 let buttons = [
                     {buttonId: `twitter ${text}`, buttonText: {displayText: '► Video'}, type: 1}
                 ]
@@ -2107,17 +2107,18 @@ case 'tiktok': case 'tiktoknowm': {
                 }
                 let msg = await hisoka.sendMessage(m.chat, buttonMessage, { quoted: m })
                 hisoka.sendMessage(m.chat, { audio: { url: anu.result.audio } }, { quoted: msg })
-                break
-case 'fbdl': case 'fb': case 'facebook': {
+            }
+            break
+	        case 'fbdl': case 'fb': case 'facebook': {
                 if (!text) throw 'Masukkan Query Link!'
-                
+                m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/api/downloader/facebook', { url: text }, 'apikey'))
                 hisoka.sendMessage(m.chat, { video: { url: anu.result.url }, caption: `⭔ Title : ${anu.result.title}`}, { quoted: m })
             }
             break
 	        case 'pindl': case 'pinterestdl': {
                 if (!text) throw 'Masukkan Query Link!'
-                
+                m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/api/downloader/pinterestdl', { url: text }, 'apikey'))
                 hisoka.sendMessage(m.chat, { video: { url: anu.result }, caption: `Download From ${text}` }, { quoted: m })
             }
