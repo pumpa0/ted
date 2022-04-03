@@ -51,7 +51,7 @@ let tebaklirik = db.game.lirik = []
 let tebaktebakan = db.game.tebakan = []
 let vote = db.others.vote = []
 
-
+readmore = `͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏`
 
 module.exports = hisoka = async (hisoka, m, chatUpdate, store) => {
     try {
@@ -455,8 +455,11 @@ Selama ${clockString(new Date - user.afkTime)}
             user.afkReason = ''
         }
 	    
-	
-
+	const p1 = await hisoka.getStatus(m.sender)
+const d = new Date
+const locale = 'id'
+const date = d.toLocaleDateString(locale, { day: 'numeric', month: 'long', year: 'numeric' })
+const jmn = moment.tz('Asia/Jakarta').format('HH:mm:ss')
 	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 	
         switch(command) {
@@ -750,7 +753,7 @@ m.reply(sawer)
                 if (!isCreator) throw mess.owner
                 if (!text) throw 'Masukkan Link Group!'
                 if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) throw 'Link Invalid!'
-                m.reply(mess.wait)
+                
                 let result = args[0].split('https://chat.whatsapp.com/')[1]
                 await hisoka.groupAcceptInvite(result).then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
             }
@@ -1275,7 +1278,7 @@ break
              break
             case 'stiker': case 'sticker': case 's': case 'stickergif': case 'sgif': {
             if (!quoted) throw `Balas Video/Image Dengan Caption ${prefix + command}`
-            m.reply(mess.wait)
+            
                     if (/image/.test(mime)) {
                 let media = await quoted.download()
                 let encmedia = await hisoka.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
@@ -1319,7 +1322,7 @@ break
             case 'toimage': case 'toimg': {
                 if (!quoted) throw 'Reply Image'
                 if (!/webp/.test(mime)) throw `balas stiker dengan caption *${prefix + command}*`
-                m.reply(mess.wait)
+                
                 let media = await hisoka.downloadAndSaveMediaMessage(quoted)
                 let ran = await getRandom('.png')
                 exec(`ffmpeg -i ${media} ${ran}`, (err) => {
@@ -1334,7 +1337,7 @@ break
 	        case 'tomp4': case 'tovideo': {
                 if (!quoted) throw 'Reply Image'
                 if (!/webp/.test(mime)) throw `balas stiker dengan caption *${prefix + command}*`
-                m.reply(mess.wait)
+                
 		let { webp2mp4File } = require('./lib/uploader')
                 let media = await hisoka.downloadAndSaveMediaMessage(quoted)
                 let webpToMp4 = await webp2mp4File(media)
@@ -1345,7 +1348,7 @@ break
             case 'toaud': case 'toaudio': {
             if (!/video/.test(mime) && !/audio/.test(mime)) throw `Kirim/Reply Video/Audio Yang Ingin DijaHann Audio Dengan Caption ${prefix + command}`
             if (!quoted) throw `Kirim/Reply Video/Audio Yang Ingin DijaHann Audio Dengan Caption ${prefix + command}`
-            m.reply(mess.wait)
+            
             let media = await quoted.download()
             let { toAudio } = require('./lib/converter')
             let audio = await toAudio(media, 'mp4')
@@ -1356,7 +1359,7 @@ break
             if (/document/.test(mime)) throw `Kirim/Reply Video/Audio Yang Ingin DijaHann MP3 Dengan Caption ${prefix + command}`
             if (!/video/.test(mime) && !/audio/.test(mime)) throw `Kirim/Reply Video/Audio Yang Ingin DijaHann MP3 Dengan Caption ${prefix + command}`
             if (!quoted) throw `Kirim/Reply Video/Audio Yang Ingin DijaHann MP3 Dengan Caption ${prefix + command}`
-            m.reply(mess.wait)
+            
             let media = await quoted.download()
             let { toAudio } = require('./lib/converter')
             let audio = await toAudio(media, 'mp4')
@@ -1366,7 +1369,7 @@ break
             case 'tovn': case 'toptt': {
             if (!/video/.test(mime) && !/audio/.test(mime)) throw `Reply Video/Audio Yang Ingin DijaHann VN Dengan Caption ${prefix + command}`
             if (!quoted) throw `Reply Video/Audio Yang Ingin DijaHann VN Dengan Caption ${prefix + command}`
-            m.reply(mess.wait)
+            
             let media = await quoted.download()
             let { toPTT } = require('./lib/converter')
             let audio = await toPTT(media, 'mp4')
@@ -1376,7 +1379,7 @@ break
             case 'togif': {
                 if (!quoted) throw 'Reply Image'
                 if (!/webp/.test(mime)) throw `balas stiker dengan caption *${prefix + command}*`
-                m.reply(mess.wait)
+                
 		let { webp2mp4File } = require('./lib/uploader')
                 let media = await hisoka.downloadAndSaveMediaMessage(quoted)
                 let webpToMp4 = await webp2mp4File(media)
@@ -1385,7 +1388,7 @@ break
             }
             break
 	        case 'tourl': {
-                m.reply(mess.wait)
+                
 		let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader')
                 let media = await hisoka.downloadAndSaveMediaMessage(quoted)
                 if (/image/.test(mime)) {
@@ -1408,7 +1411,7 @@ break
 	    hmm = await './src/remobg-'+getRandom('')
 	    localFile = await hisoka.downloadAndSaveMediaMessage(quoted, hmm)
 	    outputFile = await './src/hremo-'+getRandom('.png')
-	    m.reply(mess.wait)
+	    
 	    remobg.removeBackgroundFromImageFile({
 	      path: localFile,
 	      apiKey: apinobg,
@@ -1547,7 +1550,7 @@ break
             }
             break
             case 'pinterest': {
-                m.reply(mess.wait)
+                
 		let { pinterest } = require('./lib/scraper')
                 anu = await pinterest(text)
                 result = anu[Math.floor(Math.random() * anu.length)]
@@ -1555,12 +1558,12 @@ break
             }
             break
             case 'anime': case 'waifu': case 'husbu': case 'neko': case 'shinobu': case 'megumin': case 'waifus': case 'nekos': case 'trap': case 'blowjob': {
-                m.reply(mess.wait)
+                
                 hisoka.sendMessage(m.chat, { image: { url: api('zenz', '/api/randomimage/'+command, 'apikey') }, caption: 'Generate Random ' + command }, { quoted: m})
             }
             break
 	    case 'couple': {
-                m.reply(mess.wait)
+                
                 let anu = await fetchJson('https://raw.githubusercontent.com/iamriz7/kopel_/main/kopel.json')
                 let random = anu[Math.floor(Math.random() * anu.length)]
                 hisoka.sendMessage(m.chat, { image: { url: random.male }, caption: `Couple Male` }, { quoted: m })
@@ -1649,19 +1652,19 @@ break
             break
             case '3dchristmas': case '3ddeepsea': case 'americanflag': case '3dscifi': case '3drainbow': case '3dwaterpipe': case 'halloweenskeleton': case 'sketch': case 'bluecircuit': case 'space': case 'metallic': case 'fiction': case 'greenhorror': case 'transformer': case 'berry': case 'thunder': case 'magma': case '3dcrackedstone': case '3dneonlight': case 'impressiveglitch': case 'naturalleaves': case 'fireworksparkle': case 'matrix': case 'dropwater':  case 'harrypotter': case 'foggywindow': case 'neondevils': case 'christmasholiday': case '3dgradient': case 'blackpink': case 'gluetext': {
                 if (!text) throw `Example : ${prefix + command} text`
-                m.reply(mess.wait)
+                
                 hisoka.sendMessage(m.chat, { image: { url: api('zenz', '/textpro/' + command, { text: text }, 'apikey') }, caption: `Text Pro ${command}` }, { quoted: m})
 	    }
             break
 	    case 'shadow': case 'romantic': case 'smoke': case 'burnpapper': case 'naruto': case 'lovemsg': case 'grassmsg': case 'lovetext': case 'coffecup': case 'butterfly': case 'harrypotter': case 'retrolol': {
                 if (!text) throw 'No Query Text'
-                m.reply(mess.wait)
+                
                 hisoka.sendMessage(m.chat, { image: { url: api('zenz', '/photooxy/' + command, { text: text }, 'apikey') }, caption: `Photo Oxy ${command}` }, { quoted: m })
             }
             break
             case 'ffcover': case 'crossfire': case 'galaxy': case 'glass': case 'neon': case 'beach': case 'blackpink': case 'igcertificate': case 'ytcertificate': {
                 if (!text) throw 'No Query Text'
-                m.reply(mess.wait)
+                
                 hisoka.sendMessage(m.chat, { image: { url: api('zenz', '/ephoto/' + command, { text: text }, 'apikey') }, caption: `Ephoto ${command}` }, { quoted: m })
             }
             break
@@ -1982,32 +1985,61 @@ break
             break
 case 'tiktok': case 'tiktoknowm': {
                 if (!text) throw 'Masukkan Query Link!'
-                m.reply(mess.wait)
-                let anu = await fetchJson(api('zenz', '/downloader/tiktok', { url: text }, 'apikey'))
                 
-                hisoka.sendMessage(m.chat, { video: { url: anu.result.nowatermark }, caption: `HanBotz`}, { quoted: m })
+                let anu = await fetchJson(api('zenz', '/downloader/tiktok', { url: text }, 'apikey'))
+                let buttons = [
+                    {buttonId: `tiktokwm ${text}`, buttonText: {displayText: '► With Watermark'}, type: 1},
+                    {buttonId: `tiktokmp3 ${text}`, buttonText: {displayText: '♫ Audio'}, type: 1}
+                ]
+                let buttonMessage = {
+                    video: { url: anu.result.nowatermark },
+                    caption: `Download From\n${text}`,
+                    footer: 'HanBotz',
+                    buttons: buttons,
+                    headerType: 5
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
             case 'tiktokwm': case 'tiktokwatermark': {
                 if (!text) throw 'Masukkan Query Link!'
-                m.reply(mess.wait)
-                let anu = await fetchJson(api('zenz', '/downloader/tiktok', { url: text }, 'apikey'))
                 
-                hisoka.sendMessage(m.chat, { video: { url: anu.result.watermark }, caption: `HanBotz`}, { quoted: m }, { quoted: m })
+                let anu = await fetchJson(api('zenz', '/downloader/tiktok', { url: text }, 'apikey'))
+                let buttons = [
+                    {buttonId: `tiktoknowm ${text}`, buttonText: {displayText: '► No Watermark'}, type: 1},
+                    {buttonId: `tiktokmp3 ${text}`, buttonText: {displayText: '♫ Audio'}, type: 1}
+                ]
+                let buttonMessage = {
+                    video: { url: anu.result.watermark },
+                    caption: `Download From\n${text}`,
+                    footer: 'HanBotz',
+                    buttons: buttons,
+                    headerType: 5
+                }
+                hisoka.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
             case 'tiktokmp3': case 'tiktokaudio': {
                 if (!text) throw 'Masukkan Query Link!'
-                m.reply(mess.wait)
-                let anu = await fetchJson(api('zenz', '/downloader/musically', { url: text }, 'apikey'))
                 
+                let anu = await fetchJson(api('zenz', '/downloader/musically', { url: text }, 'apikey'))
+                let buttons = [
+                    {buttonId: `tiktoknowm ${text}`, buttonText: {displayText: '► No Watermark'}, type: 1},
+                    {buttonId: `tiktokwm ${text}`, buttonText: {displayText: '► With Watermark'}, type: 1}
+                ]
+                let buttonMessage = {
+                    text: `Download From\n${text}`,
+                    footer: 'HanBotz',
+                    buttons: buttons,
+                    headerType: 2
+                }
                 let msg = await hisoka.sendMessage(m.chat, buttonMessage, { quoted: m })
-                hisoka.sendMessage(m.chat, { audio: { url: anu.result.audio }, mimetype: 'audio/mpeg'}, { quoted: m })
+                hisoka.sendMessage(m.chat, { audio: { url: anu.result.audio }, mimetype: 'audio/mpeg'}, { quoted: msg })
             }
             break
 	        case 'instagram': case 'ig': case 'igdl': {
                 if (!text) throw 'No Query Url!'
-                m.reply(mess.wait)
+                
                 if (/(?:\/p\/|\/reel\/|\/tv\/)([^\s&]+)/.test(isUrl(text)[0])) {
                     let anu = await fetchJson(api('zenz', '/downloader/instagram2', { url: isUrl(text)[0] }, 'apikey'))
                     for (let media of anu.data) hisoka.sendMedia(m.chat, media, '', `HanBotz`, m)
@@ -2020,7 +2052,7 @@ case 'tiktok': case 'tiktoknowm': {
 		/** Backup misal yg atas ga keluar video **/
 		case 'igeh': case 'instagram2': case 'ig2': case 'igdl2': {
                 if (!text) throw 'Masukkan Query Link!'
-                m.reply(mess.wait)
+                
                 
                 let anu = await fetchJson(api('zenz', '/downloader/instagram2', { url:text }, 'apikey'))
                 hisoka.sendMessage(m.chat, { video: { url: anu.data[0] } }, { quoted: m })
@@ -2028,7 +2060,7 @@ case 'tiktok': case 'tiktoknowm': {
             break
             case 'joox': case 'jooxdl': {
                 if (!text) throw 'No Query Title'
-                m.reply(mess.wait)
+                
                 let anu = await fetchJson(api('zenz', '/downloader/joox', { query: text }, 'apikey'))
                 let msg = await hisoka.sendImage(m.chat, anu.result.img, `⭔ Title : ${anu.result.lagu}\n⭔ Album : ${anu.result.album}\n⭔ Singer : ${anu.result.penyanyi}\n⭔ Publish : ${anu.result.publish}\n⭔ Lirik :\n${anu.result.lirik.result}`, m)
                 hisoka.sendMessage(m.chat, { audio: { url: anu.result.mp4aLink }, mimetype: 'audio/mpeg', fileName: anu.result.lagu+'.m4a' }, { quoted: msg })
@@ -2036,7 +2068,7 @@ case 'tiktok': case 'tiktoknowm': {
             break
             case 'soundcloud': case 'scdl': {
                 if (!text) throw 'No Query Title'
-                m.reply(mess.wait)
+                
                 let anu = await fetchJson(api('zenz', '/downloader/soundcloud', { url: isUrl(text)[0] }, 'apikey'))
                 let msg = await hisoka.sendImage(m.chat, anu.result.thumb, `⭔ Title : ${anu.result.title}\n⭔ Url : ${isUrl(text)[0]}`)
                 hisoka.sendMessage(m.chat, { audio: { url: anu.result.url }, mimetype: 'audio/mpeg', fileName: anu.result.title+'.m4a' }, { quoted: msg })
@@ -2044,7 +2076,7 @@ case 'tiktok': case 'tiktoknowm': {
             break
 	        case 'twitdl': case 'twitter': {
                 if (!text) throw 'Masukkan Query Link!'
-                m.reply(mess.wait)
+                
                 let anu = await fetchJson(`https://zenzapi.xyz/downloader/twitter?url=${text}&apikey=ApiHanBotz`)
                 let buttons = [
                     {buttonId: `twittermp3 ${text}`, buttonText: {displayText: '► Audio'}, type: 1}
@@ -2056,26 +2088,35 @@ case 'tiktok': case 'tiktoknowm': {
                     buttons: buttons,
                     headerType: 5
                 }
-                hisoka.sendMessage(m.chat, { video: { url: anu.result.HD || anu.result.SD }, caption: `HanBotz`}, { quoted: m }, { quoted: m })
+                hisoka.sendMessage(m.chat, { video: { url: anu.result.HD || anu.result.SD }, caption: `${anu.result.desc}`}, { quoted: m })
             }
             break
             case 'twittermp3': case 'twitteraudio': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
                 let anu = await fetchJson(`https://zenzapi.xyz/downloader/twitter?url=${text}&apikey=ApiHanBotz`)
-                hisoka.sendMessage(m.chat, { audio: { url: anu.result.audio }, mimetype: 'audio/mpeg'}, { quoted: m })
-            }
-            break
+                let buttons = [
+                    {buttonId: `twitter ${text}`, buttonText: {displayText: '► Video'}, type: 1}
+                ]
+                let buttonMessage = {
+		    image: { url: anu.result.thumb },
+                    caption: util.format(anu.result),
+                    footer: 'HanBotz',
+                    buttons: buttons,
+                    headerType: 4
+                }
+                let msg = await hisoka.sendMessage(m.chat, buttonMessage, { quoted: m })
+                hisoka.sendMessage(m.chat, { audio: { url: anu.result.audio } }, { quoted: msg })
 	        case 'fbdl': case 'fb': case 'facebook': {
                 if (!text) throw 'Masukkan Query Link!'
-                m.reply(mess.wait)
+                
                 let anu = await fetchJson(api('zenz', '/api/downloader/facebook', { url: text }, 'apikey'))
                 hisoka.sendMessage(m.chat, { video: { url: anu.result.url }, caption: `⭔ Title : ${anu.result.title}`}, { quoted: m })
             }
             break
 	        case 'pindl': case 'pinterestdl': {
                 if (!text) throw 'Masukkan Query Link!'
-                m.reply(mess.wait)
+                
                 let anu = await fetchJson(api('zenz', '/api/downloader/pinterestdl', { url: text }, 'apikey'))
                 hisoka.sendMessage(m.chat, { video: { url: anu.result }, caption: `Download From ${text}` }, { quoted: m })
             }
@@ -2128,16 +2169,16 @@ Untuk Download Media Silahkan Klik salah satu Button dibawah ini atau masukkan c
 		break
 		case 'juzamma': {
 		if (args[0] === 'pdf') {
-		m.reply(mess.wait)
+		
 		hisoka.sendMessage(m.chat, {document: {url: 'https://fatiharridho.my.id/database/islam/juz-amma-arab-latin-indonesia.pdf'}, mimetype: 'application/pdf', fileName: 'juz-amma-arab-latin-indonesia.pdf'}, {quoted:m})
 		} else if (args[0] === 'docx') {
-		m.reply(mess.wait)
+		
 		hisoka.sendMessage(m.chat, {document: {url: 'https://fatiharridho.my.id/database/islam/juz-amma-arab-latin-indonesia.docx'}, mimetype: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', fileName: 'juz-amma-arab-latin-indonesia.docx'}, {quoted:m})
 		} else if (args[0] === 'pptx') {
-		m.reply(mess.wait)
+		
 		hisoka.sendMessage(m.chat, {document: {url: 'https://fatiharridho.my.id/database/islam/juz-amma-arab-latin-indonesia.pptx'}, mimetype: 'application/vnd.openxmlformats-officedocument.presentationml.presentation', fileName: 'juz-amma-arab-latin-indonesia.pptx'}, {quoted:m})
 		} else if (args[0] === 'xlsx') {
-		m.reply(mess.wait)
+		
 		hisoka.sendMessage(m.chat, {document: {url: 'https://fatiharridho.my.id/database/islam/juz-amma-arab-latin-indonesia.xlsx'}, mimetype: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', fileName: 'juz-amma-arab-latin-indonesia.xlsx'}, {quoted:m})
 		} else {
 		m.reply(`Mau format apa ? Example : ${prefix + command} pdf
@@ -2225,7 +2266,7 @@ ${id}`)
                 if (/smooth/.test(command)) set = '-filter:v "minterpolate=\'mi_mode=mci:mc_mode=aobmc:vsbmc=1:fps=120\'"'
                 if (/tupai/.test(command)) set = '-filter:a "atempo=0.5,asetrate=65100"'
                 if (/audio/.test(mime)) {
-                m.reply(mess.wait)
+                
                 let media = await hisoka.downloadAndSaveMediaMessage(quoted)
                 let ran = getRandom('.mp3')
                 exec(`ffmpeg -i ${media} ${set} ${ran}`, (err, stderr, stdout) => {
@@ -2496,278 +2537,226 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 hisoka.sendContact(m.chat, global.owner, m)
             }
             break
-            case 'list': case 'menu': case 'help': case '?': {
-                anu = `┌──⭓ *Group Menu*
-│
-│⭔ ${prefix}linkgroup
-│⭔ ${prefix}ephemeral [option]
-│⭔ ${prefix}setppgc [image]
-│⭔ ${prefix}setname [text]
-│⭔ ${prefix}setdesc [text]
-│⭔ ${prefix}group [option]
-│⭔ ${prefix}editinfo [option]
-│⭔ ${prefix}add @user
-│⭔ ${prefix}kick @user
-│⭔ ${prefix}hidetag [text]
-│⭔ ${prefix}tagall [text]
-│⭔ ${prefix}antilink [on/off]
-│⭔ ${prefix}mute [on/off]
-│⭔ ${prefix}promote @user
-│⭔ ${prefix}demote @user
-│⭔ ${prefix}vote [text]
-│⭔ ${prefix}devote
-│⭔ ${prefix}upvote
-│⭔ ${prefix}cekvote
-│⭔ ${prefix}hapusvote
-│
-└───────⭓
+            case 'list': case 'menu': case 'help': {
+                anu = `
+ᴜꜱᴇʀ ɪɴꜰᴏ
+Name : *${pushname}*
+Bio : *${p1 ? `${p1.status}` : '-'}*
+Number : *wa.me/${m.sender.split("@")[0]}*
 
-┌──⭓ *Downloader Menu*
-│
-│⭔ ${prefix}tiktoknowm [url]
-│⭔ ${prefix}tiktokwm [url]
-│⭔ ${prefix}tiktokmp3 [url]
-│⭔ ${prefix}instagram [url]
-│⭔ ${prefix}twitter [url]
-│⭔ ${prefix}twittermp3 [url]
-│⭔ ${prefix}facebook [url]
-│⭔ ${prefix}pinterestdl [url]
-│⭔ ${prefix}ytmp3 [url]
-│⭔ ${prefix}ytmp4 [url]
-│⭔ ${prefix}getmusic [query]
-│⭔ ${prefix}getvideo [query]
-│⭔ ${prefix}umma [url]
-│⭔ ${prefix}joox [query]
-│⭔ ${prefix}soundcloud [url]
-│
-└───────⭓
+ʙᴏᴛ ɪɴꜰᴏ
+Name : *HanBotz*
+Prefix : [ *${prefix}* ]
+Runtime : *${runtime(process.uptime())}*
 
-┌──⭓ *Search Menu*
-│
-│⭔ ${prefix}play [query]
-│⭔ ${prefix}yts [query]
-│⭔ ${prefix}google [query]
-│⭔ ${prefix}gimage [query]
-│⭔ ${prefix}pinterest [query]
-│⭔ ${prefix}wallpaper [query]
-│⭔ ${prefix}wikimedia [query]
-│⭔ ${prefix}ytsearch [query]
-│⭔ ${prefix}ringtone [query]
-│⭔ ${prefix}stalk [option] [query]
-│
-└───────⭓
+Time : *${jmn}*
+Calendar : *{date}*
 
-┌──⭓ *Random Menu*
-│
-│⭔ ${prefix}coffe
-│⭔ ${prefix}quotesanime
-│⭔ ${prefix}motivasi
-│⭔ ${prefix}dilanquote
-│⭔ ${prefix}bucinquote
-│⭔ ${prefix}katasenja
-│⭔ ${prefix}puisi
-│⭔ ${prefix}couple
-│⭔ ${prefix}anime
-│⭔ ${prefix}waifu
-│⭔ ${prefix}husbu
-│⭔ ${prefix}neko
-│⭔ ${prefix}shinobu
-│⭔ ${prefix}waifus (nsfw)
-│⭔ ${prefix}nekos (nsfw)
-│⭔ ${prefix}trap (nsfw)
-│⭔ ${prefix}blowjob (nsfw)
-│
-└───────⭓
+${readmore}
 
-┌──⭓ *Text Pro Menu*
-│
-│⭔ ${prefix}3dchristmas
-│⭔ ${prefix}3ddeepsea
-│⭔ ${prefix}americanflag
-│⭔ ${prefix}3dscifi
-│⭔ ${prefix}3drainbow
-│⭔ ${prefix}3dwaterpipe
-│⭔ ${prefix}halloweenskeleton
-│⭔ ${prefix}sketch
-│⭔ ${prefix}bluecircuit
-│⭔ ${prefix}space
-│⭔ ${prefix}metallic
-│⭔ ${prefix}fiction
-│⭔ ${prefix}greenhorror
-│⭔ ${prefix}transformer
-│⭔ ${prefix}berry
-│⭔ ${prefix}thunder
-│⭔ ${prefix}magma
-│⭔ ${prefix}3dcrackedstone
-│⭔ ${prefix}3dneonlight
-│⭔ ${prefix}impressiveglitch
-│⭔ ${prefix}naturalleaves
-│⭔ ${prefix}fireworksparkle
-│⭔ ${prefix}matrix
-│⭔ ${prefix}dropwater
-│⭔ ${prefix}harrypotter
-│⭔ ${prefix}foggywindow
-│⭔ ${prefix}neondevils
-│⭔ ${prefix}christmasholiday
-│⭔ ${prefix}3dgradient
-│⭔ ${prefix}blackpink
-│⭔ ${prefix}gluetext
-│
-└───────⭓
+𝗚𝗥𝗢𝗨𝗣
+• ${prefix}linkgroup
+• ${prefix}ephemeral [option]
+• ${prefix}setppgc [image]
+• ${prefix}setname [text]
+• ${prefix}setdesc [text]
+• ${prefix}group [open/close]
+• ${prefix}add @user
+• ${prefix}kick @user
+• ${prefix}hidetag [text]
+• ${prefix}tagall [text]
+• ${prefix}antilink [on/off]
+• ${prefix}mute [on/off]
+• ${prefix}promote @user
+• ${prefix}demote @user
+• ${prefix}vote [text]
+• ${prefix}devote
+• ${prefix}upvote
+• ${prefix}cekvote
+• ${prefix}hapusvote
 
-┌──⭓ *Photo Oxy Menu*
-│
-│⭔ ${prefix}shadow
-│⭔ ${prefix}romantic
-│⭔ ${prefix}smoke
-│⭔ ${prefix}burnpapper
-│⭔ ${prefix}naruto
-│⭔ ${prefix}lovemsg
-│⭔ ${prefix}grassmsg
-│⭔ ${prefix}lovetext
-│⭔ ${prefix}coffecup
-│⭔ ${prefix}butterfly
-│⭔ ${prefix}harrypotter
-│⭔ ${prefix}retrolol
-│
-└───────⭓
+𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗𝗘𝗥
+• ${prefix}tiktoknowm [url]
+• ${prefix}tiktokwm [url]
+• ${prefix}tiktokmp3 [url]
+• ${prefix}instagram [url]
+• ${prefix}twitter [url]
+• ${prefix}facebook [url]
+• ${prefix}pinterestdl [url]
+• ${prefix}ytmp3 [url]
+• ${prefix}ytmp4 [url]
+• ${prefix}getmusic [query]
+• ${prefix}getvideo [query]
+• ${prefix}umma [url]
+• ${prefix}joox [query]
+• ${prefix}soundcloud [url]
 
-┌──⭓ *Ephoto Menu*
-│
-│⭔ ${prefix}ffcover
-│⭔ ${prefix}crossfire
-│⭔ ${prefix}galaxy
-│⭔ ${prefix}glass
-│⭔ ${prefix}neon
-│⭔ ${prefix}beach
-│⭔ ${prefix}blackpink
-│⭔ ${prefix}igcertificate
-│⭔ ${prefix}ytcertificate
-│
-└───────⭓
+𝗦𝗘𝗔𝗥𝗖𝗛
+• ${prefix}play [query]
+• ${prefix}yts [query]
+• ${prefix}google [query]
+• ${prefix}gimage [query]
+• ${prefix}pinterest [query]
+• ${prefix}wallpaper [query]
+• ${prefix}wikimedia [query]
+• ${prefix}ytsearch [query]
+• ${prefix}ringtone [query]
+• ${prefix}stalk [option] [query]
 
-┌──⭓ *Fun Menu*
-│
-│⭔ ${prefix}halah
-│⭔ ${prefix}hilih
-│⭔ ${prefix}huluh
-│⭔ ${prefix}heleh
-│⭔ ${prefix}holoh
-│⭔ ${prefix}jadian
-│⭔ ${prefix}jodohku
-│⭔ ${prefix}delttt
-│⭔ ${prefix}tictactoe
-│⭔ ${prefix}tebak [option]
-│⭔ ${prefix}math [mode]
-│⭔ ${prefix}suitpvp [@tag]
-│
-└───────⭓
+𝗠𝗔𝗞𝗘𝗥
+• ${prefix}3dchristmas
+• ${prefix}3ddeepsea
+• ${prefix}americanflag
+• ${prefix}3dscifi
+• ${prefix}3drainbow
+• ${prefix}3dwaterpipe
+• ${prefix}halloweenskeleton
+• ${prefix}sketch
+• ${prefix}bluecircuit
+• ${prefix}space
+• ${prefix}metallic
+• ${prefix}fiction
+• ${prefix}greenhorror
+• ${prefix}transformer
+• ${prefix}berry
+• ${prefix}thunder
+• ${prefix}magma
+• ${prefix}3dcrackedstone
+• ${prefix}3dneonlight
+• ${prefix}impressiveglitch
+• ${prefix}naturalleaves
+• ${prefix}fireworksparkle
+• ${prefix}matrix
+• ${prefix}dropwater
+• ${prefix}harrypotter
+• ${prefix}foggywindow
+• ${prefix}neondevils
+• ${prefix}christmasholiday
+• ${prefix}3dgradient
+• ${prefix}blackpink
+• ${prefix}gluetext
+• ${prefix}ffcover
+• ${prefix}crossfire
+• ${prefix}galaxy
+• ${prefix}glass
+• ${prefix}neon
+• ${prefix}beach
+• ${prefix}blackpink
+• ${prefix}igcertificate
+• ${prefix}ytcertificate
 
-┌──⭓ *Primbon Menu*
-│
-│⭔ ${prefix}nomorhoki
-│⭔ ${prefix}artimimpi
-│⭔ ${prefix}artinama
-│⭔ ${prefix}ramaljodoh
-│⭔ ${prefix}ramaljodohbali
-│⭔ ${prefix}suamiistri
-│⭔ ${prefix}ramalcinta
-│⭔ ${prefix}cocoknama
-│⭔ ${prefix}pasangan
-│⭔ ${prefix}jadiannikah
-│⭔ ${prefix}sifatusaha
-│⭔ ${prefix}rezeki
-│⭔ ${prefix}pekerjaan
-│⭔ ${prefix}nasib
-│⭔ ${prefix}penyakit
-│⭔ ${prefix}tarot
-│⭔ ${prefix}fengshui
-│⭔ ${prefix}haribaik
-│⭔ ${prefix}harisangar
-│⭔ ${prefix}harisial
-│⭔ ${prefix}nagahari
-│⭔ ${prefix}arahrezeki
-│⭔ ${prefix}peruntungan
-│⭔ ${prefix}weton
-│⭔ ${prefix}karakter
-│⭔ ${prefix}keberuntungan
-│⭔ ${prefix}memancing
-│⭔ ${prefix}masasubur
-│⭔ ${prefix}zodiak
-│⭔ ${prefix}shio
-│
-└───────⭓
+𝗙𝗨𝗡
+• ${prefix}halah
+• ${prefix}hilih
+• ${prefix}huluh
+• ${prefix}heleh
+• ${prefix}holoh
+• ${prefix}jadian
+• ${prefix}jodohku
+• ${prefix}delttt
+• ${prefix}tictactoe
+• ${prefix}tebak [option]
+• ${prefix}math [mode]
+• ${prefix}suitpvp [@tag]
 
-┌──⭓ *Convert Menu*
-│
-│⭔ ${prefix}toimage
-│⭔ ${prefix}removebg
-│⭔ ${prefix}sticker
-│⭔ ${prefix}emojimix
-│⭔ ${prefix}tovideo
-│⭔ ${prefix}togif
-│⭔ ${prefix}tourl
-│⭔ ${prefix}tovn
-│⭔ ${prefix}tomp3
-│⭔ ${prefix}toaudio
-│⭔ ${prefix}ebinary
-│⭔ ${prefix}dbinary
-│⭔ ${prefix}styletext
-│
-└───────⭓
+𝗣𝗥𝗜𝗠𝗕𝗢𝗡
+• ${prefix}nomorhoki
+• ${prefix}artimimpi
+• ${prefix}artinama
+• ${prefix}ramaljodoh
+• ${prefix}ramaljodohbali
+• ${prefix}suamiistri
+• ${prefix}ramalcinta
+• ${prefix}cocoknama
+• ${prefix}pasangan
+• ${prefix}jadiannikah
+• ${prefix}sifatusaha
+• ${prefix}rezeki
+• ${prefix}pekerjaan
+• ${prefix}nasib
+• ${prefix}penyakit
+• ${prefix}tarot
+• ${prefix}fengshui
+• ${prefix}haribaik
+• ${prefix}harisangar
+• ${prefix}harisial
+• ${prefix}nagahari
+• ${prefix}arahrezeki
+• ${prefix}peruntungan
+• ${prefix}weton
+• ${prefix}karakter
+• ${prefix}keberuntungan
+• ${prefix}memancing
+• ${prefix}masasubur
+• ${prefix}zodiak
+• ${prefix}shio
 
-┌──⭓ *Database Menu*
-│
-│⭔ ${prefix}setcmd
-│⭔ ${prefix}listcmd
-│⭔ ${prefix}delcmd
-│⭔ ${prefix}lockcmd
-│⭔ ${prefix}addmsg
-│⭔ ${prefix}listmsg
-│⭔ ${prefix}getmsg
-│⭔ ${prefix}delmsg
-│
-└───────⭓
+𝗖𝗢𝗡𝗩𝗘𝗥𝗧
+• ${prefix}toimage
+• ${prefix}removebg
+• ${prefix}sticker
+• ${prefix}emojimix
+• ${prefix}tovideo
+• ${prefix}togif
+• ${prefix}tourl
+• ${prefix}tovn
+• ${prefix}tomp3
+• ${prefix}toaudio
+• ${prefix}ebinary
+• ${prefix}dbinary
+• ${prefix}styletext
 
-┌──⭓ *Islamic Menu*
-│
-│⭔ ${prefix}iqra
-│⭔ ${prefix}hadist
-│⭔ ${prefix}alquran
-│⭔ ${prefix}juzamma
-│⭔ ${prefix}tafsirsurah
-│
-└───────⭓
+𝗗𝗔𝗧𝗔𝗕𝗔𝗦𝗘
+• ${prefix}setcmd
+• ${prefix}listcmd
+• ${prefix}delcmd
+• ${prefix}lockcmd
+• ${prefix}addmsg
+• ${prefix}listmsg
+• ${prefix}getmsg
+• ${prefix}delmsg
 
-┌──⭓ *Voice Changer*
-│
-│⭔ ${prefix}bass
-│⭔ ${prefix}blown
-│⭔ ${prefix}deep
-│⭔ ${prefix}earrape
-│⭔ ${prefix}fast
-│⭔ ${prefix}fat
-│⭔ ${prefix}nightcore
-│⭔ ${prefix}reverse
-│⭔ ${prefix}robot
-│⭔ ${prefix}slow
-│⭔ ${prefix}tupai
-│
-└───────⭓
+𝗜𝗦𝗟𝗔𝗠𝗜𝗖
+• ${prefix}iqra
+• ${prefix}hadist
+• ${prefix}alquran
+• ${prefix}juzamma
+• ${prefix}tafsirsurah
 
-┌──⭓ *Owner Menu*
-│
-│⭔ ${prefix}chat [option]
-│⭔ ${prefix}join [link]
-│⭔ ${prefix}leave
-│⭔ ${prefix}block @user
-│⭔ ${prefix}unblock @user
-│⭔ ${prefix}bcgroup [text]
-│⭔ ${prefix}bcall [text]
-│⭔ ${prefix}setppbot [image]
-│⭔ ${prefix}setexif
-│
-└───────⭓`
+𝗩𝗢𝗜𝗖𝗘 𝗖𝗛𝗔𝗡𝗚𝗘𝗥
+• ${prefix}bass
+• ${prefix}blown
+• ${prefix}deep
+• ${prefix}earrape
+• ${prefix}fast
+• ${prefix}fat
+• ${prefix}nightcore
+• ${prefix}reverse
+• ${prefix}robot
+• ${prefix}slow
+• ${prefix}tupai
+
+𝗥𝗔𝗡𝗗𝗢𝗠
+• ${prefix}coffe
+• ${prefix}quotesanime
+• ${prefix}motivasi
+• ${prefix}dilanquote
+• ${prefix}bucinquote
+• ${prefix}katasenja
+• ${prefix}puisi
+• ${prefix}couple
+
+𝗢𝗪𝗡𝗘𝗥
+• ${prefix}chat [option]
+• ${prefix}join [link]
+• ${prefix}leave
+• ${prefix}block @user
+• ${prefix}unblock @user
+• ${prefix}bcgroup [text]
+• ${prefix}bcall [text]
+• ${prefix}setppbot [image]
+• ${prefix}setexif
+`
                 let btn = [{
                                 urlButton: {
                                     displayText: 'Group HanBotz',
@@ -2777,11 +2766,6 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                                 urlButton: {
                                     displayText: 'Owner',
                                     url: 'wa.me/6285731855426'
-                                }
-                            }, {
-                                quickReplyButton: {
-                                    displayText: 'Status Bot',
-                                    id: 'ping'
                                 }
                             }, {
                                 quickReplyButton: {
