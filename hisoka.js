@@ -455,7 +455,6 @@ Selama ${clockString(new Date - user.afkTime)}
             user.afkReason = ''
         }
 	    
-	const p1 = await hisoka.getStatus(m.sender)
 const d = new Date
 const locale = 'id'
 const date = d.toLocaleDateString(locale, { day: 'numeric', month: 'long', year: 'numeric' })
@@ -2543,7 +2542,6 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
                 anu = `
 ᴜꜱᴇʀ ɪɴꜰᴏ
 Name : *${pushname}*
-Bio : *${p1 ? `${p1.status}` : '-'}*
 Number : *wa.me/${m.sender.split("@")[0]}*
 
 ʙᴏᴛ ɪɴꜰᴏ
