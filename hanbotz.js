@@ -439,8 +439,8 @@ klik https://wa.me/${botNumber.split`@`[0]}`, m, { mentions: [roof.p, roof.p2] }
             if (!afkTime || afkTime < 0) continue
             let reason = user.afkReason || ''
             m.reply(`
-Jangan tag dia!
-Dia sedang AFK ${reason ? 'dengan alasan ' + reason : 'tanpa alasan'}
+*Dia sedang AFK*
+${reason ? 'dengan alasan ' + reason : '-'}
 Selama ${clockString(new Date - afkTime)}
 `.trim())
         }
@@ -1534,6 +1534,7 @@ break
                 if (!text) throw `Example : ${prefix + command} 1`
                 if (!m.quoted) return m.reply('Reply Pesan')
                 if (!m.quoted.isBaileys) throw `Hanya Bisa Membalas Pesan Dari Bot`
+                m.reply(`wait...`)
 		let urls = quoted.text.match(new RegExp(/(?:https?:\/\/)?(?:youtu\.be\/|(?:www\.|m\.)?youtube\.com\/(?:watch|v|embed|shorts)(?:\.php)?(?:\?.*v=|\/))([a-zA-Z0-9\_-]+)/, 'gi'))
                 if (!urls) throw `Mungkin pesan yang anda reply tidak mengandung result ytsearch`
                 let quality = args[1] ? args[1] : '128kbps'
@@ -1548,6 +1549,7 @@ break
                 if (!text) throw `Example : ${prefix + command} 1`
                 if (!m.quoted) return m.reply('Reply Pesan')
                 if (!m.quoted.isBaileys) throw `Hanya Bisa Membalas Pesan Dari Bot`
+                m.reply(`wait...`)
                 let urls = quoted.text.match(new RegExp(/(?:https?:\/\/)?(?:youtu\.be\/|(?:www\.|m\.)?youtube\.com\/(?:watch|v|embed|shorts)(?:\.php)?(?:\?.*v=|\/))([a-zA-Z0-9\_-]+)/, 'gi'))
                 if (!urls) throw `Mungkin pesan yang anda reply tidak mengandung result ytsearch`
                 let quality = args[1] ? args[1] : '480p'
@@ -1977,7 +1979,7 @@ break
                     if (!id) throw `No Query username, Example : ${prefix + command} ig cak_haho`
                     let { result: anu } = await fetchJson(api('zenz', '/api/stalker/ig', { username: id }, 'apikey'))
                     if (anu.status == false) return m.reply(anu.result.message)
-                    hanbotz.sendMedia(m.chat, anu.caption.profile_hd, '', `⭔ Full Name : ${anu.caption.full_name}\n⭔ User Name : ${anu.caption.user_name}\n⭔ ID ${anu.caption.user_id}\n⭔ Followers : ${anu.caption.followers}\n⭔ Following : ${anu.caption.following}\n⭔ Bussines : ${anu.caption.bussines}\n⭔ Profesional : ${anu.caption.profesional}\n⭔ Verified : ${anu.caption.verified}\n⭔ Private : ${anu.caption.private}\n⭔ Bio : ${anu.caption.biography}\n⭔ Bio Url : ${anu.caption.bio_url}`, m)
+                    hanbotz.sendMedia(m.chat, anu.caption.profile_hd, '', `⭔ Full Name : ${anu.caption.full_name}\n⭔ User Name : ${anu.caption.user_name}\n⭔ ID ${anu.caption.user_id}\n⭔ Followers : ${anu.caption.following}\n⭔ Following : ${anu.caption.followers}\n⭔ Bussines : ${anu.caption.bussines}\n⭔ Profesional : ${anu.caption.profesional}\n⭔ Verified : ${anu.caption.verified}\n⭔ Private : ${anu.caption.private}\n⭔ Bio : ${anu.caption.biography}\n⭔ Bio Url : ${anu.caption.bio_url}`, m)
 		    db.users[m.sender].limit -= 1
                 } else if (type.toLowerCase() == 'npm') {
                     if (!id) throw `No Query username, Example : ${prefix + command} npm scrape-primbon`
@@ -2610,48 +2612,6 @@ ${readmore}
 • ${prefix}ringtone [query]
 • ${prefix}stalk [option] [query]
 
-𝗠𝗔𝗞𝗘𝗥
-• ${prefix}3dchristmas
-• ${prefix}3ddeepsea
-• ${prefix}americanflag
-• ${prefix}3dscifi
-• ${prefix}3drainbow
-• ${prefix}3dwaterpipe
-• ${prefix}halloweenskeleton
-• ${prefix}sketch
-• ${prefix}bluecircuit
-• ${prefix}space
-• ${prefix}metallic
-• ${prefix}fiction
-• ${prefix}greenhorror
-• ${prefix}transformer
-• ${prefix}berry
-• ${prefix}thunder
-• ${prefix}magma
-• ${prefix}3dcrackedstone
-• ${prefix}3dneonlight
-• ${prefix}impressiveglitch
-• ${prefix}naturalleaves
-• ${prefix}fireworksparkle
-• ${prefix}matrix
-• ${prefix}dropwater
-• ${prefix}harrypotter
-• ${prefix}foggywindow
-• ${prefix}neondevils
-• ${prefix}christmasholiday
-• ${prefix}3dgradient
-• ${prefix}blackpink
-• ${prefix}gluetext
-• ${prefix}ffcover
-• ${prefix}crossfire
-• ${prefix}galaxy
-• ${prefix}glass
-• ${prefix}neon
-• ${prefix}beach
-• ${prefix}blackpink
-• ${prefix}igcertificate
-• ${prefix}ytcertificate
-
 𝗙𝗨𝗡
 • ${prefix}halah
 • ${prefix}hilih
@@ -2852,7 +2812,7 @@ ${readmore}
         
 
     } catch (err) {
-        m.reply(`util.format(err)\n\nReport Ke Owner\nwa.me/6285731855426`)
+        m.reply((`util.format(err)) \n\nReport Ke Owner\nwa.me/6285731855426`)
     }
 }
 
