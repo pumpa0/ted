@@ -23,7 +23,7 @@ const store = makeInMemoryStore({ logger: pino().child({ level: 'silent', stream
 
 async function starthanbotz() {
     let { version, isLatest } = await fetchLatestBaileysVersion()
-    const HanBotz = hanbotzConnect({
+    const hanbotz = hanbotzConnect({
         logger: pino({ level: 'silent' }),
         printQRInTerminal: true,
         browser: ['hanbotz Multi Device','Safari','1.0.0'],
@@ -492,7 +492,7 @@ async function starthanbotz() {
     return hanbotz
 }
 
-startHanbotz()
+starthanbotz()
 
 
 let file = require.resolve(__filename)
