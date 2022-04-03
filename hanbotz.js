@@ -2812,7 +2812,7 @@ ${readmore}
         
 
     } catch (err) {
-        m.reply((`util.format(err)) \n\nReport Ke Owner\nwa.me/6285731855426`)
+        m.reply(util.format(err))
     }
 }
 
