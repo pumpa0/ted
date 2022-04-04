@@ -2755,19 +2755,20 @@ case 'botz': {
 	}
 	break
 case 'darkjoke': {
-                let anu = await getBuffer(`https://zenzapi.xyz/api/random/darkjoke?apikey=ApiHanBotz`)
+                let anu = (`https://zenzapi.xyz/api/random/darkjoke?apikey=ApiHanBotz`)
                 hanbotz.sendMessage(m.chat, { image: { url: anu }, caption: `DarkJoke` }, { quoted: m })
             }
 	    break
-case 'darkjoke': {
-                let anu = await getBuffer(`https://zenzapi.xyz/api/random/memeindo?apikey=ApiHanBotz`)
+case 'meme': {
+                let anu = (`https://zenzapi.xyz/api/random/memeindo?apikey=ApiHanBotz`)
                 hanbotz.sendMessage(m.chat, { image: { url: anu }, caption: `Meme` }, { quoted: m })
             }
 	    break
 case 'attp': {
 	if (!text) throw `text nya mana`
-	let media = await getBuffer(`https://zenzapi.xyz/api/image/attp?text=${text}&apikey=ApiHanBotz`)
+	let media = (`https://zenzapi.xyz/api/image/attp?text=${text}&apikey=ApiHanBotz`)
                 let encmedia = await hanbotz.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
+                await fs.unlinkSync(encmedia)
                 }
                 break
 case 'mememaker': {
@@ -2775,7 +2776,7 @@ case 'mememaker': {
 	p1 = (args[0])
 	p2 = (args[1])
 	p3 = (args[2])
-	let anu = await getBuffer(`https://zenzapi.xyz/api/image/meme?text=${p1}&text2=${p2}&image=${p3}&apikey=ApiHanBotz`)
+	let anu = (`https://zenzapi.xyz/api/image/meme?text=${p1}&text2=${p2}&image=${p3}&apikey=ApiHanBotz`)
 	hanbotz.sendMessage(m.chat, { image: { url: anu }, caption: `MemeMaker` }, { quoted: m })
             }
             break
