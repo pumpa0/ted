@@ -731,7 +731,7 @@ m.reply(sawer)
             let buttons = [
                         { buttonId: '.', buttonText: { displayText: 'Semoga Cepat Punya Anak' }, type: 1 }
                     ]
-                    await hanbotz.sendButtonText(m.chat, buttons, jawab, hanbotz.user.name, m, {mentions: ments}
+                    await hanbotz.sendButtonText(m.chat, buttons, jawab, hanbotz.user.name, m, {mentions: ments})
             }
             break
             case 'jadian': {
@@ -744,7 +744,7 @@ m.reply(sawer)
 @${orang.split('@')[0]} ❤️ @${jodoh.split('@')[0]}`
             let menst = [orang, jodoh]
             let buttons = [
-                        { buttonId: 'jadian', buttonText: { displayText: 'Jodohku' }, type: 1 }
+                        { buttonId: '.', buttonText: { displayText: 'Semoga Cepat Punya Anak' }, type: 1 }
                     ]
                     await hanbotz.sendButtonText(m.chat, buttons, jawab, hanbotz.user.name, m, {mentions: menst})
             }
@@ -2703,7 +2703,6 @@ ${readmore}
 • ${prefix}tupai
 
 𝗥𝗔𝗡𝗗𝗢𝗠
-• ${prefix}coffe
 • ${prefix}quotesanime
 • ${prefix}motivasi
 • ${prefix}dilanquote
