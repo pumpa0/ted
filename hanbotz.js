@@ -161,13 +161,13 @@ module.exports = hanbotz = async (hanbotz, m, chatUpdate, store) => {
         if (db.chats[m.chat].antilink) {
         if (budy.match(`chat.whatsapp.com`)) {
         m.reply(`「 ANTI LINK 」\n\nKamu terdeteksi mengirim link group, maaf kamu akan di kick !`)
-        if (!isBotAdmins) return m.reply(`Ehh bot gak admin T_T`)
+        if (!isBotAdmins) return m.reply(`Bot gak admin T_T`)
         let gclink = (`https://chat.whatsapp.com/`+await hanbotz.groupInviteCode(m.chat))
         let isLinkThisGc = new RegExp(gclink, 'i')
         let isgclink = isLinkThisGc.test(m.text)
-        if (isgclink) return m.reply(`Ehh maaf gak jadi, karena kamu ngirim link group ini`)
-        if (isAdmins) return m.reply(`Ehh maaf kamu admin`)
-        if (isCreator) return m.reply(`Ehh maaf kamu owner bot ku`)
+        if (isgclink) return m.reply(`Sebarin Oyyy`)
+        if (isAdmins) return m.reply(`Admin Bebas`)
+        if (isCreator) return m.reply(`Owner Bebas`)
         hanbotz.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
         }
         }
@@ -223,7 +223,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebaklagu[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await hanbotz.sendButtonText(m.chat, [{ buttonId: 'tebak lagu', buttonText: { displayText: 'Tebak Lagu' }, type: 1 }], `🎮 Tebak Lagu 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hanbotz.user.name, m)
+                await hanbotz.sendButtonText(m.chat, [{ buttonId: 'tebak lagu', buttonText: { displayText: 'Tebak Lagu' }, type: 1 }], ` Tebak Lagu \n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hanbotz.user.name, m)
                 delete tebaklagu[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
         }
@@ -232,7 +232,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = kuismath[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await m.reply(`🎮 Kuis Matematika  🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? kirim ${prefix}math mode`)
+                await m.reply(` Kuis Matematika  \n\nJawaban Benar 🎉\n\nIngin bermain lagi? kirim ${prefix}math mode`)
                 delete kuismath[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
         }
@@ -241,7 +241,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebakgambar[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await hanbotz.sendButtonText(m.chat, [{ buttonId: 'tebak gambar', buttonText: { displayText: 'Tebak Gambar' }, type: 1 }], `🎮 Tebak Gambar 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hanbotz.user.name, m)
+                await hanbotz.sendButtonText(m.chat, [{ buttonId: 'tebak gambar', buttonText: { displayText: 'Tebak Gambar' }, type: 1 }], ` Tebak Gambar \n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hanbotz.user.name, m)
                 delete tebakgambar[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
         }
@@ -250,7 +250,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebakkata[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await hanbotz.sendButtonText(m.chat, [{ buttonId: 'tebak kata', buttonText: { displayText: 'Tebak Kata' }, type: 1 }], `🎮 Tebak Kata 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hanbotz.user.name, m)
+                await hanbotz.sendButtonText(m.chat, [{ buttonId: 'tebak kata', buttonText: { displayText: 'Tebak Kata' }, type: 1 }], ` Tebak Kata \n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hanbotz.user.name, m)
                 delete tebakkata[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
         }
@@ -260,7 +260,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             jawaban = caklontong[m.sender.split('@')[0]]
 	    deskripsi = caklontong_desk[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await hanbotz.sendButtonText(m.chat, [{ buttonId: 'tebak lontong', buttonText: { displayText: 'Tebak Lontong' }, type: 1 }], `🎮 Cak Lontong 🎮\n\nJawaban Benar 🎉\n*${deskripsi}*\n\nIngin bermain lagi? tekan button dibawah`, hanbotz.user.name, m)
+                await hanbotz.sendButtonText(m.chat, [{ buttonId: 'tebak lontong', buttonText: { displayText: 'Tebak Lontong' }, type: 1 }], ` Cak Lontong \n\nJawaban Benar 🎉\n*${deskripsi}*\n\nIngin bermain lagi? tekan button dibawah`, hanbotz.user.name, m)
                 delete caklontong[m.sender.split('@')[0]]
 		delete caklontong_desk[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
@@ -270,7 +270,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebakkalimat[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await hanbotz.sendButtonText(m.chat, [{ buttonId: 'tebak kalimat', buttonText: { displayText: 'Tebak Kalimat' }, type: 1 }], `🎮 Tebak Kalimat 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hanbotz.user.name, m)
+                await hanbotz.sendButtonText(m.chat, [{ buttonId: 'tebak kalimat', buttonText: { displayText: 'Tebak Kalimat' }, type: 1 }], ` Tebak Kalimat \n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hanbotz.user.name, m)
                 delete tebakkalimat[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
         }
@@ -279,7 +279,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebaklirik[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await hanbotz.sendButtonText(m.chat, [{ buttonId: 'tebak lirik', buttonText: { displayText: 'Tebak Lirik' }, type: 1 }], `🎮 Tebak Lirik 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hanbotz.user.name, m)
+                await hanbotz.sendButtonText(m.chat, [{ buttonId: 'tebak lirik', buttonText: { displayText: 'Tebak Lirik' }, type: 1 }], ` Tebak Lirik \n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hanbotz.user.name, m)
                 delete tebaklirik[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
         }
@@ -288,7 +288,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebaktebakan[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await hanbotz.sendButtonText(m.chat, [{ buttonId: 'tebak tebakan', buttonText: { displayText: 'Tebak Tebakan' }, type: 1 }], `🎮 Tebak Tebakan 🎮\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hanbotz.user.name, m)
+                await hanbotz.sendButtonText(m.chat, [{ buttonId: 'tebak tebakan', buttonText: { displayText: 'Tebak Tebakan' }, type: 1 }], ` Tebak Tebakan \n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hanbotz.user.name, m)
                 delete tebaktebakan[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
         }
@@ -469,7 +469,7 @@ const jmn = moment.tz('Asia/Jakarta').format('HH:mm:ss')
                 m.reply(`${m.pushName} Telah Afk${text ? ': ' + text : ''}`)
             }
             break	
-        case 'ttc': case 'ttt': case 'tictactoe': {
+        case 'tictactoe': {
             let TicTacToe = require("./lib/tictactoe")
             this.game = this.game ? this.game : {}
             if (Object.values(this.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) throw 'Kamu masih didalam game'
@@ -526,7 +526,7 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
             delete this.game
             hanbotz.sendText(m.chat, `Berhasil delete session TicTacToe`, m)
             } else if (!this.game) {
-            m.reply(`Session TicTacToe🎮 tidak ada`)
+            m.reply(`Session TicTacToe tidak ada`)
             } else throw '?'
             } catch (e) {
             m.reply('rusak')
@@ -2743,7 +2743,11 @@ ${readmore}
                         hanbotz.send5ButImg(m.chat, anu, hanbotz.user.name, global.thumb, btn)
                      }
             break
-
+case 'hancraft': case 'hanmc': {
+	let anu = await fetchJson(`https://minecraftpocket-servers.com/api/?object=servers&element=detail&key=g1e0tIhAlzQXgdA8yycligd37YK18u4b14c`)
+	mine = (`_*SERVER GABUT HAN*_\n*Status*: ${anu.is_online}\n\n*Name*: ${anu.name}\n*Address*: ${anu.address}\n*Port*: ${anu.port}\n*Version*: ${anu.version}\n*Players*: ${anu.players} / ${anu.maxplayers}\n\n*Url*: ${anu.url}`)
+	m.reply(mine)
+	break
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
             default:
                 if (budy.startsWith('=>')) {
