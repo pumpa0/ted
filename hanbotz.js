@@ -1579,7 +1579,7 @@ break
                 hanbotz.sendMessage(m.chat, { image: { url: random.male }, caption: `Couple Male` }, { quoted: m })
                 hanbotz.sendMessage(m.chat, { image: { url: random.female }, caption: `Couple Female` }, { quoted: m })
             }
-	    break
+	    break 
             case 'coffe': case 'kopi': {
             let buttons = [
                     {buttonId: `coffe`, buttonText: {displayText: 'Next Image'}, type: 1}
@@ -2747,6 +2747,38 @@ case 'hancraft': case 'hanmc': {
 	m.reply(mine)
 	}
 	        break
+case 'botz': {
+	if (!text) throw `ya, ada apa?`
+	let anu = await fetchJson(`https://zenzapi.xyz/api/simisimi?text=${text}&apikey=ApiHanBotz`)
+	jawabni = (`${anu.result.message}`)
+	m.reply(jawabni)
+	}
+	break
+case 'darkjoke': {
+                let anu = await fetchJson(`https://zenzapi.xyz/api/random/darkjoke?apikey=ApiHanBotz`)
+                hanbotz.sendMessage(m.chat, { image: { url: anu }, caption: `DarkJoke` }, { quoted: m })
+            }
+	    break
+case 'darkjoke': {
+                let anu = await fetchJson(`https://zenzapi.xyz/api/random/memeindo?apikey=ApiHanBotz`)
+                hanbotz.sendMessage(m.chat, { image: { url: anu }, caption: `Meme` }, { quoted: m })
+            }
+	    break
+case 'attp': {
+	if (!text) throw `text nya mana`
+	let media = await fetchJson(`https://zenzapi.xyz/api/image/attp?text=${text}&apikey=ApiHanBotz`)
+                let encmedia = await hanbotz.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
+                }
+                break
+case 'mememaker': {
+	if (!text) throw `text nya mana?\nContoh: ${command} han botz [link]\n\nNote: untuk mendapatkan link gambar, gunakan *.tourl*`
+	p1 = (args[0])
+	p2 = (args[1])
+	p3 = (args[2])
+	let anu = await fetchJson(`https://zenzapi.xyz/api/image/meme?text=${p1}&text2=${p2}&image=${p3}&apikey=ApiHanBotz`)
+	hanbotz.sendMessage(m.chat, { image: { url: anu }, caption: `MemeMaker` }, { quoted: m })
+            }
+            break
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
             default:
                 if (budy.startsWith('=>')) {
