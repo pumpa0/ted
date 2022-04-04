@@ -2767,22 +2767,22 @@ case 'meme': {
 case 'attp': {
 	if (!text) throw `text nya mana`
 	let anu = (`https://zenzapi.xyz/api/image/attp?text=${text}&apikey=ApiHanBotz`)
-                hanbotz.sendMessage(m.chat, { sticker: { url: anu }}, { quoted: m })
+                hanbotz.sendMessage(m.chat, { sticker: { url: anu }}, { packname: global.packname, author: global.author }, { quoted: m })
                 }
                 break
-case 'attp2': {
+case 'attp': {
 	if (!text) throw `text nya mana`
-	let anu = (`https://zenzapi.xyz/api/image/attp?text=${text}&apikey=ApiHanBotz`)
-                hanbotz.sendVideoAsSticker(m.chat, anu, m, { packname: global.packname, author: global.author })
+	let anu = (`https://zenzapi.xyz/api/image/ttp?text=${text}&apikey=ApiHanBotz`)
+                hanbotz.sendMessage(m.chat, { sticker: { url: anu }}, { packname: global.packname, author: global.author }, { quoted: m })
                 }
                 break
-case 'mememaker': {
+case 'mememaker': case 'smeme': case 'stikermeme': case 'stickermeme': {
 	if (!text) throw `text nya mana?\nContoh: *${command} han botz [link]*\n\nNote: untuk mendapatkan link gambar, gunakan *.tourl*`
 	p1 = (args[0])
 	p2 = (args[1])
 	p3 = (args[2])
 	let anu = (`https://zenzapi.xyz/api/image/meme?text=${p1}&text2=${p2}&image=${p3}&apikey=ApiHanBotz`)
-	hanbotz.sendMessage(m.chat, { image: { url: anu }, caption: `MemeMaker` }, { quoted: m })
+	hanbotz.sendMessage(m.chat, { sticker: { url: anu }}, { packname: global.packname, author: global.author }, { quoted: m })
             }
             break
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
