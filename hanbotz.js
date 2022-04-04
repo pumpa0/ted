@@ -2792,6 +2792,7 @@ case 'mememaker': case 'smeme': case 'stikermeme': case 'stickermeme': case 'mem
 case 'ceklimit': {
 	lamat = (`db.users[m.sender].limit`)
 	m.reply(lamat)
+	break
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
             default:
                 if (budy.startsWith('=>')) {
