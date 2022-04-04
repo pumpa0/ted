@@ -469,7 +469,8 @@ const jmn = moment.tz('Asia/Jakarta').format('HH:mm:ss')
                 m.reply(`${m.pushName} Telah Afk${text ? ': ' + text : ''}`)
             }
             break	
-        case 'tictactoe': {
+        case 'tictactoerusak': {
+        	    if (!m.mentionedJid[0]) return m.reply(`_Siapa yang ingin kamu tantang?_\nTag orangnya..\n\nAtau Ketik Room Yang Mengajak Kamu`)
             let TicTacToe = require("./lib/tictactoe")
             this.game = this.game ? this.game : {}
             if (Object.values(this.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) throw 'Kamu masih didalam game'
@@ -728,9 +729,9 @@ m.reply(sawer)
 @${me.split('@')[0]} ❤️ @${jodoh.split('@')[0]}`
             let ments = [me, jodoh]
             let buttons = [
-                        { buttonId: 'jodohku', buttonText: { displayText: 'Jodohku' }, type: 1 }
+                        { buttonId: '.', buttonText: { displayText: 'Semoga Cepat Punya Anak' }, type: 1 }
                     ]
-                    await hanbotz.sendButtonText(m.chat, buttons, jawab, hanbotz.user.name, m, {mentions: ments})
+                    await hanbotz.sendButtonText(m.chat, buttons, jawab, hanbotz.user.name, m, {mentions: ments}
             }
             break
             case 'jadian': {
@@ -2620,8 +2621,6 @@ ${readmore}
 • ${prefix}holoh
 • ${prefix}jadian
 • ${prefix}jodohku
-• ${prefix}delttt
-• ${prefix}tictactoe
 • ${prefix}tebak [option]
 • ${prefix}math [mode]
 • ${prefix}suitpvp [@tag]
