@@ -2767,13 +2767,13 @@ case 'meme': {
 case 'attp': {
 	if (!text) throw `text nya mana`
 	let anu = (`https://zenzapi.xyz/api/image/attp?text=${text}&apikey=ApiHanBotz`)
-                hanbotz.sendMessage(m.chat, { sticker: { url: anu } { packname: global.packname, author: global.author }}, { quoted: m })
+                hanbotz.sendMessage(m.chat, { sticker: { url: anu }, { quoted: m })
                 }
                 break
 case 'ttp': {
 	if (!text) throw `text nya mana`
 	let anu = (`https://zenzapi.xyz/api/image/ttp?text=${text}&apikey=ApiHanBotz`)
-                hanbotz.sendMessage(m.chat, { sticker: { url: anu } { packname: global.packname, author: global.author }}, { quoted: m })
+                hanbotz.sendMessage(m.chat, { sticker: { url: anu }, { quoted: m })
                 }
                 break
 case 'mememaker': case 'smeme': case 'stikermeme': case 'stickermeme': {
@@ -2782,7 +2782,7 @@ case 'mememaker': case 'smeme': case 'stikermeme': case 'stickermeme': {
 	p2 = (args[1])
 	p3 = (args[2])
 	let anu = (`https://zenzapi.xyz/api/image/meme?text=${p1}&text2=${p2}&image=${p3}&apikey=ApiHanBotz`)
-	hanbotz.sendMessage(m.chat, { sticker: { url: anu } { packname: global.packname, author: global.author }}, { quoted: m })
+	hanbotz.sendMessage(m.chat, { sticker: { url: anu }, { quoted: m })
             }
             break
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
