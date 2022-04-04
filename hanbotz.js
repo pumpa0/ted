@@ -2766,9 +2766,8 @@ case 'meme': {
 	    break
 case 'attp': {
 	if (!text) throw `text nya mana`
-	let media = (`https://zenzapi.xyz/api/image/attp?text=${text}&apikey=ApiHanBotz`)
-                let encmedia = await hanbotz.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
-                await fs.unlinkSync(encmedia)
+	let anu = (`https://zenzapi.xyz/api/image/attp?text=${text}&apikey=ApiHanBotz`)
+                hanbotz.sendMessage(m.chat, { sticker: { url: anu }, { quoted: m })
                 }
                 break
 case 'mememaker': {
