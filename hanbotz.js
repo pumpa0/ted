@@ -2776,14 +2776,8 @@ case 'attp2': {
                 hanbotz.sendVideoAsSticker(m.chat, anu, m, { packname: global.packname, author: global.author })
                 }
                 break
-case 'attp3': {
-	if (!text) throw `text nya mana`
-	let anu = (`https://zenzapi.xyz/api/image/attp?text=${text}&apikey=ApiHanBotz`)
-                hanbotz.sendVideoAsSticker(m.chat, { sticker: { url: anu }, { packname: global.packname, author: global.author }})
-                }
-                break
 case 'mememaker': {
-	if (!text) throw `text nya mana?\nContoh: ${command} han botz [link]\n\nNote: untuk mendapatkan link gambar, gunakan *.tourl*`
+	if (!text) throw `text nya mana?\nContoh: *${command} han botz [link]*\n\nNote: untuk mendapatkan link gambar, gunakan *.tourl*`
 	p1 = (args[0])
 	p2 = (args[1])
 	p3 = (args[2])
