@@ -2791,7 +2791,8 @@ case 'mememaker': case 'smeme': case 'stikermeme': case 'stickermeme': case 'mem
             break
 case 'ceklimit': {
 	lamat = (`db.users[m.sender].limit`)
-	m.reply(lamat)
+	m.reply(`limit kamu: *lamat*`)
+	}
 	break
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
             default:
