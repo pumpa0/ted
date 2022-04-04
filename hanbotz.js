@@ -2755,13 +2755,17 @@ case 'botz': {
 	}
 	break
 case 'darkjoke': {
+	if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
                 let anu = (`https://zenzapi.xyz/api/random/darkjoke?apikey=ApiHanBotz`)
                 hanbotz.sendMessage(m.chat, { image: { url: anu }, caption: `DarkJoke` }, { quoted: m })
+                db.users[m.sender].limit -= 1 // -1 limit
             }
 	    break
 case 'meme': {
+	if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
                 let anu = (`https://zenzapi.xyz/api/random/memeindo?apikey=ApiHanBotz`)
                 hanbotz.sendMessage(m.chat, { image: { url: anu }, caption: `Meme` }, { quoted: m })
+                db.users[m.sender].limit -= 1 // -1 limit
             }
 	    break
 case 'attp': {
@@ -2776,13 +2780,13 @@ case 'ttp': {
                 hanbotz.sendMessage(m.chat, { sticker: { url: anu }}, { quoted: m })
                 }
                 break
-case 'mememaker': case 'smeme': case 'stikermeme': case 'stickermeme': {
+case 'mememaker': case 'smeme': case 'stikermeme': case 'stickermeme': case 'memegen': {
 	if (!text) throw `text nya mana?\nContoh: *${command} han botz [link]*\n\nNote: untuk mendapatkan link gambar, gunakan *.tourl*`
 	p1 = (args[0])
 	p2 = (args[1])
 	p3 = (args[2])
 	let anu = (`https://zenzapi.xyz/api/image/meme?text=${p1}&text2=${p2}&image=${p3}&apikey=ApiHanBotz`)
-	hanbotz.sendMessage(m.chat, { sticker: { url: anu }}, { quoted: m })
+	hanbotz.sendMessage(m.chat, { image: { url: anu }, { caption: `to sticker use *.s*`}{ quoted: m })
             }
             break
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
