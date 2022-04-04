@@ -2767,7 +2767,19 @@ case 'meme': {
 case 'attp': {
 	if (!text) throw `text nya mana`
 	let anu = (`https://zenzapi.xyz/api/image/attp?text=${text}&apikey=ApiHanBotz`)
-                hanbotz.sendMessage(m.chat, { sticker: { url: anu }, { quoted: m })
+                hanbotz.sendMessage(m.chat, { sticker: { url: anu }}, { quoted: m })
+                }
+                break
+case 'attp2': {
+	if (!text) throw `text nya mana`
+	let anu = (`https://zenzapi.xyz/api/image/attp?text=${text}&apikey=ApiHanBotz`)
+                hanbotz.sendVideoAsSticker(m.chat, anu, m, { packname: global.packname, author: global.author })
+                }
+                break
+case 'attp3': {
+	if (!text) throw `text nya mana`
+	let anu = (`https://zenzapi.xyz/api/image/attp?text=${text}&apikey=ApiHanBotz`)
+                hanbotz.sendVideoAsSticker(m.chat, { sticker: { url: anu }, { packname: global.packname, author: global.author }})
                 }
                 break
 case 'mememaker': {
