@@ -2747,7 +2747,8 @@ case 'hancraft': case 'hanmc': {
 	let anu = await fetchJson(`https://minecraftpocket-servers.com/api/?object=servers&element=detail&key=g1e0tIhAlzQXgdA8yycligd37YK18u4b14c`)
 	mine = (`_*SERVER GABUT HAN*_\n*Status*: ${anu.is_online}\n\n*Name*: ${anu.name}\n*Address*: ${anu.address}\n*Port*: ${anu.port}\n*Version*: ${anu.version}\n*Players*: ${anu.players} / ${anu.maxplayers}\n\n*Url*: ${anu.url}`)
 	m.reply(mine)
-	break
+	}
+	        break
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
             default:
                 if (budy.startsWith('=>')) {
