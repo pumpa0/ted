@@ -2786,9 +2786,12 @@ case 'mememaker': case 'smeme': case 'stikermeme': case 'stickermeme': case 'mem
 	p2 = (args[1])
 	p3 = (args[2])
 	let anu = (`https://zenzapi.xyz/api/image/meme?text=${p1}&text2=${p2}&image=${p3}&apikey=ApiHanBotz`)
-	hanbotz.sendMessage(m.chat, { image: { url: anu }}, { caption: `to sticker use *.s*`}, { quoted: m })
+	hanbotz.sendMessage(m.chat, { image: { url: anu }, caption: `to sticker use *.s*`}, { quoted: m })
             }
             break
+case 'ceklimit': {
+	lamat = (`db.users[m.sender].limit`)
+	m.reply(lamat)
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
             default:
                 if (budy.startsWith('=>')) {
