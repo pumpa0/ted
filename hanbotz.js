@@ -57,7 +57,7 @@ module.exports = hanbotz = async (hanbotz, m, chatUpdate, store) => {
     try {
         var body = (m.mtype === 'conversation') ? m.message.conversation : (m.mtype == 'imageMessage') ? m.message.imageMessage.caption : (m.mtype == 'videoMessage') ? m.message.videoMessage.caption : (m.mtype == 'extendedTextMessage') ? m.message.extendedTextMessage.text : (m.mtype == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : (m.mtype == 'listResponseMessage') ? m.message.listResponseMessage.singleSelectReply.selectedRowId : (m.mtype == 'templateButtonReplyMessage') ? m.message.templateButtonReplyMessage.selectedId : (m.mtype === 'messageContextInfo') ? (m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.text) : ''
         var budy = (typeof m.text == 'string' ? m.text : '')
-        var prefix = prefa ? /^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi.test(body) ? body.match(/^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi)[0] : "" : prefa ?? global.prefix
+        var prefix = prefa ? /^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi.test(body) ? body.match(/^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi)[0] : '.' : prefa ?? global.prefix
         const isCmd = body.startsWith(prefix)
         const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
         const args = body.trim().split(/ +/).slice(1)
@@ -535,6 +535,7 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
             }
             break
             case 'suitpvp': case 'suit': {
+            	if (!m.isGroup) throw mess.group
             this.suit = this.suit ? this.suit : {}
             let poin = 10
             let poin_lose = 10
@@ -2552,6 +2553,8 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
             case 'menu': case 'help': {
             	let anu = await fetchJson(`https://api.lolhuman.xyz/api/countdown/2/5/2022?apikey=HanBotzApi`)
             lebaran = (`${anu.result}`)
+            let ana = wait fetchJson (`https://zenzapi.xyz/api/cekapi?apikey=ApiHanBotz`)
+            apis = (`${ana.message.today_hit}`)
                 anu = `
 ᴜꜱᴇʀ ɪɴꜰᴏ
 Name : *${pushname}*
@@ -2559,7 +2562,7 @@ Number : *wa.me/${m.sender.split("@")[0]}*
 
 ʙᴏᴛ ɪɴꜰᴏ
 Name : *HanBotz*
-Prefix : [ *${prefix}* ]
+Prefix : [ *Multi* ]
 Runtime : *${runtime(process.uptime())}*
 
 Time Server : *${jmn}* WIB
@@ -2840,8 +2843,8 @@ ${readmore}
 • ${prefix}setppbot [image]
 • ${prefix}setexif
 
-To talk to bots, use *botz _text_*
-Example: *botz hai*
+To talk to bots, use *${prefix}botz _[text]_*
+Example: *${prefix}botz hai*
 `
                 let btn = [{
                                 urlButton: {
@@ -2949,7 +2952,7 @@ case 'mememaker': case 'smeme': case 'stikermeme': case 'stickermeme': case 'mem
                 case 'horrorblood':
                 case 'thunder':
                 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
-                    if (args.length == 0) return reply(`Example: ${prefix + command} HanBotz`)
+                    if (args.length == 0) return m.reply(`Example: ${prefix + command} HanBotz`)
                     ini_txt = args.join(" ")
                     anu = (`https://api.lolhuman.xyz/api/textprome/${command}?apikey=HanBotzApi&text=${ini_txt}`)
                     hanbotz.sendMessage(m.chat, { image: { url: anu }, caption: `HanBotz` }, { quoted: m })
@@ -2966,7 +2969,7 @@ case 'pornhub':
                 case 'steel3d':
                 case 'wallgravity':
                 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
-                    if (args.length == 0) return reply(`Example: ${prefix + command} Han Botz`)
+                    if (args.length == 0) return m.reply(`Example: ${prefix + command} Han Botz`)
                     txt1 = args[0]
                     txt2 = args[1]
                     anu = (`https://api.lolhuman.xyz/api/textprome2/${command}?apikey=HanBotzApi&text1=${txt1}&text2=${txt2}`)
@@ -2999,7 +3002,7 @@ break
                 case 'harrypotter':
                 case 'carvedwood':
                 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
-                    if (args.length == 0) return reply(`Example: ${prefix + command} HanBotz`)
+                    if (args.length == 0) return m.reply(`Example: ${prefix + command} HanBotz`)
                     ini_txt = args.join(" ")
                     getBuffer(`https://api.lolhuman.xyz/api/photooxy1/${command}?apikey=HanBotzApi&text=${ini_txt}`)
                         hanbotz.sendMessage(m.chat, { image: { url: anu }, caption: `HanBotz` }, { quoted: m })
@@ -3010,7 +3013,7 @@ break
                 case 'battlefield4':
                 case 'pubg':
                 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
-                    if (args.length == 0) return reply(`Example: ${prefix + command} Han Botz`)
+                    if (args.length == 0) return m.reply(`Example: ${prefix + command} Han Botz`)
                     txt1 = args[0]
                     txt2 = args[1]
                     getBuffer(`https://api.lolhuman.xyz/api/photooxy2/${command}?apikey=HanBotzApi&text1=${txt1}&text2=${txt2}`)
@@ -3050,12 +3053,19 @@ break
                 case 'silverplaybutton':
                 case 'freefire':
                 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
-                    if (args.length == 0) return reply(`Example: ${prefix + command} HanBotz`)
+                    if (args.length == 0) return m.reply(`Example: ${prefix + command} HanBotz`)
                     ini_txt = args.join(" ")
                     getBuffer(`https://api.lolhuman.xyz/api/ephoto1/${command}?apikey=HanBotzApi&text=${ini_txt}`)
                         hanbotz.sendMessage(m.chat, { image: { url: anu }, caption: `HanBotz` }, { quoted: m })
                 db.users[m.sender].limit -= 1 // -1 limit
                     break
+case 'wikipedia': 
+if (!text) throw `Masukkan Query`
+let anu = (`https://zenzapi.xyz/api/wikipedia?query=${text}&apikey=ApiHanBotz`)
+wikip = (`${anu.result.isi}`)
+judulnya = (`${anu.result.judul}`)
+m.reply(`*Query*: ${judulnya}\n\n*Penjelasan*: ${wikip}`)
+break
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
             default:
                 if (budy.startsWith('=>')) {
