@@ -2610,31 +2610,32 @@ ${readmore}__________________________
 • ${prefix}pinterestdl [url]
 • ${prefix}ytmp3 [url]
 • ${prefix}ytmp4 [url]
-• ${prefix}getmusic [query]
-• ${prefix}getvideo [query]
 • ${prefix}umma [url]
 • ${prefix}joox [query]
 • ${prefix}soundcloud [url]
+• ${prefix}getmusic [query]
+• ${prefix}getvideo [query]
 
 𝗦𝗘𝗔𝗥𝗖𝗛
 • ${prefix}play [query]
-• ${prefix}yts [query]
 • ${prefix}google [query]
 • ${prefix}gimage [query]
 • ${prefix}pinterest [query]
 • ${prefix}wallpaper [query]
-• ${prefix}wikimedia [query]
+• ${prefix}wikipedia [query]
 • ${prefix}ytsearch [query]
 • ${prefix}ringtone [query]
 
-𝗙𝗨𝗡
+𝗧𝗘𝗫𝗧
 • ${prefix}halah
 • ${prefix}hilih
 • ${prefix}huluh
 • ${prefix}heleh
 • ${prefix}holoh
-• ${prefix}jadian
-• ${prefix}jodohku
+• ${prefix}alay
+• ${prefix}balik
+
+𝗚𝗔𝗠𝗘
 • ${prefix}tebak [option]
 • ${prefix}math [mode]
 • ${prefix}suitpvp [@tag]
@@ -2715,6 +2716,7 @@ ${readmore}__________________________
 • ${prefix}katasenja
 • ${prefix}puisi
 • ${prefix}couple
+__________________________
 
 *ＬＩＭＩＴ  ＡＲＥＡ*
 
@@ -2836,6 +2838,7 @@ ${readmore}__________________________
 • ${prefix}meme
 • ${prefix}darkjoke
 • ${prefix}mememaker
+__________________________
 
 *ＰＲＥＭＩＵＭ  ＡＲＥＡ*
 
@@ -2901,6 +2904,7 @@ ${readmore}__________________________
 • ${prefix}biganimetiddies
 • ${prefix}animebellybutton
 • ${prefix}hentai4everyone
+__________________________
 
 *ＯＷＮＥＲ  ＡＲＥＡ*
 
@@ -3224,6 +3228,18 @@ case 'lirik':
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/lirik?apikey=HanBotzApi&query=${query}`)
                     m.reply(get_result.result)
                     break
+case 'alay':
+if (!m.quoted && !text) throw `Kirim/reply text dengan caption ${prefix + command}`
+let anu = (`https://zenzapi.xyz/api/alay?query=${text}&apikey=ApiHanBotz`)
+yala = (`${anu.result}`)
+m.reply(yala)
+break
+case 'balik':
+if (!m.quoted && !text) throw `Kirim/reply text dengan caption ${prefix + command}`
+let anu = (`https://zenzapi.xyz/api/reversetext?query=${text}&apikey=ApiHanBotz`)
+taba = (`${anu.result}`)
+m.reply(taba)
+break
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
             default:
                 if (budy.startsWith('=>')) {
