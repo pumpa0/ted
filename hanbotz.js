@@ -3230,14 +3230,14 @@ case 'lirik':
                     break
 case 'alay':
 if (!m.quoted && !text) throw `Kirim/reply text dengan caption ${prefix + command}`
-let anu = (`https://zenzapi.xyz/api/alay?query=${text}&apikey=ApiHanBotz`)
-yala = (`${anu.result}`)
+let inu = (`https://zenzapi.xyz/api/alay?query=${text}&apikey=ApiHanBotz`)
+yala = (`${inu.result}`)
 m.reply(yala)
 break
 case 'balik':
 if (!m.quoted && !text) throw `Kirim/reply text dengan caption ${prefix + command}`
-let anu = (`https://zenzapi.xyz/api/reversetext?query=${text}&apikey=ApiHanBotz`)
-taba = (`${anu.result}`)
+let awu = (`https://zenzapi.xyz/api/reversetext?query=${text}&apikey=ApiHanBotz`)
+taba = (`${awu.result}`)
 m.reply(taba)
 break
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
