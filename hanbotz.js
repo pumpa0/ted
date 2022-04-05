@@ -2671,6 +2671,8 @@ ${readmore}
 • ${prefix}ebinary
 • ${prefix}dbinary
 • ${prefix}styletext
+• ${prefix}attp
+• ${prefix}mememaker
 
 𝗗𝗔𝗧𝗔𝗕𝗔𝗦𝗘
 • ${prefix}setcmd
@@ -2710,6 +2712,8 @@ ${readmore}
 • ${prefix}katasenja
 • ${prefix}puisi
 • ${prefix}couple
+• ${prefix}meme
+• ${prefix}darkjoke
 
 𝗢𝗪𝗡𝗘𝗥
 • ${prefix}chat [option]
@@ -2721,6 +2725,9 @@ ${readmore}
 • ${prefix}bcall [text]
 • ${prefix}setppbot [image]
 • ${prefix}setexif
+
+To talk to bots, use *botz _text_ *
+Example: *botz hai*
 `
                 let btn = [{
                                 urlButton: {
@@ -2789,8 +2796,11 @@ case 'mememaker': case 'smeme': case 'stikermeme': case 'stickermeme': case 'mem
 	hanbotz.sendMessage(m.chat, { image: { url: anu }, caption: `to sticker use *.s*`}, { quoted: m })
             }
             break
-case 'ceklimit': {
-	m.reply(`limit kamu: *${limitUser}*`)
+case 'twit': {
+	if (!text) throw `link nya mana`
+	let anu = (`https://api.lolhuman.xyz/api/twitter?apikey=HanBotzApi&url=${text}`)
+	tawer = (`${anu.result.link.find((v) => v.resolution === "720p"}`)
+	hanbotz.sendMessage(m.chat, { video: { url: tawer }, caption: ${anu.result.title} }, { quoted: m })
 	}
 	break
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
