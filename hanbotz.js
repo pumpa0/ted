@@ -2726,7 +2726,7 @@ ${readmore}
 • ${prefix}setppbot [image]
 • ${prefix}setexif
 
-To talk to bots, use *botz _text_ *
+To talk to bots, use *botz _text_*
 Example: *botz hai*
 `
                 let btn = [{
@@ -2799,7 +2799,7 @@ case 'mememaker': case 'smeme': case 'stikermeme': case 'stickermeme': case 'mem
 case 'twit': {
 	if (!text) throw `link nya mana`
 	let anu = (`https://api.lolhuman.xyz/api/twitter?apikey=HanBotzApi&url=${text}`)
-	tawer = (`${anu.result.link.find((v) => v.resolution === "720p")}`)
+	tawer = (`${anu.result.link[0].link}`)
 	capt = (`${anu.result.title}`)
 	hanbotz.sendMessage(m.chat, { video: { url: tawer }, caption: capt }, { quoted: m })
 	}
