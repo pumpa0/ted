@@ -2295,6 +2295,7 @@ ${id}`)
                 }
                 break
             case 'setcmd': {
+            	if (!isCreator) throw mess.owner
                 if (!m.quoted) throw 'Reply Pesan!'
                 if (!m.quoted.fileSha256) throw 'SHA256 Hash Missing'
                 if (!text) throw `Untuk Command Apa?`
@@ -2311,6 +2312,7 @@ ${id}`)
             }
             break
             case 'delcmd': {
+            	if (!isCreator) throw mess.owner
                 let hash = m.quoted.fileSha256.toString('base64')
                 if (!hash) throw `Tidak ada hash`
                 if (global.db.sticker[hash] && global.db.sticker[hash].locked) throw 'You have no permission to delete this sticker command'              
@@ -2319,6 +2321,7 @@ ${id}`)
             }
             break
             case 'listcmd': {
+            	if (!isCreator) throw mess.owner
                 let teks = `
 *List Hash*
 Info: *bold* hash is Locked
@@ -2338,6 +2341,7 @@ ${Object.entries(global.db.sticker).map(([key, value], index) => `${index + 1}. 
             }
             break
             case 'addmsg': {
+            	if (!isCreator) throw mess.owner
                 if (!m.quoted) throw 'Reply Message Yang Ingin Disave Di Database'
                 if (!text) throw `Example : ${prefix + command} nama file`
                 let msgs = global.db.database
@@ -2351,6 +2355,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
             }
             break
             case 'getmsg': {
+            	if (!isCreator) throw mess.owner
                 if (!text) throw `Example : ${prefix + command} file name\n\nLihat list pesan dengan ${prefix}listmsg`
                 let msgs = global.db.database
                 if (!(text.toLowerCase() in msgs)) throw `'${text}' tidak terdaftar di list pesan`
@@ -2358,6 +2363,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
             }
             break
             case 'listmsg': {
+            	if (!isCreator) throw mess.owner
                 let msgs = JSON.parse(fs.readFileSync('./src/database.json'))
 	        let seplit = Object.entries(global.db.database).map(([nama, isi]) => { return { nama, ...isi } })
 		let teks = '「 LIST DATABASE 」\n\n'
@@ -2368,6 +2374,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
 	    }
 	    break
             case 'delmsg': case 'deletemsg': {
+            	if (!isCreator) throw mess.owner
 	        let msgs = global.db.database
 	        if (!(text.toLowerCase() in msgs)) return m.reply(`'${text}' tidak terdaftar didalam list pesan`)
 		delete msgs[text.toLowerCase()]
@@ -2384,7 +2391,6 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
             }
 			break
             case 'keluar': case 'leave': {
-            	if (!isCreator) return
                 if (m.isGroup) return m.reply('Fitur Tidak Dapat Digunakan Untuk Group!')
                 this.anonymous = this.anonymous ? this.anonymous : {}
                 let room = Object.values(this.anonymous).find(room => room.check(m.sender))
@@ -2570,6 +2576,8 @@ Menuju Idul Fitri
 *${lebaran}*
 
 ${readmore}
+*ＭＡＩＮ  ＡＲＥＡ*
+
 𝗚𝗥𝗢𝗨𝗣
 • ${prefix}linkgroup
 • ${prefix}ephemeral [option]
@@ -2679,16 +2687,6 @@ ${readmore}
 • ${prefix}styletext
 • ${prefix}attp
 
-𝗗𝗔𝗧𝗔𝗕𝗔𝗦𝗘
-• ${prefix}setcmd
-• ${prefix}listcmd
-• ${prefix}delcmd
-• ${prefix}lockcmd
-• ${prefix}addmsg
-• ${prefix}listmsg
-• ${prefix}getmsg
-• ${prefix}delmsg
-
 𝗜𝗦𝗟𝗔𝗠𝗜𝗖
 • ${prefix}iqra
 • ${prefix}hadist
@@ -2719,6 +2717,15 @@ ${readmore}
 • ${prefix}couple
 
 *ＬＩＭＩＴ  ＡＲＥＡ*
+
+𝗦𝗧𝗔𝗟𝗞𝗜𝗡𝗚
+• ff (Free Fire)
+• ml (Mobile Legends)
+• aov (Arena Of Valor)
+• cod (Call Of Duty)
+• pb (Point Blank)
+• ig (Instagram)
+*Example*: ${prefix}stalk ml [id] [server]
 
 𝗠𝗔𝗞𝗘𝗥
 • ${prefix}blackpink
@@ -2830,7 +2837,84 @@ ${readmore}
 • ${prefix}darkjoke
 • ${prefix}mememaker
 
-𝗢𝗪𝗡𝗘𝗥
+*ＰＲＥＭＩＵＭ  ＡＲＥＡ*
+
+𝗡𝗦𝗙𝗪 [_Ramadhan Stay Halal_]
+• ${prefix}trap
+• ${prefix}blowjob
+• ${prefix}yaoi
+• ${prefix}ecchi
+• ${prefix}hentai
+• ${prefix}bj
+• ${prefix}ero
+• ${prefix}cum
+• ${prefix}feet
+• ${prefix}yuri
+• ${prefix}trap
+• ${prefix}lewd
+• ${prefix}feed
+• ${prefix}eron
+• ${prefix}solo
+• ${prefix}gasm
+• ${prefix}poke
+• ${prefix}anal
+• ${prefix}holo
+• ${prefix}tits
+• ${prefix}kuni
+• ${prefix}kiss
+• ${prefix}erok
+• ${prefix}smug
+• ${prefix}baka
+• ${prefix}solog
+• ${prefix}feetg
+• ${prefix}lewdk
+• ${prefix}waifu
+• ${prefix}pussy
+• ${prefix}femdom
+• ${prefix}cuddle
+• ${prefix}hentai
+• ${prefix}eroyuri
+• ${prefix}cum_jpg
+• ${prefix}blowjob
+• ${prefix}erofeet
+• ${prefix}holoero
+• ${prefix}classic
+• ${prefix}erokemo
+• ${prefix}fox_girl
+• ${prefix}futanari
+• ${prefix}lewdkemo
+• ${prefix}wallpaper
+• ${prefix}pussy_jpg
+• ${prefix}kemonomimi
+• ${prefix}nsfw_avatar
+• ${prefix}chiisaihentai
+• ${prefix}ahegao
+• ${prefix}hololewd
+• ${prefix}sideoppai
+• ${prefix}animefeets
+• ${prefix}animebooty
+• ${prefix}animethighss
+• ${prefix}hentaiparadise
+• ${prefix}animearmpits
+• ${prefix}hentaifemdom
+• ${prefix}lewdanimegirls
+• ${prefix}biganimetiddies
+• ${prefix}animebellybutton
+• ${prefix}hentai4everyone
+
+*ＯＷＮＥＲ  ＡＲＥＡ*
+
+𝗗𝗔𝗧𝗔𝗕𝗔𝗦𝗘
+• ${prefix}setcmd
+• ${prefix}listcmd
+• ${prefix}delcmd
+• ${prefix}lockcmd
+• ${prefix}addmsg
+• ${prefix}listmsg
+• ${prefix}getmsg
+• ${prefix}delmsg
+
+𝗢𝗣𝗧𝗜𝗢𝗡
 • ${prefix}chat [option]
 • ${prefix}join [link]
 • ${prefix}leave
@@ -2897,6 +2981,7 @@ case 'meme': {
 	    break
 case 'attp': {
 	if (!text) throw `text nya mana`
+	m.reply(`Wait...`)
 	let anu = (`https://zenzapi.xyz/api/image/attp?text=${text}&apikey=ApiHanBotz`)
                 hanbotz.sendMessage(m.chat, { sticker: { url: anu }}, { quoted: m })
                 }
@@ -2904,7 +2989,7 @@ case 'attp': {
 case 'ttp': {
 	if (!text) throw `text nya mana`
 	let anu = (`https://zenzapi.xyz/api/image/ttp?text=${text}&apikey=ApiHanBotz`)
-                hanbotz.sendMessage(m.chat, { sticker: { url: anu }}, { quoted: m })
+                hanbotz.sendMessage(m.chat, { image: { url: anu }}, { quoted: m })
                 }
                 break
 case 'mememaker': case 'smeme': case 'stikermeme': case 'stickermeme': case 'memegen': {
@@ -3059,11 +3144,86 @@ break
                     break
 case 'wikipedia': 
 if (!text) throw `Masukkan Query`
-let anu = (`https://zenzapi.xyz/api/wikipedia?query=${text}&apikey=ApiHanBotz`)
+let anu = await fetchJson(`https://zenzapi.xyz/api/wikipedia?query=${text}&apikey=ApiHanBotz`)
 wikip = (`${anu.result.isi}`)
 judulnya = (`${anu.result.judul}`)
 m.reply(`*Query*: ${judulnya}\n\n*Penjelasan*: ${wikip}`)
 break
+case 'chiisaihentai':
+                case 'trap':
+                case 'blowjob':
+                case 'yaoi':
+                case 'ecchi':
+                case 'hentai':
+                case 'ahegao':
+                case 'hololewd':
+                case 'sideoppai':
+                case 'animefeets':
+                case 'animebooty':
+                case 'animethighss':
+                case 'hentaiparadise':
+                case 'animearmpits':
+                case 'hentaifemdom':
+                case 'lewdanimegirls':
+                case 'biganimetiddies':
+                case 'animebellybutton':
+                case 'hentai4everyone':
+                if (!isPremium) throw `Fitur Khusus Premium`
+                    let anu = (`https://api.lolhuman.xyz/api/random/nsfw/${command}?apikey=HanBotzApi`)
+                    hanbotz.sendMessage(m.chat, { image: { url: anu }, caption: `Stay Halal` }, { quoted: m })
+                    break
+case 'bj':
+                case 'ero':
+                case 'cum':
+                case 'feet':
+                case 'yuri':
+                case 'trap':
+                case 'lewd':
+                case 'feed':
+                case 'eron':
+                case 'solo':
+                case 'gasm':
+                case 'poke':
+                case 'anal':
+                case 'holo':
+                case 'tits':
+                case 'kuni':
+                case 'kiss':
+                case 'erok':
+                case 'smug':
+                case 'baka':
+                case 'solog':
+                case 'feetg':
+                case 'lewdk':
+                case 'waifu':
+                case 'pussy':
+                case 'femdom':
+                case 'cuddle':
+                case 'hentai':
+                case 'eroyuri':
+                case 'cum_jpg':
+                case 'blowjob':
+                case 'erofeet':
+                case 'holoero':
+                case 'classic':
+                case 'erokemo':
+                case 'fox_girl':
+                case 'futanari':
+                case 'lewdkemo':
+                case 'wallpaper':
+                case 'pussy_jpg':
+                case 'kemonomimi':
+                case 'nsfw_avatar':
+                     if (!isPremium) throw `Fitur Khusus Premium`
+                    let anu = (`https://api.lolhuman.xyz/api/random2/${command}?apikey=HanBotzApi`)
+                    hanbotz.sendMessage(m.chat, { image: { url: anu }, caption: `Stay Halal` }, { quoted: m })
+                    break
+case 'lirik':
+                    if (args.length == 0) return reply(`Example: ${prefix + command} Melukis Senja`)
+                    query = args.join(" ")
+                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/lirik?apikey=HanBotzApi&query=${query}`)
+                    m.reply(get_result.result)
+                    break
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
             default:
                 if (budy.startsWith('=>')) {
