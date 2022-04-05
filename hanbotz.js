@@ -1167,7 +1167,7 @@ break
                     let btn = [{
                                 urlButton: {
                                     displayText: 'Group HanBotz',
-                                    url: 'https://chat.whatsapp.com/IKcqBMcirblBbc9SqpKuPu'
+                                    url: 'https://chat.whatsapp.com/I2Hmr4RNYOHFIRNvZHBFjX'
                                 }
                             }, {
                                 urlButton: {
@@ -1201,7 +1201,7 @@ break
 		    let btn = [{
                                 urlButton: {
                                     displayText: 'Group HanBotz',
-                                    url: 'https://chat.whatsapp.com/IKcqBMcirblBbc9SqpKuPu'
+                                    url: 'https://chat.whatsapp.com/I2Hmr4RNYOHFIRNvZHBFjX'
                                 }
                             }, {
                                 urlButton: {
@@ -2732,7 +2732,7 @@ Example: *botz hai*
                 let btn = [{
                                 urlButton: {
                                     displayText: 'Group HanBotz',
-                                    url: 'https://chat.whatsapp.com/IKcqBMcirblBbc9SqpKuPu'
+                                    url: 'https://chat.whatsapp.com/I2Hmr4RNYOHFIRNvZHBFjX'
                                 }
                             }, {
                                 urlButton: {
@@ -2799,7 +2799,7 @@ case 'mememaker': case 'smeme': case 'stikermeme': case 'stickermeme': case 'mem
 case 'twit': {
 	if (!text) throw `link nya mana`
 	let anu = (`https://api.lolhuman.xyz/api/twitter?apikey=HanBotzApi&url=${text}`)
-	tawer = (`${anu.result.link.find((v) => v.resolution === "720p"}`)
+	tawer = (`${anu.result.link.find((v) => v.resolution === "720p")}`)
 	hanbotz.sendMessage(m.chat, { video: { url: tawer }, caption: ${anu.result.title} }, { quoted: m })
 	}
 	break
