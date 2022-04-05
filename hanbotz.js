@@ -2800,7 +2800,8 @@ case 'twit': {
 	if (!text) throw `link nya mana`
 	let anu = (`https://api.lolhuman.xyz/api/twitter?apikey=HanBotzApi&url=${text}`)
 	tawer = (`${anu.result.link.find((v) => v.resolution === "720p")}`)
-	hanbotz.sendMessage(m.chat, { video: { url: tawer }, caption: ${anu.result.title} }, { quoted: m })
+	capt = (`${anu.result.title}`)
+	hanbotz.sendMessage(m.chat, { video: { url: tawer }, caption: capt }, { quoted: m })
 	}
 	break
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
