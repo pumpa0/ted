@@ -2550,6 +2550,8 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
             }
             break
             case 'menu': case 'help': {
+            	let anu = await fetchJson(`https://api.lolhuman.xyz/api/countdown/2/5/2022?apikey=HanBotzApi`)
+            lebaran = (`${anu.result}`)
                 anu = `
 ᴜꜱᴇʀ ɪɴꜰᴏ
 Name : *${pushname}*
@@ -2562,6 +2564,9 @@ Runtime : *${runtime(process.uptime())}*
 
 Time Server : *${jmn}* WIB
 Calendar : *${date}*
+
+Menuju Idul Fitri
+*${lebaran}*
 
 ${readmore}
 𝗚𝗥𝗢𝗨𝗣
@@ -2672,7 +2677,6 @@ ${readmore}
 • ${prefix}dbinary
 • ${prefix}styletext
 • ${prefix}attp
-• ${prefix}mememaker
 
 𝗗𝗔𝗧𝗔𝗕𝗔𝗦𝗘
 • ${prefix}setcmd
@@ -2712,8 +2716,118 @@ ${readmore}
 • ${prefix}katasenja
 • ${prefix}puisi
 • ${prefix}couple
+
+*ＬＩＭＩＴ  ＡＲＥＡ*
+
+𝗠𝗔𝗞𝗘𝗥
+• ${prefix}blackpink
+• ${prefix}neon
+• ${prefix}greenneon
+• ${prefix}advanceglow
+• ${prefix}futureneon
+• ${prefix}sandwriting
+• ${prefix}sandsummer
+• ${prefix}sandengraved
+• ${prefix}metaldark
+• ${prefix}neonlight
+• ${prefix}holographic
+• ${prefix}text1917
+• ${prefix}minion
+• ${prefix}deluxesilver
+• ${prefix}newyearcard
+• ${prefix}bloodfrosted
+• ${prefix}halloween
+• ${prefix}jokerlogo
+• ${prefix}fireworksparkle
+• ${prefix}natureleaves
+• ${prefix}bokeh
+• ${prefix}toxic
+• ${prefix}strawberry
+• ${prefix}box3d
+• ${prefix}roadwarning
+• ${prefix}breakwall
+• ${prefix}icecold
+• ${prefix}luxury
+• ${prefix}cloud
+• ${prefix}summersand
+• ${prefix}horrorblood
+• ${prefix}thunder
+• ${prefix}shadow
+• ${prefix}cup
+• ${prefix}cup1
+• ${prefix}romance
+• ${prefix}smoke
+• ${prefix}burnpaper
+• ${prefix}lovemessage
+• ${prefix}undergrass
+• ${prefix}love
+• ${prefix}coffe
+• ${prefix}woodheart
+• ${prefix}woodenboard
+• ${prefix}summer3d
+• ${prefix}wolfmetal
+• ${prefix}nature3d
+• ${prefix}underwater
+• ${prefix}golderrose
+• ${prefix}summernature
+• ${prefix}letterleaves
+• ${prefix}glowingneon
+• ${prefix}fallleaves
+• ${prefix}flamming
+• ${prefix}harrypotter
+• ${prefix}carvedwood
+• ${prefix}wetglass
+• ${prefix}multicolor3d
+• ${prefix}watercolor
+• ${prefix}luxurygold
+• ${prefix}galaxywallpaper
+• ${prefix}lighttext
+• ${prefix}beautifulflower
+• ${prefix}puppycute
+• ${prefix}royaltext
+• ${prefix}heartshaped
+• ${prefix}birthdaycake
+• ${prefix}galaxystyle
+• ${prefix}hologram3d
+• ${prefix}greenneon
+• ${prefix}glossychrome
+• ${prefix}greenbush
+• ${prefix}metallogo
+• ${prefix}noeltext
+• ${prefix}glittergold
+• ${prefix}textcake
+• ${prefix}starsnight
+• ${prefix}wooden3d
+• ${prefix}textbyname
+• ${prefix}writegalacy
+• ${prefix}galaxybat
+• ${prefix}snow3d
+• ${prefix}birthdayday
+• ${prefix}goldplaybutton
+• ${prefix}silverplaybutton
+• ${prefix}freefire
+*Example*: ${prefix}blackpink HanBotz
+
+• ${prefix}pornhub
+• ${prefix}glitch
+• ${prefix}avenger
+• ${prefix}space
+• ${prefix}ninjalogo
+• ${prefix}marvelstudio
+• ${prefix}lionlogo
+• ${prefix}wolflogo
+• ${prefix}steel3d
+• ${prefix}wallgravity
+• ${prefix}tiktok
+• ${prefix}arcade8bit
+• ${prefix}battlefield4
+• ${prefix}pubg
+*Example*: ${prefix}pornhub Han Botz
+
+𝗠𝗘𝗠𝗘
 • ${prefix}meme
 • ${prefix}darkjoke
+• ${prefix}mememaker
 
 𝗢𝗪𝗡𝗘𝗥
 • ${prefix}chat [option]
@@ -2748,6 +2862,11 @@ Example: *botz hai*
                         hanbotz.send5ButImg(m.chat, anu, hanbotz.user.name, global.thumb, btn)
                      }
             break
+case 'say': {
+	if (!text) throw `apa?`
+	hanbotz.sendMessage(text)
+	}
+	break
 case 'hancraft': case 'hanmc': {
 	let anu = await fetchJson(`https://minecraftpocket-servers.com/api/?object=servers&element=detail&key=g1e0tIhAlzQXgdA8yycligd37YK18u4b14c`)
 	mine = (`_*SERVER GABUT HAN*_\n*Status*: ${anu.is_online}\n\n*Name*: ${anu.name}\n*Address*: ${anu.address}\n*Port*: ${anu.port}\n*Version*: ${anu.version}\n*Players*: ${anu.players} / ${anu.maxplayers}\n\n*Url*: ${anu.url}`)
@@ -2796,14 +2915,147 @@ case 'mememaker': case 'smeme': case 'stikermeme': case 'stickermeme': case 'mem
 	hanbotz.sendMessage(m.chat, { image: { url: anu }, caption: `to sticker use *.s*`}, { quoted: m })
             }
             break
-case 'twit': {
-	if (!text) throw `link nya mana`
-	let anu = (`https://api.lolhuman.xyz/api/twitter?apikey=HanBotzApi&url=${text}`)
-	tawer = (`${anu.result.link[0].link}`)
-	capt = (`${anu.result.title}`)
-	hanbotz.sendMessage(m.chat, { video: { url: tawer }, caption: capt }, { quoted: m })
-	}
-	break
+             // Textprome //
+                case 'blackpink':
+                case 'neon':
+                case 'greenneon':
+                case 'advanceglow':
+                case 'futureneon':
+                case 'sandwriting':
+                case 'sandsummer':
+                case 'sandengraved':
+                case 'metaldark':
+                case 'neonlight':
+                case 'holographic':
+                case 'text1917':
+                case 'minion':
+                case 'deluxesilver':
+                case 'newyearcard':
+                case 'bloodfrosted':
+                case 'halloween':
+                case 'jokerlogo':
+                case 'fireworksparkle':
+                case 'natureleaves':
+                case 'bokeh':
+                case 'toxic':
+                case 'strawberry':
+                case 'box3d':
+                case 'roadwarning':
+                case 'breakwall':
+                case 'icecold':
+                case 'luxury':
+                case 'cloud':
+                case 'summersand':
+                case 'horrorblood':
+                case 'thunder':
+                if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+                    if (args.length == 0) return reply(`Example: ${prefix + command} HanBotz`)
+                    ini_txt = args.join(" ")
+                    anu = (`https://api.lolhuman.xyz/api/textprome/${command}?apikey=HanBotzApi&text=${ini_txt}`)
+                    hanbotz.sendMessage(m.chat, { image: { url: anu }, caption: `HanBotz` }, { quoted: m })
+                db.users[m.sender].limit -= 1 // -1 limit
+break
+case 'pornhub':
+                case 'glitch':
+                case 'avenger':
+                case 'space':
+                case 'ninjalogo':
+                case 'marvelstudio':
+                case 'lionlogo':
+                case 'wolflogo':
+                case 'steel3d':
+                case 'wallgravity':
+                if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+                    if (args.length == 0) return reply(`Example: ${prefix + command} Han Botz`)
+                    txt1 = args[0]
+                    txt2 = args[1]
+                    anu = (`https://api.lolhuman.xyz/api/textprome2/${command}?apikey=HanBotzApi&text1=${txt1}&text2=${txt2}`)
+                    hanbotz.sendMessage(m.chat, { image: { url: anu }, caption: `HanBotz` }, { quoted: m })
+                db.users[m.sender].limit -= 1 // -1 limit
+break
+// Photo Oxy //
+                case 'shadow':
+                case 'cup':
+                case 'cup1':
+                case 'romance':
+                case 'smoke':
+                case 'burnpaper':
+                case 'lovemessage':
+                case 'undergrass':
+                case 'love':
+                case 'coffe':
+                case 'woodheart':
+                case 'woodenboard':
+                case 'summer3d':
+                case 'wolfmetal':
+                case 'nature3d':
+                case 'underwater':
+                case 'golderrose':
+                case 'summernature':
+                case 'letterleaves':
+                case 'glowingneon':
+                case 'fallleaves':
+                case 'flamming':
+                case 'harrypotter':
+                case 'carvedwood':
+                if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+                    if (args.length == 0) return reply(`Example: ${prefix + command} HanBotz`)
+                    ini_txt = args.join(" ")
+                    getBuffer(`https://api.lolhuman.xyz/api/photooxy1/${command}?apikey=HanBotzApi&text=${ini_txt}`)
+                        hanbotz.sendMessage(m.chat, { image: { url: anu }, caption: `HanBotz` }, { quoted: m })
+                db.users[m.sender].limit -= 1 // -1 limit
+                    break
+                case 'tiktok':
+                case 'arcade8bit':
+                case 'battlefield4':
+                case 'pubg':
+                if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+                    if (args.length == 0) return reply(`Example: ${prefix + command} Han Botz`)
+                    txt1 = args[0]
+                    txt2 = args[1]
+                    getBuffer(`https://api.lolhuman.xyz/api/photooxy2/${command}?apikey=HanBotzApi&text1=${txt1}&text2=${txt2}`)
+                        hanbotz.sendMessage(m.chat, { image: { url: anu }, caption: `HanBotz` }, { quoted: m })
+                db.users[m.sender].limit -= 1 // -1 limit
+                    break
+
+                    // Ephoto 360 //
+                case 'wetglass':
+                case 'multicolor3d':
+                case 'watercolor':
+                case 'luxurygold':
+                case 'galaxywallpaper':
+                case 'lighttext':
+                case 'beautifulflower':
+                case 'puppycute':
+                case 'royaltext':
+                case 'heartshaped':
+                case 'birthdaycake':
+                case 'galaxystyle':
+                case 'hologram3d':
+                case 'greenneon':
+                case 'glossychrome':
+                case 'greenbush':
+                case 'metallogo':
+                case 'noeltext':
+                case 'glittergold':
+                case 'textcake':
+                case 'starsnight':
+                case 'wooden3d':
+                case 'textbyname':
+                case 'writegalacy':
+                case 'galaxybat':
+                case 'snow3d':
+                case 'birthdayday':
+                case 'goldplaybutton':
+                case 'silverplaybutton':
+                case 'freefire':
+                if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
+                    if (args.length == 0) return reply(`Example: ${prefix + command} HanBotz`)
+                    ini_txt = args.join(" ")
+                    getBuffer(`https://api.lolhuman.xyz/api/ephoto1/${command}?apikey=HanBotzApi&text=${ini_txt}`)
+                        hanbotz.sendMessage(m.chat, { image: { url: anu }, caption: `HanBotz` }, { quoted: m })
+                db.users[m.sender].limit -= 1 // -1 limit
+                    break
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
             default:
                 if (budy.startsWith('=>')) {
