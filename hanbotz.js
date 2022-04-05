@@ -3087,8 +3087,8 @@ break
                 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
                     if (args.length == 0) return m.reply(`Example: ${prefix + command} HanBotz`)
                     ini_txt = args.join(" ")
-                    getBuffer(`https://api.lolhuman.xyz/api/photooxy1/${command}?apikey=HanBotzApi&text=${ini_txt}`)
-                        hanbotz.sendMessage(m.chat, { image: { url: anu }, caption: `HanBotz` }, { quoted: m })
+                    aps = (`https://api.lolhuman.xyz/api/photooxy1/${command}?apikey=HanBotzApi&text=${ini_txt}`)
+                        hanbotz.sendMessage(m.chat, { image: { url: aps }, caption: `HanBotz` }, { quoted: m })
                 db.users[m.sender].limit -= 1 // -1 limit
                     break
                 case 'tiktok':
@@ -3099,8 +3099,8 @@ break
                     if (args.length == 0) return m.reply(`Example: ${prefix + command} Han Botz`)
                     txt1 = args[0]
                     txt2 = args[1]
-                    getBuffer(`https://api.lolhuman.xyz/api/photooxy2/${command}?apikey=HanBotzApi&text1=${txt1}&text2=${txt2}`)
-                        hanbotz.sendMessage(m.chat, { image: { url: anu }, caption: `HanBotz` }, { quoted: m })
+                    gamb = (`https://api.lolhuman.xyz/api/photooxy2/${command}?apikey=HanBotzApi&text1=${txt1}&text2=${txt2}`)
+                        hanbotz.sendMessage(m.chat, { image: { url: gamb }, caption: `HanBotz` }, { quoted: m })
                 db.users[m.sender].limit -= 1 // -1 limit
                     break
 
@@ -3138,8 +3138,8 @@ break
                 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
                     if (args.length == 0) return m.reply(`Example: ${prefix + command} HanBotz`)
                     ini_txt = args.join(" ")
-                    getBuffer(`https://api.lolhuman.xyz/api/ephoto1/${command}?apikey=HanBotzApi&text=${ini_txt}`)
-                        hanbotz.sendMessage(m.chat, { image: { url: anu }, caption: `HanBotz` }, { quoted: m })
+                    gam = (`https://api.lolhuman.xyz/api/ephoto1/${command}?apikey=HanBotzApi&text=${ini_txt}`)
+                        hanbotz.sendMessage(m.chat, { image: { url: gam }, caption: `HanBotz` }, { quoted: m })
                 db.users[m.sender].limit -= 1 // -1 limit
                     break
 case 'wikipedia': 
@@ -3169,8 +3169,8 @@ case 'chiisaihentai':
                 case 'animebellybutton':
                 case 'hentai4everyone':
                 if (!isPremium) throw `Fitur Khusus Premium`
-                    let anu = (`https://api.lolhuman.xyz/api/random/nsfw/${command}?apikey=HanBotzApi`)
-                    hanbotz.sendMessage(m.chat, { image: { url: anu }, caption: `Stay Halal` }, { quoted: m })
+                    let seb = (`https://api.lolhuman.xyz/api/random/nsfw/${command}?apikey=HanBotzApi`)
+                    hanbotz.sendMessage(m.chat, { image: { url: seb }, caption: `Stay Halal` }, { quoted: m })
                     break
 case 'bj':
                 case 'ero':
@@ -3215,8 +3215,8 @@ case 'bj':
                 case 'kemonomimi':
                 case 'nsfw_avatar':
                      if (!isPremium) throw `Fitur Khusus Premium`
-                    let anu = (`https://api.lolhuman.xyz/api/random2/${command}?apikey=HanBotzApi`)
-                    hanbotz.sendMessage(m.chat, { image: { url: anu }, caption: `Stay Halal` }, { quoted: m })
+                    let yame = (`https://api.lolhuman.xyz/api/random2/${command}?apikey=HanBotzApi`)
+                    hanbotz.sendMessage(m.chat, { image: { url: yame }, caption: `Stay Halal` }, { quoted: m })
                     break
 case 'lirik':
                     if (args.length == 0) return reply(`Example: ${prefix + command} Melukis Senja`)
