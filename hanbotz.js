@@ -2566,7 +2566,7 @@ Number : *wa.me/${m.sender.split("@")[0]}*
 
 ʙᴏᴛ ɪɴꜰᴏ
 Name : *HanBotz*
-Prefix : [ *Multi* ]
+Prefix : [ *${prefix}* ]
 Runtime : *${runtime(process.uptime())}*
 
 Time Server : *${jmn}* WIB
@@ -2626,7 +2626,6 @@ ${readmore}__________________________
 • ${prefix}wikimedia [query]
 • ${prefix}ytsearch [query]
 • ${prefix}ringtone [query]
-• ${prefix}stalk [option] [query]
 
 𝗙𝗨𝗡
 • ${prefix}halah
@@ -2927,7 +2926,7 @@ ${readmore}__________________________
 • ${prefix}setexif
 
 To talk to bots, use *${prefix}botz _[text]_*
-Example: *${prefix}botz hai*
+*Example*: ${prefix}botz hai
 `
                 let btn = [{
                                 urlButton: {
@@ -2950,7 +2949,8 @@ Example: *${prefix}botz hai*
             break
 case 'say': {
 	if (!text) throw `apa?`
-	hanbotz.sendMessage(text)
+	inih = (`${text}`)
+	hanbotz.sendMessage(inih)
 	}
 	break
 case 'hancraft': case 'hanmc': {
@@ -3004,7 +3004,6 @@ case 'mememaker': case 'smeme': case 'stikermeme': case 'stickermeme': case 'mem
             break
              // Textprome //
                 case 'blackpink':
-                case 'neon':
                 case 'greenneon':
                 case 'advanceglow':
                 case 'futureneon':
