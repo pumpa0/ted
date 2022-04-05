@@ -23,7 +23,7 @@ global.premium = ['6285731855426']
 global.packname = 'Han'
 global.author = '@terserah_bomat'
 global.sessionName = 'session'
-global.prefa = ['','!','.','🐦','🐤','🗿','/','#']
+global.prefa = ['!','.','/','#']
 global.sp = '•'
 global.mess = {
     success: 'Success',
