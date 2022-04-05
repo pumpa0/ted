@@ -2553,8 +2553,6 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
             case 'menu': case 'help': {
             	let anu = await fetchJson(`https://api.lolhuman.xyz/api/countdown/2/5/2022?apikey=HanBotzApi`)
             lebaran = (`${anu.result}`)
-            let ana = wait fetchJson (`https://zenzapi.xyz/api/cekapi?apikey=ApiHanBotz`)
-            apis = (`${ana.message.today_hit}`)
                 anu = `
 ᴜꜱᴇʀ ɪɴꜰᴏ
 Name : *${pushname}*
