@@ -2575,7 +2575,8 @@ Calendar : *${date}*
 Menuju Idul Fitri
 *${lebaran}*
 
-${readmore}
+${readmore}__________________________
+
 *ＭＡＩＮ  ＡＲＥＡ*
 
 𝗚𝗥𝗢𝗨𝗣
@@ -2839,7 +2840,7 @@ ${readmore}
 
 *ＰＲＥＭＩＵＭ  ＡＲＥＡ*
 
-𝗡𝗦𝗙𝗪 [_Ramadhan Stay Halal_]
+𝗡𝗦𝗙𝗪 || _Ramadhan Stay Halal_
 • ${prefix}trap
 • ${prefix}blowjob
 • ${prefix}yaoi
@@ -3037,8 +3038,8 @@ case 'mememaker': case 'smeme': case 'stikermeme': case 'stickermeme': case 'mem
                 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
                     if (args.length == 0) return m.reply(`Example: ${prefix + command} HanBotz`)
                     ini_txt = args.join(" ")
-                    anu = (`https://api.lolhuman.xyz/api/textprome/${command}?apikey=HanBotzApi&text=${ini_txt}`)
-                    hanbotz.sendMessage(m.chat, { image: { url: anu }, caption: `HanBotz` }, { quoted: m })
+pris = (`https://api.lolhuman.xyz/api/textprome/${command}?apikey=HanBotzApi&text=${ini_txt}`)
+                    hanbotz.sendMessage(m.chat, { image: { url: pris }, caption: `HanBotz` }, { quoted: m })
                 db.users[m.sender].limit -= 1 // -1 limit
 break
 case 'pornhub':
@@ -3055,8 +3056,8 @@ case 'pornhub':
                     if (args.length == 0) return m.reply(`Example: ${prefix + command} Han Botz`)
                     txt1 = args[0]
                     txt2 = args[1]
-                    anu = (`https://api.lolhuman.xyz/api/textprome2/${command}?apikey=HanBotzApi&text1=${txt1}&text2=${txt2}`)
-                    hanbotz.sendMessage(m.chat, { image: { url: anu }, caption: `HanBotz` }, { quoted: m })
+                    serrr = (`https://api.lolhuman.xyz/api/textprome2/${command}?apikey=HanBotzApi&text1=${txt1}&text2=${txt2}`)
+                    hanbotz.sendMessage(m.chat, { image: { url: serrr }, caption: `HanBotz` }, { quoted: m })
                 db.users[m.sender].limit -= 1 // -1 limit
 break
 // Photo Oxy //
@@ -3169,7 +3170,7 @@ case 'chiisaihentai':
                 case 'animebellybutton':
                 case 'hentai4everyone':
                 if (!isPremium) throw `Fitur Khusus Premium`
-                    let seb = (`https://api.lolhuman.xyz/api/random/nsfw/${command}?apikey=HanBotzApi`)
+                    seb = (`https://api.lolhuman.xyz/api/random/nsfw/${command}?apikey=HanBotzApi`)
                     hanbotz.sendMessage(m.chat, { image: { url: seb }, caption: `Stay Halal` }, { quoted: m })
                     break
 case 'bj':
@@ -3215,7 +3216,7 @@ case 'bj':
                 case 'kemonomimi':
                 case 'nsfw_avatar':
                      if (!isPremium) throw `Fitur Khusus Premium`
-                    let yame = (`https://api.lolhuman.xyz/api/random2/${command}?apikey=HanBotzApi`)
+                    yame = (`https://api.lolhuman.xyz/api/random2/${command}?apikey=HanBotzApi`)
                     hanbotz.sendMessage(m.chat, { image: { url: yame }, caption: `Stay Halal` }, { quoted: m })
                     break
 case 'lirik':
