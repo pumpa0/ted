@@ -2954,7 +2954,7 @@ To talk to bots, use *${prefix}botz _[text]_*
 case 'say': {
 	if (!text) throw `apa?`
 	inih = (`${text}`)
-	hanbotz.sendMessage(inih)
+	hanbotz.sendMessage(m.chat, inih)
 	}
 	break
 case 'hancraft': case 'hanmc': {
