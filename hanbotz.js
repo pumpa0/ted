@@ -720,7 +720,7 @@ m.reply(sawer)
                 }
             }
             break
-            case 'jodohku': {
+            case 'jodohkujowkssoks': {
             if (!m.isGroup) throw mess.group
             let member = participants.map(u => u.id)
             let me = m.sender
@@ -735,7 +735,7 @@ m.reply(sawer)
                     await hanbotz.sendButtonText(m.chat, buttons, jawab, hanbotz.user.name, m, {mentions: ments})
             }
             break
-            case 'jadian': {
+            case 'jadianahaijskdk': {
             if (!m.isGroup) throw mess.group
             let member = participants.map(u => u.id)
             let orang = member[Math.floor(Math.random() * member.length)]
@@ -1561,10 +1561,9 @@ break
             }
             break
             case 'pinterest': {
-                
 		let { pinterest } = require('./lib/scraper')
-                anu = await pinterest(text)
-                result = anu[Math.floor(Math.random() * anu.length)]
+                pint = await pinterest(text)
+                result = pint[Math.floor(Math.random() * pint.length)]
                 hanbotz.sendMessage(m.chat, { image: { url: result }, caption: '⭔ Media Url : '+result }, { quoted: m })
             }
             break
@@ -1574,11 +1573,12 @@ break
             }
             break
 	    case 'couple': {
-                
+                if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
                 let anu = await fetchJson('https://raw.githubusercontent.com/iamriz7/kopel_/main/kopel.json')
                 let random = anu[Math.floor(Math.random() * anu.length)]
                 hanbotz.sendMessage(m.chat, { image: { url: random.male }, caption: `Couple Male` }, { quoted: m })
                 hanbotz.sendMessage(m.chat, { image: { url: random.female }, caption: `Couple Female` }, { quoted: m })
+                db.users[m.sender].limit -= 1 // -1 limit
             }
 	    break 
             case 'coffe': case 'kopi': {
@@ -2632,8 +2632,6 @@ ${readmore}__________________________
 • ${prefix}huluh
 • ${prefix}heleh
 • ${prefix}holoh
-• ${prefix}alay
-• ${prefix}balik
 
 𝗚𝗔𝗠𝗘
 • ${prefix}tebak [option]
@@ -2708,14 +2706,13 @@ ${readmore}__________________________
 • ${prefix}slow
 • ${prefix}tupai
 
-𝗥𝗔𝗡𝗗𝗢𝗠
+𝗤𝗨𝗢𝗧𝗘
 • ${prefix}quotesanime
 • ${prefix}motivasi
 • ${prefix}dilanquote
 • ${prefix}bucinquote
 • ${prefix}katasenja
 • ${prefix}puisi
-• ${prefix}couple
 __________________________
 
 *ＬＩＭＩＴ  ＡＲＥＡ*
@@ -2731,7 +2728,6 @@ __________________________
 
 𝗠𝗔𝗞𝗘𝗥
 • ${prefix}blackpink
-• ${prefix}neon
 • ${prefix}greenneon
 • ${prefix}advanceglow
 • ${prefix}futureneon
@@ -2838,6 +2834,9 @@ __________________________
 • ${prefix}meme
 • ${prefix}darkjoke
 • ${prefix}mememaker
+
+𝗥𝗔𝗡𝗗𝗢𝗠
+• ${prefix}couple
 __________________________
 
 *ＰＲＥＭＩＵＭ  ＡＲＥＡ*
@@ -2930,7 +2929,7 @@ __________________________
 • ${prefix}setexif
 
 To talk to bots, use *${prefix}botz _[text]_*
-*Example*: ${prefix}botz hai
+*Example*: ${prefix}botz halo
 `
                 let btn = [{
                                 urlButton: {
@@ -2953,7 +2952,7 @@ To talk to bots, use *${prefix}botz _[text]_*
             break
 case 'say': {
 	if (!text) throw `apa?`
-	inih = `${text}`
+	inih = `${q}`
 	hanbotz.sendMessage(m.chat, inih)
 	}
 	break
@@ -3228,18 +3227,7 @@ case 'lirik':
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/lirik?apikey=HanBotzApi&query=${query}`)
                     m.reply(get_result.result)
                     break
-case 'alay':
-if (!m.quoted && !text) throw `Kirim/reply text dengan caption ${prefix + command}`
-let inu = (`https://zenzapi.xyz/api/alay?query=${text}&apikey=ApiHanBotz`)
-yala = (`${inu.result}`)
-m.reply(yala)
-break
-case 'balik':
-if (!m.quoted && !text) throw `Kirim/reply text dengan caption ${prefix + command}`
-let awu = (`https://zenzapi.xyz/api/reversetext?query=${text}&apikey=ApiHanBotz`)
-taba = (`${awu.result}`)
-m.reply(taba)
-break
+
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
             default:
                 if (budy.startsWith('=>')) {
