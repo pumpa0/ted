@@ -1391,7 +1391,7 @@ break
             }
             break
 	        case 'tourl': {
-                m.reply(`wait...`)
+		if (!quoted && !text) throw `Kirim/Reply gambar dengan caption ${prefix}tourl`
 		let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader')
                 let media = await hanbotz.downloadAndSaveMediaMessage(quoted)
                 if (/image/.test(mime)) {
@@ -1994,7 +1994,7 @@ break
                 }
             }
             break
-case 'tiktok': case 'tiktoknowm': {
+case 'tiktoknowm': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/downloader/tiktok', { url: text }, 'apikey'))
@@ -2578,6 +2578,7 @@ Menuju Idul Fitri
 ${readmore}__________________________
 
 *ＭＡＩＮ  ＡＲＥＡ*
+__________________________
 
 𝗚𝗥𝗢𝗨𝗣
 • ${prefix}linkgroup
@@ -2716,6 +2717,7 @@ ${readmore}__________________________
 __________________________
 
 *ＬＩＭＩＴ  ＡＲＥＡ*
+__________________________
 
 𝗦𝗧𝗔𝗟𝗞𝗜𝗡𝗚
 • ff (Free Fire)
@@ -2840,6 +2842,7 @@ __________________________
 __________________________
 
 *ＰＲＥＭＩＵＭ  ＡＲＥＡ*
+__________________________
 
 𝗡𝗦𝗙𝗪 || _Ramadhan Stay Halal_
 • ${prefix}trap
@@ -2950,12 +2953,6 @@ To talk to bots, use *${prefix}botz _[text]_*
                         hanbotz.send5ButImg(m.chat, anu, hanbotz.user.name, global.thumb, btn)
                      }
             break
-case 'say': {
-	if (!text) throw `apa?`
-	inih = `${q}`
-	hanbotz.sendMessage(m.chat, inih)
-	}
-	break
 case 'hancraft': case 'hanmc': {
 	let anu = await fetchJson(`https://minecraftpocket-servers.com/api/?object=servers&element=detail&key=g1e0tIhAlzQXgdA8yycligd37YK18u4b14c`)
 	mine = (`_*SERVER GABUT HAN*_\n*Status*: ${anu.is_online}\n\n*Name*: ${anu.name}\n*Address*: ${anu.address}\n*Port*: ${anu.port}\n*Version*: ${anu.version}\n*Players*: ${anu.players} / ${anu.maxplayers}\n\n*Url*: ${anu.url}`)
@@ -3227,7 +3224,12 @@ case 'lirik':
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/lirik?apikey=HanBotzApi&query=${query}`)
                     m.reply(get_result.result)
                     break
-
+case 'info zerocraft': {
+	let anu = await fetchJson(`https://minecraftpocket-servers.com/api/?object=servers&element=detail&key=GWiK8IHM7GyAvPMRxHj2vjEKr2J27zcWd`)
+	zcra = (`_*ZeroCraft S1*_\n\n*Status*: [ ${anu.is_online} ] (0=offline, 1=online)\n\n*Name*: ${anu.name}\n*Address*: ${anu.address}\n*Port*: ${anu.port}\n*Version*: ${anu.version}\n*Players*: ${anu.players} / ${anu.maxplayers}\n\n*Votes*: ${anu.votes}\n*Rank*: ${anu.rank}\n*Score*: ${anu.score}\n\n*Last Check*: ${anu.last_check}\n*Last_Online*: ${anu.last_online}\n\n*Url*: ${anu.url}`)
+	m.reply(zcra)
+	}
+	        break
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
             default:
                 if (budy.startsWith('=>')) {
