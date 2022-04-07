@@ -3224,7 +3224,7 @@ case 'lirik':
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/lirik?apikey=HanBotzApi&query=${query}`)
                     m.reply(get_result.result)
                     break
-case 'info zerocraft': {
+case '#zerocraft': {
 	let anu = await fetchJson(`https://minecraftpocket-servers.com/api/?object=servers&element=detail&key=GWiK8IHM7GyAvPMRxHj2vjEKr2J27zcWd`)
 	zcra = (`_*ZeroCraft S1*_\n\n*Status*: [ ${anu.is_online} ] (0=offline, 1=online)\n\n*Name*: ${anu.name}\n*Address*: ${anu.address}\n*Port*: ${anu.port}\n*Version*: ${anu.version}\n*Players*: ${anu.players} / ${anu.maxplayers}\n\n*Votes*: ${anu.votes}\n*Rank*: ${anu.rank}\n*Score*: ${anu.score}\n\n*Last Check*: ${anu.last_check}\n*Last_Online*: ${anu.last_online}\n\n*Url*: ${anu.url}`)
 	m.reply(zcra)
