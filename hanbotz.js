@@ -165,9 +165,9 @@ module.exports = hanbotz = async (hanbotz, m, chatUpdate, store) => {
         let gclink = (`https://chat.whatsapp.com/`+await hanbotz.groupInviteCode(m.chat))
         let isLinkThisGc = new RegExp(gclink, 'i')
         let isgclink = isLinkThisGc.test(m.text)
-        if (isgclink) return m.reply(`Sebarin Oyyy`)
-        if (isAdmins) return m.reply(`Admin Bebas`)
-        if (isCreator) return m.reply(`Owner Bebas`)
+        if (isgclink) return m.reply(`Tapi Boong`)
+        if (isAdmins) return m.reply(`Eh Admin, Gak Jadi Deh`)
+        if (isCreator) return m.reply(`Owner Sendiri Masa Di Kick`)
         hanbotz.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
         }
         }
@@ -223,7 +223,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebaklagu[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await hanbotz.sendButtonText(m.chat, [{ buttonId: 'tebak lagu', buttonText: { displayText: 'Tebak Lagu' }, type: 1 }], ` Tebak Lagu \n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hanbotz.user.name, m)
+                await hanbotz.sendButtonText(m.chat, [{ buttonId: 'tebak lagu', buttonText: { displayText: 'Tebak Lagu' }, type: 1 }], `Tebak Lagu\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hanbotz.user.name, m)
                 delete tebaklagu[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
         }
@@ -232,7 +232,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = kuismath[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await m.reply(` Kuis Matematika  \n\nJawaban Benar 🎉\n\nIngin bermain lagi? kirim ${prefix}math mode`)
+                await m.reply(`Kuis Matematika\n\nJawaban Benar 🎉\n\nIngin bermain lagi? kirim ${prefix}math mode`)
                 delete kuismath[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
         }
@@ -241,7 +241,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebakgambar[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await hanbotz.sendButtonText(m.chat, [{ buttonId: 'tebak gambar', buttonText: { displayText: 'Tebak Gambar' }, type: 1 }], ` Tebak Gambar \n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hanbotz.user.name, m)
+                await hanbotz.sendButtonText(m.chat, [{ buttonId: 'tebak gambar', buttonText: { displayText: 'Tebak Gambar' }, type: 1 }], `Tebak Gambar\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hanbotz.user.name, m)
                 delete tebakgambar[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
         }
@@ -250,7 +250,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebakkata[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await hanbotz.sendButtonText(m.chat, [{ buttonId: 'tebak kata', buttonText: { displayText: 'Tebak Kata' }, type: 1 }], ` Tebak Kata \n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hanbotz.user.name, m)
+                await hanbotz.sendButtonText(m.chat, [{ buttonId: 'tebak kata', buttonText: { displayText: 'Tebak Kata' }, type: 1 }], `Tebak Kata\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hanbotz.user.name, m)
                 delete tebakkata[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
         }
@@ -260,7 +260,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             jawaban = caklontong[m.sender.split('@')[0]]
 	    deskripsi = caklontong_desk[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await hanbotz.sendButtonText(m.chat, [{ buttonId: 'tebak lontong', buttonText: { displayText: 'Tebak Lontong' }, type: 1 }], ` Cak Lontong \n\nJawaban Benar 🎉\n*${deskripsi}*\n\nIngin bermain lagi? tekan button dibawah`, hanbotz.user.name, m)
+                await hanbotz.sendButtonText(m.chat, [{ buttonId: 'tebak lontong', buttonText: { displayText: 'Tebak Lontong' }, type: 1 }], `Cak Lontong\n\nJawaban Benar 🎉\n*${deskripsi}*\n\nIngin bermain lagi? tekan button dibawah`, hanbotz.user.name, m)
                 delete caklontong[m.sender.split('@')[0]]
 		delete caklontong_desk[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
@@ -270,7 +270,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebakkalimat[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await hanbotz.sendButtonText(m.chat, [{ buttonId: 'tebak kalimat', buttonText: { displayText: 'Tebak Kalimat' }, type: 1 }], ` Tebak Kalimat \n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hanbotz.user.name, m)
+                await hanbotz.sendButtonText(m.chat, [{ buttonId: 'tebak kalimat', buttonText: { displayText: 'Tebak Kalimat' }, type: 1 }], `Tebak Kalimat\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hanbotz.user.name, m)
                 delete tebakkalimat[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
         }
@@ -279,7 +279,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebaklirik[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await hanbotz.sendButtonText(m.chat, [{ buttonId: 'tebak lirik', buttonText: { displayText: 'Tebak Lirik' }, type: 1 }], ` Tebak Lirik \n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hanbotz.user.name, m)
+                await hanbotz.sendButtonText(m.chat, [{ buttonId: 'tebak lirik', buttonText: { displayText: 'Tebak Lirik' }, type: 1 }], `Tebak Lirik\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hanbotz.user.name, m)
                 delete tebaklirik[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
         }
@@ -288,7 +288,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebaktebakan[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await hanbotz.sendButtonText(m.chat, [{ buttonId: 'tebak tebakan', buttonText: { displayText: 'Tebak Tebakan' }, type: 1 }], ` Tebak Tebakan \n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hanbotz.user.name, m)
+                await hanbotz.sendButtonText(m.chat, [{ buttonId: 'tebak tebakan', buttonText: { displayText: 'Tebak Tebakan' }, type: 1 }], `Tebak Tebakan\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hanbotz.user.name, m)
                 delete tebaktebakan[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
         }
@@ -571,10 +571,7 @@ _sewa bot hubungi owner_
 wa.me/6285731855426`
 m.reply(sawer)
             break
-            case 'sc': {
-                m.reply('mau ngapain 🤨')
-            }
-            break
+            
             case 'chat': {
                 if (!isCreator) throw mess.owner
                 if (!q) throw 'Option : 1. mute\n2. unmute\n3. archive\n4. unarchive\n5. read\n6. unread\n7. delete'
@@ -1149,8 +1146,8 @@ break
             }
             break
             case 'delete': case 'del': {
-            	if (!isAdmins && !isCreator) mess.admin
-                if (!m.quoted) throw false
+            	if (!isAdmins && !isCreator) throw mess.admin
+                if (!m.quoted) throw `Reply Pesan`
                 let { chat, fromMe, id, isBaileys } = m.quoted
                 if (!isBaileys) throw 'Pesan tersebut bukan dikirim oleh bot!'
                 hanbotz.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: true, id: m.quoted.id, participant: m.quoted.sender } })
@@ -1349,8 +1346,8 @@ break
             }
             break
             case 'toaud': case 'toaudio': {
-            if (!/video/.test(mime) && !/audio/.test(mime)) throw `Kirim/Reply Video/Audio Yang Ingin DijaHann Audio Dengan Caption ${prefix + command}`
-            if (!quoted) throw `Kirim/Reply Video/Audio Yang Ingin DijaHann Audio Dengan Caption ${prefix + command}`
+            if (!/video/.test(mime) && !/audio/.test(mime)) throw `Kirim/Reply Video/Audio Yang Ingin Dijadikan Audio Dengan Caption ${prefix + command}`
+            if (!quoted) throw `Kirim/Reply Video/Audio Yang Ingin Dijadikan Audio Dengan Caption ${prefix + command}`
             m.reply(`wait...`)
             let media = await quoted.download()
             let { toAudio } = require('./lib/converter')
@@ -1359,9 +1356,9 @@ break
             }
             break
             case 'tomp3': {
-            if (/document/.test(mime)) throw `Kirim/Reply Video/Audio Yang Ingin DijaHann MP3 Dengan Caption ${prefix + command}`
-            if (!/video/.test(mime) && !/audio/.test(mime)) throw `Kirim/Reply Video/Audio Yang Ingin DijaHann MP3 Dengan Caption ${prefix + command}`
-            if (!quoted) throw `Kirim/Reply Video/Audio Yang Ingin DijaHann MP3 Dengan Caption ${prefix + command}`
+            if (/document/.test(mime)) throw `Kirim/Reply Video/Audio Yang Ingin Dijadikan MP3 Dengan Caption ${prefix + command}`
+            if (!/video/.test(mime) && !/audio/.test(mime)) throw `Kirim/Reply Video/Audio Yang Ingin Dijadikan MP3 Dengan Caption ${prefix + command}`
+            if (!quoted) throw `Kirim/Reply Video/Audio Yang Ingin Dijadikan MP3 Dengan Caption ${prefix + command}`
             m.reply(`wait...`)
             let media = await quoted.download()
             let { toAudio } = require('./lib/converter')
@@ -1370,8 +1367,8 @@ break
             }
             break
             case 'tovn': case 'toptt': {
-            if (!/video/.test(mime) && !/audio/.test(mime)) throw `Reply Video/Audio Yang Ingin DijaHann VN Dengan Caption ${prefix + command}`
-            if (!quoted) throw `Reply Video/Audio Yang Ingin DijaHann VN Dengan Caption ${prefix + command}`
+            if (!/video/.test(mime) && !/audio/.test(mime)) throw `Reply Video/Audio Yang Ingin Dijadikan VN Dengan Caption ${prefix + command}`
+            if (!quoted) throw `Reply Video/Audio Yang Ingin Dijadikan VN Dengan Caption ${prefix + command}`
             m.reply(`wait...`)
             let media = await quoted.download()
             let { toPTT } = require('./lib/converter')
@@ -1391,7 +1388,7 @@ break
             }
             break
 	        case 'tourl': {
-		if (!quoted && !text) throw `Kirim/Reply gambar dengan caption ${prefix}tourl`
+		if (!quoted) throw `Kirim/Reply gambar dengan caption ${prefix}tourl`
 		let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader')
                 let media = await hanbotz.downloadAndSaveMediaMessage(quoted)
                 if (/image/.test(mime)) {
@@ -1525,10 +1522,10 @@ break
                 let { ytv } = require('./lib/y2mate')
                 if (!text) throw `Example : ${prefix + command} https://youtube.com/*** 720`
                 m.reply(`searching...`)
-                let quality = args[1] ? args[1] : '720'
+                let quality = args[1] ? args[1] : '480'
                 let media = await ytv(text, quality)
                 if (media.filesize >= 100000) return m.reply('File Melebihi Batas '+util.format(media))
-                hanbotz.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `⭔ Title : ${media.title}\n⭔ File Size : ${media.filesizeF}\n⭔ Url : ${isUrl(text)}\n⭔ Ext : MP4\n⭔ Resolusi : ${args[1] || '720p'}` }, { quoted: m })
+                hanbotz.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `⭔ Title : ${media.title}\n⭔ File Size : ${media.filesizeF}\n⭔ Url : ${isUrl(text)}\n⭔ Ext : MP4\n⭔ Resolusi : ${args[1] || '480p'}` }, { quoted: m })
             }
             break
 	    case 'getmusic': {
@@ -1557,21 +1554,19 @@ break
                 let quality = args[1] ? args[1] : '480p'
                 let media = await ytv(urls[text - 1], quality)
                 if (media.filesize >= 100000) return m.reply('File Melebihi Batas '+util.format(media))
-                hanbotz.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `⭔ Title : ${media.title}\n⭔ File Size : ${media.filesizeF}\n⭔ Url : ${urls[text - 1]}\n⭔ Ext : MP3\n⭔ Resolusi : ${args[1] || '360p'}` }, { quoted: m })
+                hanbotz.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `⭔ Title : ${media.title}\n⭔ File Size : ${media.filesizeF}\n⭔ Url : ${urls[text - 1]}\n⭔ Ext : MP4\n⭔ Resolusi : ${args[1] || '480p'}` }, { quoted: m })
             }
             break
             case 'pinterest': {
+            	          if (m.isGroup) return m.reply('Fitur Tidak Dapat Digunakan Untuk Group!')
 		let { pinterest } = require('./lib/scraper')
                 pint = await pinterest(text)
                 result = pint[Math.floor(Math.random() * pint.length)]
                 hanbotz.sendMessage(m.chat, { image: { url: result }, caption: '⭔ Media Url : '+result }, { quoted: m })
-            }
-            break
-            case 'anime': case 'waifu': case 'husbu': case 'neko': case 'shinobu': case 'megumin': case 'waifus': case 'nekos': case 'trap': case 'blowjob': {
                 
-                hanbotz.sendMessage(m.chat, { image: { url: api('zenz', '/api/randomimage/'+command, 'apikey') }, caption: 'Generate Random ' + command }, { quoted: m})
             }
             break
+            
 	    case 'couple': {
                 if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
                 let anu = await fetchJson('https://raw.githubusercontent.com/iamriz7/kopel_/main/kopel.json')
@@ -1598,8 +1593,8 @@ break
             case 'wallpaper': {
                 if (!text) throw 'Masukkan Query Title'
 		let { wallpaper } = require('./lib/scraper')
-                anu = await wallpaper(text)
-                result = anu[Math.floor(Math.random() * anu.length)]
+                walp = await wallpaper(text)
+                result = walp[Math.floor(Math.random() * walp.length)]
 		let buttons = [
                     {buttonId: `wallpaper ${text}`, buttonText: {displayText: 'Next Image'}, type: 1}
                 ]
@@ -1616,8 +1611,8 @@ break
             case 'wikimedia': {
                 if (!text) throw 'Masukkan Query Title'
 		let { wikimedia } = require('./lib/scraper')
-                anu = await wikimedia(text)
-                result = anu[Math.floor(Math.random() * anu.length)]
+                wkm = await wikimedia(text)
+                result = wkm[Math.floor(Math.random() * wkm.length)]
                 let buttons = [
                     {buttonId: `wikimedia ${text}`, buttonText: {displayText: 'Next Image'}, type: 1}
                 ]
@@ -1632,6 +1627,7 @@ break
             }
             break
             case 'quotesanime': case 'quoteanime': {
+            	        if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
 		let { quotesAnime } = require('./lib/scraper')
                 let anu = await quotesAnime()
                 result = anu[Math.floor(Math.random() * anu.length)]
@@ -1645,10 +1641,13 @@ break
                     headerType: 2
                 }
                 hanbotz.sendMessage(m.chat, buttonMessage, { quoted: m })
+                db.users[m.sender].limit -= 1 // -1 limit
             }
             break
 	        case 'motivasi': case 'dilanquote': case 'bucinquote': case 'katasenja': case 'puisi': {
+		        if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
                 let anu = await fetchJson(api('zenz', '/api/'+command, {}, 'apikey'))
+                inite = (`${anu.result.message}`)
                 let buttons = [
                     {buttonId: `motivasi`, buttonText: {displayText: 'Next'}, type: 1}
                 ]
@@ -1658,29 +1657,13 @@ break
                     buttons: buttons,
                     headerType: 2
                 }
-                hanbotz.sendMessage(m.chat, buttonMessage, { quoted: m })
+                m.reply(inite)
+                db.users[m.sender].limit -= 1 // -1 limit
             }
             break
-            case '3dchristmas': case '3ddeepsea': case 'americanflag': case '3dscifi': case '3drainbow': case '3dwaterpipe': case 'halloweenskeleton': case 'sketch': case 'bluecircuit': case 'space': case 'metallic': case 'fiction': case 'greenhorror': case 'transformer': case 'berry': case 'thunder': case 'magma': case '3dcrackedstone': case '3dneonlight': case 'impressiveglitch': case 'naturalleaves': case 'fireworksparkle': case 'matrix': case 'dropwater':  case 'harrypotter': case 'foggywindow': case 'neondevils': case 'christmasholiday': case '3dgradient': case 'blackpink': case 'gluetext': {
-                if (!text) throw `Example : ${prefix + command} text`
-                
-                hanbotz.sendMessage(m.chat, { image: { url: api('zenz', '/textpro/' + command, { text: text }, 'apikey') }, caption: `Text Pro ${command}` }, { quoted: m})
-	    }
-            break
-	    case 'shadow': case 'romantic': case 'smoke': case 'burnpapper': case 'naruto': case 'lovemsg': case 'grassmsg': case 'lovetext': case 'coffecup': case 'butterfly': case 'harrypotter': case 'retrolol': {
-                if (!text) throw 'No Query Text'
-                
-                hanbotz.sendMessage(m.chat, { image: { url: api('zenz', '/photooxy/' + command, { text: text }, 'apikey') }, caption: `Photo Oxy ${command}` }, { quoted: m })
-            }
-            break
-            case 'ffcover': case 'crossfire': case 'galaxy': case 'glass': case 'neon': case 'beach': case 'blackpink': case 'igcertificate': case 'ytcertificate': {
-                if (!text) throw 'No Query Text'
-                
-                hanbotz.sendMessage(m.chat, { image: { url: api('zenz', '/ephoto/' + command, { text: text }, 'apikey') }, caption: `Ephoto ${command}` }, { quoted: m })
-            }
-            break
+            
 	    case 'nomerhoki': case 'nomorhoki': {
-                if (!Number(text)) throw `Example : ${prefix + command} 6288292024190`
+                if (!Number(text)) throw `Example : ${prefix + command} 6285731855426`
                 let anu = await primbon.nomer_hoki(Number(text))
                 if (anu.status == false) return m.reply(anu.message)
                 hanbotz.sendText(m.chat, `⭔ *Nomor HP :* ${anu.message.nomer_hp}\n⭔ *Angka Shuzi :* ${anu.message.angka_shuzi}\n⭔ *Energi Positif :*\n- Kekayaan : ${anu.message.energi_positif.kekayaan}\n- Kesehatan : ${anu.message.energi_positif.kesehatan}\n- Cinta : ${anu.message.energi_positif.cinta}\n- Kestabilan : ${anu.message.energi_positif.kestabilan}\n- Persentase : ${anu.message.energi_positif.persentase}\n⭔ *Energi Negatif :*\n- Perselisihan : ${anu.message.energi_negatif.perselisihan}\n- Kehilangan : ${anu.message.energi_negatif.kehilangan}\n- Malapetaka : ${anu.message.energi_negatif.malapetaka}\n- Kehancuran : ${anu.message.energi_negatif.kehancuran}\n- Persentase : ${anu.message.energi_negatif.persentase}`, m)
@@ -2269,7 +2252,7 @@ ${id}`)
                 if (/bass/.test(command)) set = '-af equalizer=f=54:width_type=o:width=2:g=20'
                 if (/blown/.test(command)) set = '-af acrusher=.1:1:64:0:log'
                 if (/deep/.test(command)) set = '-af atempo=4/4,asetrate=44500*2/3'
-                if (/earrape/.test(command)) set = '-af volume=9'
+                if (/earrape/.test(command)) set = '-af volume=11'
                 if (/fast/.test(command)) set = '-filter:a "atempo=1.63,asetrate=44100"'
                 if (/fat/.test(command)) set = '-filter:a "atempo=1.6,asetrate=22100"'
                 if (/nightcore/.test(command)) set = '-filter:a atempo=1.06,asetrate=44100*1.10'
@@ -2706,14 +2689,6 @@ __________________________
 • ${prefix}robot
 • ${prefix}slow
 • ${prefix}tupai
-
-𝗤𝗨𝗢𝗧𝗘
-• ${prefix}quotesanime
-• ${prefix}motivasi
-• ${prefix}dilanquote
-• ${prefix}bucinquote
-• ${prefix}katasenja
-• ${prefix}puisi
 __________________________
 
 *ＬＩＭＩＴ  ＡＲＥＡ*
@@ -2831,6 +2806,14 @@ __________________________
 • ${prefix}battlefield4
 • ${prefix}pubg
 *Example*: ${prefix}pornhub Han Botz
+
+𝗤𝗨𝗢𝗧𝗘
+• ${prefix}quotesanime
+• ${prefix}motivasi
+• ${prefix}dilanquote
+• ${prefix}bucinquote
+• ${prefix}katasenja
+• ${prefix}puisi
 
 𝗠𝗘𝗠𝗘
 • ${prefix}meme
@@ -2952,12 +2935,6 @@ To talk to bots, use *${prefix}botz _[text]_*
                             }]
                         hanbotz.send5ButImg(m.chat, anu, hanbotz.user.name, global.thumb, btn)
                      }
-            break
-case 'hancraft': case 'hanmc': {
-	let anu = await fetchJson(`https://minecraftpocket-servers.com/api/?object=servers&element=detail&key=g1e0tIhAlzQXgdA8yycligd37YK18u4b14c`)
-	mine = (`_*SERVER GABUT HAN*_\n*Status*: ${anu.is_online}\n\n*Name*: ${anu.name}\n*Address*: ${anu.address}\n*Port*: ${anu.port}\n*Version*: ${anu.version}\n*Players*: ${anu.players} / ${anu.maxplayers}\n\n*Url*: ${anu.url}`)
-	m.reply(mine)
-	}
 	        break
 case 'botz': {
 	if (!text) throw `ya, ada apa?`
@@ -3224,9 +3201,9 @@ case 'lirik':
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/lirik?apikey=HanBotzApi&query=${query}`)
                     m.reply(get_result.result)
                     break
-case '#zerocraft': {
+case 'zerocraft': {
 	let anu = await fetchJson(`https://minecraftpocket-servers.com/api/?object=servers&element=detail&key=GWiK8IHM7GyAvPMRxHj2vjEKr2J27zcWd`)
-	zcra = (`_*ZeroCraft S1*_\n\n*Status*: [ ${anu.is_online} ] (0=offline, 1=online)\n\n*Name*: ${anu.name}\n*Address*: ${anu.address}\n*Port*: ${anu.port}\n*Version*: ${anu.version}\n*Players*: ${anu.players} / ${anu.maxplayers}\n\n*Votes*: ${anu.votes}\n*Rank*: ${anu.rank}\n*Score*: ${anu.score}\n\n*Last Check*: ${anu.last_check}\n*Last_Online*: ${anu.last_online}\n\n*Url*: ${anu.url}`)
+	zcra = (`_*ZeroCraft*_\n\n*Status*: [ ${anu.is_online} ] (0=offline, 1=online)\n\n*Name*: ${anu.name}\n*Address*: ${anu.address}\n*Port*: ${anu.port}\n*Version*: ${anu.version}\n*Players*: ${anu.players} / ${anu.maxplayers}\n\n*Votes*: ${anu.votes}\n*Rank*: ${anu.rank}\n*Score*: ${anu.score}\n\n*Last Check*: ${anu.last_check}\n*Last_Online*: ${anu.last_online}\n\n*Url*: ${anu.url}`)
 	m.reply(zcra)
 	}
 	        break
