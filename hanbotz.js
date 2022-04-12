@@ -160,14 +160,14 @@ module.exports = hanbotz = async (hanbotz, m, chatUpdate, store) => {
 	  // Anti Link
         if (db.chats[m.chat].antilink) {
         if (budy.match(`chat.whatsapp.com`)) {
-        m.reply(`「 ANTI LINK 」\n\nKamu terdeteksi mengirim link group, maaf kamu akan di kick !`)
         if (!isBotAdmins) return m.reply(`Bot gak admin T_T`)
+        if (isAdmins) return m.reply(`Eh Admin, Gak Jadi Deh`)
+        if (isCreator) return m.reply(`Owner Sendiri Masa Di Kick`)
         let gclink = (`https://chat.whatsapp.com/`+await hanbotz.groupInviteCode(m.chat))
         let isLinkThisGc = new RegExp(gclink, 'i')
         let isgclink = isLinkThisGc.test(m.text)
-        if (isgclink) return m.reply(`Tapi Boong`)
-        if (isAdmins) return m.reply(`Eh Admin, Gak Jadi Deh`)
-        if (isCreator) return m.reply(`Owner Sendiri Masa Di Kick`)
+	 if (isgclink) return m.reply(`good`)
+		 m.reply(`「 ANTI LINK 」\n\nKamu terdeteksi mengirim link group, maaf kamu akan di kick !`)
         hanbotz.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
         }
         }
@@ -469,8 +469,8 @@ const jmn = moment.tz('Asia/Jakarta').format('HH:mm:ss')
                 m.reply(`${m.pushName} Telah Afk${text ? ': ' + text : ''}`)
             }
             break	
-        case 'tictactoerusak': {
-        	    if (!m.mentionedJid[0]) return m.reply(`_Siapa yang ingin kamu tantang?_\nTag orangnya..\n\nAtau Ketik Room Yang Mengajak Kamu`)
+        case 'tictactoe': {
+        	   if (!text) throw "nama room?"
             let TicTacToe = require("./lib/tictactoe")
             this.game = this.game ? this.game : {}
             if (Object.values(this.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) throw 'Kamu masih didalam game'
