@@ -38,7 +38,7 @@ global.mess = {
 }
 global.limitawal = {
     premium: "Infinity",
-    free: 12
+    free: "12"
 }
 global.thumb = fs.readFileSync('./lib/hisoka.jpg')
 
