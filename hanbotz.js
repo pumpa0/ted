@@ -470,7 +470,7 @@ const jmn = moment.tz('Asia/Jakarta').format('HH:mm:ss')
             }
             break	
         case 'tictactoe': {
-        	    if (!text) throw `Buat Room\n\nContoh: ${prefix}tictactoe @tag room1`
+        	    if (!text) throw `Contoh: ${prefix}tictactoe @tag`
         let roms = args[1]
             let TicTacToe = require("./lib/tictactoe")
             this.game = this.game ? this.game : {}
@@ -515,8 +515,8 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
             game: new TicTacToe(m.sender, 'o'),
             state: 'WAITING'
             }
-            if (roms) room.name = roms
-            m.reply('Menunggu partner' + (text ? ` mengetik command dibawah ini ${prefix}${command} ${roms}` : ''))
+            if (text) room.name = text
+            m.reply('Menunggu partner' + (text ? ` mengetik command dibawah ini *${prefix}${command} ${text}*` : ''))
             this.game[room.id] = room
             }
             }
