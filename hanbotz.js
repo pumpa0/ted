@@ -99,10 +99,10 @@ module.exports = hanbotz = async (hanbotz, m, chatUpdate, store) => {
             if (typeof chats !== 'object') global.db.chats[m.chat] = {}
             if (chats) {
                 if (!('mute' in chats)) chats.mute = false
-                if (!('antilink' in chats)) chats.antilink = false
+                if (!('antilink' in chats)) chats.antilink = true
             } else global.db.chats[m.chat] = {
                 mute: false,
-                antilink: false,
+                antilink: true,
             }
 		
 	    let setting = global.db.settings[botNumber]
@@ -470,8 +470,8 @@ const jmn = moment.tz('Asia/Jakarta').format('HH:mm:ss')
             }
             break	
         case 'tictactoe': {
-        	if (m.mentionedJid[0]) return m.reply(`Buat Room\n\nContoh: ${prefix}tictactoe room1`)
-        	    if (!text) throw `Buat Room\n\nContoh: ${prefix}tictactoe room1`
+        	    if (!text) throw `Buat Room\n\nContoh: ${prefix}tictactoe @tag room1`
+        let roms = args[1]
             let TicTacToe = require("./lib/tictactoe")
             this.game = this.game ? this.game : {}
             if (Object.values(this.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) throw 'Kamu masih didalam game'
@@ -515,8 +515,8 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
             game: new TicTacToe(m.sender, 'o'),
             state: 'WAITING'
             }
-            if (text) room.name = text
-            m.reply('Menunggu partner' + (text ? ` mengetik command dibawah ini ${prefix}${command} ${text}` : ''))
+            if (roms) room.name = roms
+            m.reply('Menunggu partner' + (text ? ` mengetik command dibawah ini ${prefix}${command} ${roms}` : ''))
             this.game[room.id] = room
             }
             }
