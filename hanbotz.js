@@ -57,7 +57,7 @@ module.exports = hanbotz = async (hanbotz, m, chatUpdate, store) => {
     try {
         var body = (m.mtype === 'conversation') ? m.message.conversation : (m.mtype == 'imageMessage') ? m.message.imageMessage.caption : (m.mtype == 'videoMessage') ? m.message.videoMessage.caption : (m.mtype == 'extendedTextMessage') ? m.message.extendedTextMessage.text : (m.mtype == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : (m.mtype == 'listResponseMessage') ? m.message.listResponseMessage.singleSelectReply.selectedRowId : (m.mtype == 'templateButtonReplyMessage') ? m.message.templateButtonReplyMessage.selectedId : (m.mtype === 'messageContextInfo') ? (m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.text) : ''
         var budy = (typeof m.text == 'string' ? m.text : '')
-        var prefix = prefa ? /^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi.test(body) ? body.match(/^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi)[0] : '.' : prefa ?? global.prefix
+        var prefix = prefa ? /^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi.test(body) ? body.match(/^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi)[0] : '' : prefa ?? global.prefix
         const isCmd = body.startsWith(prefix)
         const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
         const args = body.trim().split(/ +/).slice(1)
@@ -160,14 +160,14 @@ module.exports = hanbotz = async (hanbotz, m, chatUpdate, store) => {
 	  // Anti Link
         if (db.chats[m.chat].antilink) {
         if (budy.match(`chat.whatsapp.com`)) {
+        m.reply(`「 ANTI LINK 」\n\nKamu terdeteksi mengirim link group, maaf kamu akan di kick !`)
         if (!isBotAdmins) return m.reply(`Bot gak admin T_T`)
-        if (isAdmins) return m.reply(`Eh Admin, Gak Jadi Deh`)
-        if (isCreator) return m.reply(`Owner Sendiri Masa Di Kick`)
         let gclink = (`https://chat.whatsapp.com/`+await hanbotz.groupInviteCode(m.chat))
         let isLinkThisGc = new RegExp(gclink, 'i')
         let isgclink = isLinkThisGc.test(m.text)
-	 if (isgclink) return m.reply(`good`)
-		 m.reply(`「 ANTI LINK 」\n\nKamu terdeteksi mengirim link group, maaf kamu akan di kick !`)
+        if (isgclink) return m.reply(`Tapi Boong`)
+        if (isAdmins) return m.reply(`Eh Admin, Gak Jadi Deh`)
+        if (isCreator) return m.reply(`Owner Sendiri Masa Di Kick`)
         hanbotz.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
         }
         }
@@ -223,7 +223,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebaklagu[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await hanbotz.sendButtonText(m.chat, [{ buttonId: 'tebak lagu', buttonText: { displayText: 'Tebak Lagu' }, type: 1 }], `Tebak Lagu\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hanbotz.user.name, m)
+                await m.reply(`Tebak Lagu\n\nJawaban Benar 🎉`)
                 delete tebaklagu[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
         }
@@ -241,7 +241,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebakgambar[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await hanbotz.sendButtonText(m.chat, [{ buttonId: 'tebak gambar', buttonText: { displayText: 'Tebak Gambar' }, type: 1 }], `Tebak Gambar\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hanbotz.user.name, m)
+                await m.reply(`Tebak Gambar\n\nJawaban Benar 🎉`)
                 delete tebakgambar[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
         }
@@ -250,7 +250,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebakkata[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await hanbotz.sendButtonText(m.chat, [{ buttonId: 'tebak kata', buttonText: { displayText: 'Tebak Kata' }, type: 1 }], `Tebak Kata\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hanbotz.user.name, m)
+                await m.reply(`Tebak Kata\n\nJawaban Benar 🎉`)
                 delete tebakkata[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
         }
@@ -260,7 +260,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             jawaban = caklontong[m.sender.split('@')[0]]
 	    deskripsi = caklontong_desk[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await hanbotz.sendButtonText(m.chat, [{ buttonId: 'tebak lontong', buttonText: { displayText: 'Tebak Lontong' }, type: 1 }], `Cak Lontong\n\nJawaban Benar 🎉\n*${deskripsi}*\n\nIngin bermain lagi? tekan button dibawah`, hanbotz.user.name, m)
+                await m.reply(`Cak Lontong\n\nJawaban Benar 🎉\n*${deskripsi}*`)
                 delete caklontong[m.sender.split('@')[0]]
 		delete caklontong_desk[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
@@ -270,7 +270,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebakkalimat[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await hanbotz.sendButtonText(m.chat, [{ buttonId: 'tebak kalimat', buttonText: { displayText: 'Tebak Kalimat' }, type: 1 }], `Tebak Kalimat\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hanbotz.user.name, m)
+                await m.reply(`Tebak Kalimat\n\nJawaban Benar 🎉`)
                 delete tebakkalimat[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
         }
@@ -279,7 +279,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebaklirik[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await hanbotz.sendButtonText(m.chat, [{ buttonId: 'tebak lirik', buttonText: { displayText: 'Tebak Lirik' }, type: 1 }], `Tebak Lirik\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hanbotz.user.name, m)
+                await m.reply(`Tebak Lirik\n\nJawaban Benar 🎉`)
                 delete tebaklirik[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
         }
@@ -288,7 +288,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             kuis = true
             jawaban = tebaktebakan[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await hanbotz.sendButtonText(m.chat, [{ buttonId: 'tebak tebakan', buttonText: { displayText: 'Tebak Tebakan' }, type: 1 }], `Tebak Tebakan\n\nJawaban Benar 🎉\n\nIngin bermain lagi? tekan button dibawah`, hanbotz.user.name, m)
+                await m.reply(`Tebak Tebakan\n\nJawaban Benar 🎉`)
                 delete tebaktebakan[m.sender.split('@')[0]]
             } else m.reply('*Jawaban Salah!*')
         }
@@ -470,7 +470,8 @@ const jmn = moment.tz('Asia/Jakarta').format('HH:mm:ss')
             }
             break	
         case 'tictactoe': {
-        	   if (!text) throw "nama room?"
+        	if (m.mentionedJid[0]) return m.reply(`Buat Room\n\nContoh: ${prefix}tictactoe room1`)
+        	    if (!text) throw `Buat Room\n\nContoh: ${prefix}tictactoe room1`
             let TicTacToe = require("./lib/tictactoe")
             this.game = this.game ? this.game : {}
             if (Object.values(this.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) throw 'Kamu masih didalam game'
@@ -628,7 +629,7 @@ m.reply(sawer)
                     await sleep(60000)
                     if (tebaklagu.hasOwnProperty(m.sender.split('@')[0])) {
                     console.log("Jawaban: " + result.jawaban)
-                    hanbotz.sendButtonText(m.chat, [{ buttonId: 'tebak lagu', buttonText: { displayText: 'Tebak Lagu' }, type: 1 }], `Waktu Habis\nJawaban:  ${tebaklagu[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, hanbotz.user.name, m)
+                    await m.reply(`Waktu Habis\nJawaban:  ${tebaklagu[m.sender.split('@')[0]]}`)
                     delete tebaklagu[m.sender.split('@')[0]]
                     }
                 } else if (args[0] === 'gambar') {
@@ -641,7 +642,7 @@ m.reply(sawer)
                     await sleep(60000)
                     if (tebakgambar.hasOwnProperty(m.sender.split('@')[0])) {
                     console.log("Jawaban: " + result.jawaban)
-                    hanbotz.sendButtonText(m.chat, [{ buttonId: 'tebak gambar', buttonText: { displayText: 'Tebak Gambar' }, type: 1 }], `Waktu Habis\nJawaban:  ${tebakgambar[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, hanbotz.user.name, m)
+                    await m.reply(`Waktu Habis\nJawaban:  ${tebakgambar[m.sender.split('@')[0]]}`)
                     delete tebakgambar[m.sender.split('@')[0]]
                     }
                 } else if (args[0] === 'kata') {
@@ -654,7 +655,7 @@ m.reply(sawer)
                     await sleep(60000)
                     if (tebakkata.hasOwnProperty(m.sender.split('@')[0])) {
                     console.log("Jawaban: " + result.jawaban)
-                    hanbotz.sendButtonText(m.chat, [{ buttonId: 'tebak kata', buttonText: { displayText: 'Tebak Kata' }, type: 1 }], `Waktu Habis\nJawaban:  ${tebakkata[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, hanbotz.user.name, m)
+                    await m.reply(`Waktu Habis\nJawaban:  ${tebakkata[m.sender.split('@')[0]]}`)
                     delete tebakkata[m.sender.split('@')[0]]
                     }
                 } else if (args[0] === 'kalimat') {
@@ -667,7 +668,7 @@ m.reply(sawer)
                     await sleep(60000)
                     if (tebakkalimat.hasOwnProperty(m.sender.split('@')[0])) {
                     console.log("Jawaban: " + result.jawaban)
-                    hanbotz.sendButtonText(m.chat, [{ buttonId: 'tebak kalimat', buttonText: { displayText: 'Tebak Kalimat' }, type: 1 }], `Waktu Habis\nJawaban:  ${tebakkalimat[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, hanbotz.user.name, m)
+                    await m.reply(`Waktu Habis\nJawaban:  ${tebakkalimat[m.sender.split('@')[0]]}`)
                     delete tebakkalimat[m.sender.split('@')[0]]
                     }
                 } else if (args[0] === 'lirik') {
@@ -680,7 +681,7 @@ m.reply(sawer)
                     await sleep(60000)
                     if (tebaklirik.hasOwnProperty(m.sender.split('@')[0])) {
                     console.log("Jawaban: " + result.jawaban)
-                    hanbotz.sendButtonText(m.chat, [{ buttonId: 'tebak lirik', buttonText: { displayText: 'Tebak Lirik' }, type: 1 }], `Waktu Habis\nJawaban:  ${tebaklirik[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, hanbotz.user.name, m)
+                    await m.reply(`Waktu Habis\nJawaban:  ${tebaklirik[m.sender.split('@')[0]]}`)
                     delete tebaklirik[m.sender.split('@')[0]]
                     }
                 } else if (args[0] === 'lontong') {
@@ -694,7 +695,7 @@ m.reply(sawer)
                     await sleep(60000)
                     if (caklontong.hasOwnProperty(m.sender.split('@')[0])) {
                     console.log("Jawaban: " + result.jawaban)
-                    hanbotz.sendButtonText(m.chat, [{ buttonId: 'tebak lontong', buttonText: { displayText: 'Tebak Lontong' }, type: 1 }], `Waktu Habis\nJawaban:  ${caklontong[m.sender.split('@')[0]]}\nDeskripsi : ${caklontong_desk[m.sender.split('@')[0]]}\n\nIngin bermain? tekan button dibawah`, hanbotz.user.name, m)
+                    await m.reply(`Waktu Habis\nJawaban:  ${caklontong[m.sender.split('@')[0]]}\nDeskripsi : ${caklontong_desk[m.sender.split('@')[0]]}`)
                     delete caklontong[m.sender.split('@')[0]]
 		    delete caklontong_desk[m.sender.split('@')[0]]
                     }
@@ -1461,19 +1462,7 @@ break
         gis(text, async (error, result) => {
         n = result
         images = n[Math.floor(Math.random() * n.length)].url
-        let buttons = [
-                    {buttonId: `gimage ${text}`, buttonText: {displayText: 'Next Image'}, type: 1}
-                ]
-                let buttonMessage = {
-                    image: { url: images },
-                    caption: `*-------「 GIMAGE SEARCH 」-------*
-*Query* : ${text}
-*Media Url* : ${images}`,
-                    footer: hanbotz.user.name,
-                    buttons: buttons,
-                    headerType: 4
-                }
-                hanbotz.sendMessage(m.chat, buttonMessage, { quoted: m })
+hanbotz.sendMessage(m.chat, { image: { url: images }, caption: `*Query* : ${text}\n*Media Url* : ${images}` }, { quoted: m })
         })
         }
         break
@@ -1558,12 +1547,11 @@ break
             }
             break
             case 'pinterest': {
-            	          if (m.isGroup) return m.reply('Fitur Tidak Dapat Digunakan Untuk Group!')
+            	if (!text) throw `Masukkan Query`
 		let { pinterest } = require('./lib/scraper')
                 pint = await pinterest(text)
                 result = pint[Math.floor(Math.random() * pint.length)]
                 hanbotz.sendMessage(m.chat, { image: { url: result }, caption: '⭔ Media Url : '+result }, { quoted: m })
-                
             }
             break
             
@@ -1595,17 +1583,7 @@ break
 		let { wallpaper } = require('./lib/scraper')
                 walp = await wallpaper(text)
                 result = walp[Math.floor(Math.random() * walp.length)]
-		let buttons = [
-                    {buttonId: `wallpaper ${text}`, buttonText: {displayText: 'Next Image'}, type: 1}
-                ]
-                let buttonMessage = {
-                    image: { url: result.image[0] },
-                    caption: `⭔ Title : ${result.title}\n⭔ Category : ${result.type}\n⭔ Detail : ${result.source}\n⭔ Media Url : ${result.image[2] || result.image[1] || result.image[0]}`,
-                    footer: hanbotz.user.name,
-                    buttons: buttons,
-                    headerType: 4
-                }
-                hanbotz.sendMessage(m.chat, buttonMessage, { quoted: m })
+                hanbotz.sendMessage(m.chat, { image: { url: result.image[0] }, caption: `⭔ Title : ${result.title}\n⭔ Category : ${result.type}\n⭔ Detail : ${result.source}\n⭔ Media Url : ${result.image[2] || result.image[1] || result.image[0]}`}, { quoted: m })
             }
             break
             case 'wikimedia': {
@@ -1613,17 +1591,7 @@ break
 		let { wikimedia } = require('./lib/scraper')
                 wkm = await wikimedia(text)
                 result = wkm[Math.floor(Math.random() * wkm.length)]
-                let buttons = [
-                    {buttonId: `wikimedia ${text}`, buttonText: {displayText: 'Next Image'}, type: 1}
-                ]
-                let buttonMessage = {
-                    image: { url: result.image },
-                    caption: `⭔ Title : ${result.title}\n⭔ Source : ${result.source}\n⭔ Media Url : ${result.image}`,
-                    footer: hanbotz.user.name,
-                    buttons: buttons,
-                    headerType: 4
-                }
-                hanbotz.sendMessage(m.chat, buttonMessage, { quoted: m })
+                hanbotz.sendMessage(m.chat, { image: { url: result.image }, caption: `⭔ Title : ${result.title}\n⭔ Source : ${result.source}\n⭔ Media Url : ${result.image}`}, { quoted: m })
             }
             break
             case 'quotesanime': case 'quoteanime': {
@@ -1982,7 +1950,7 @@ case 'tiktoknowm': {
                 m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/downloader/tiktok', { url: text }, 'apikey'))
                 let buttons = [
-                    {buttonId: `tiktokwm ${text}`, buttonText: {displayText: '► With Watermark'}, type: 1},
+                    
                     {buttonId: `tiktokmp3 ${text}`, buttonText: {displayText: '♫ Audio'}, type: 1}
                 ]
                 let buttonMessage = {
@@ -2000,7 +1968,7 @@ case 'tiktoknowm': {
                 m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/downloader/tiktok', { url: text }, 'apikey'))
                 let buttons = [
-                    {buttonId: `tiktoknowm ${text}`, buttonText: {displayText: '► No Watermark'}, type: 1},
+               
                     {buttonId: `tiktokmp3 ${text}`, buttonText: {displayText: '♫ Audio'}, type: 1}
                 ]
                 let buttonMessage = {
@@ -2017,18 +1985,8 @@ case 'tiktoknowm': {
                 if (!text) throw 'Masukkan Query Link!'
                 m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/downloader/musically', { url: text }, 'apikey'))
-                let buttons = [
-                    {buttonId: `tiktoknowm ${text}`, buttonText: {displayText: '► No Watermark'}, type: 1},
-                    {buttonId: `tiktokwm ${text}`, buttonText: {displayText: '► With Watermark'}, type: 1}
-                ]
-                let buttonMessage = {
-                    text: `Download From ${text}`,
-                    footer: 'HanBotz',
-                    buttons: buttons,
-                    headerType: 2
-                }
-                let msg = await hanbotz.sendMessage(m.chat, buttonMessage, { quoted: m })
-                hanbotz.sendMessage(m.chat, { audio: { url: anu.result.audio }, mimetype: 'audio/mpeg'}, { quoted: msg })
+                
+                hanbotz.sendMessage(m.chat, { audio: { url: anu.result.audio }, mimetype: 'audio/mpeg'}, { quoted: m })
             }
             break
 	        case 'instagram': case 'ig': case 'igdl': {
@@ -2592,22 +2550,25 @@ __________________________
 • ${prefix}twitter [url]
 • ${prefix}facebook [url]
 • ${prefix}pinterestdl [url]
-• ${prefix}ytmp3 [url]
-• ${prefix}ytmp4 [url]
 • ${prefix}umma [url]
 • ${prefix}joox [query]
 • ${prefix}soundcloud [url]
+
+𝗬𝗢𝗨𝗧𝗨𝗕𝗘
+• ${prefix}play [query]
+• ${prefix}ytmp3 [url]
+• ${prefix}ytmp4 [url]
+• ${prefix}ytsearch [query]
 • ${prefix}getmusic [query]
 • ${prefix}getvideo [query]
 
 𝗦𝗘𝗔𝗥𝗖𝗛
-• ${prefix}play [query]
 • ${prefix}google [query]
 • ${prefix}gimage [query]
 • ${prefix}pinterest [query]
 • ${prefix}wallpaper [query]
 • ${prefix}wikipedia [query]
-• ${prefix}ytsearch [query]
+• ${prefix}wikimedia [query]
 • ${prefix}ringtone [query]
 
 𝗧𝗘𝗫𝗧
@@ -2892,6 +2853,7 @@ __________________________
 __________________________
 
 *ＯＷＮＥＲ  ＡＲＥＡ*
+__________________________
 
 𝗗𝗔𝗧𝗔𝗕𝗔𝗦𝗘
 • ${prefix}setcmd
