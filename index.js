@@ -81,9 +81,9 @@ async function starthanbotz() {
                 ini_user = hanbotz.contacts[num]
 welcm = `https://hardianto.xyz/api/tools/welcomer?nama=${ini_user}&namaGb=${metadata.subject}&pepeGb=${ppgroup}&totalMem=${metadata.participants.length}&pepeUser=${ppuser}&bege=https://telegra.ph/file/89a6260f0a6720240e698.jpg&apikey=hardianto`
                 if (anu.action == 'add') {
-                    hanbotz.sendMessage(anu.id, { image: { url: welcm }, contextInfo: { mentionedJid: [num] }, caption: `Welcome To ${metadata.subject} @${num.split("@")[0]}` })
+                    hanbotz.sendMessage(anu.id, { image: { url: ppuser }, contextInfo: { mentionedJid: [num] }, caption: `Hai @${num.split("@")[0]}\nWelcome To\n*${metadata.subject}*\n\n${metadata.desc}`})
                 } else if (anu.action == 'remove') {
-                    hanbotz.sendMessage(anu.id, { image: { url: ppuser }, contextInfo: { mentionedJid: [num] }, caption: `@${num.split("@")[0]} Leaving To ${metadata.subject}` })
+                    hanbotz.sendMessage(anu.id, { image: { url: ppuser }, contextInfo: { mentionedJid: [num] }, caption: `@${num.split("@")[0]} Leaving To\n*${metadata.subject}*` })
                 }
             }
         } catch (err) {
