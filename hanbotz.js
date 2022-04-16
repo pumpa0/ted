@@ -2778,10 +2778,11 @@ __________________________
 
 𝗤𝗨𝗢𝗧𝗘
 • ${prefix}quotesanime
-• ${prefix}motivasi
 • ${prefix}dilanquote
 • ${prefix}bucinquote
+• ${prefix}katabijak
 • ${prefix}katasenja
+• ${prefix}motivasi
 • ${prefix}puisi
 
 𝗠𝗘𝗠𝗘
@@ -2789,15 +2790,45 @@ __________________________
 • ${prefix}darkjoke
 • ${prefix}mememaker
 
+𝗠𝗢𝗩𝗜𝗘
+• ${prefix}lk21 [query]
+• ${prefix}drakorongoing
+
+𝗦𝗧𝗢𝗥𝗬
+• ${prefix}cerpen
+• ${prefix}ceritahoror
+• ${prefix}wattpad [link]
+• ${prefix}wattpadsearch [query]
+
+𝗔𝗡𝗜𝗠𝗔𝗡𝗚𝗔
+• ${prefix}anime [query]
+• ${prefix}manga [query]
+• ${prefix}character [query]
+• ${prefix}kusonime [link web]
+• ${prefix}kusonimesearch [query]
+
 𝗥𝗔𝗡𝗗𝗢𝗠
-• ${prefix}lirik
-• ${prefix}couple
+• ${prefix}faktaunik
+• ${prefix}lirik [query]
 __________________________
 
 *ＰＲＥＭＩＵＭ  ＡＲＥＡ*
 __________________________
 
-𝗡𝗦𝗙𝗪 || _Ramadhan Stay Halal_
+𝗣𝗢𝗥𝗡
+• ${prefix}xnxx [link]
+• ${prefix}xnxxsearch [query]
+• ${prefix}xhamster [link]
+• ${prefix}xhamstersearch [query]
+
+𝗛𝗘𝗡𝗧𝗔𝗜
+• ${prefix}nhentai [code]
+• ${prefix}nhentaipdf [code]
+• ${prefix}nhentaisearch [query]
+• ${prefix}nekopoi [link]
+• ${prefix}nekopoisearch [query]
+
+𝗡𝗦𝗙𝗪
 • ${prefix}trap
 • ${prefix}blowjob
 • ${prefix}yaoi
@@ -2890,13 +2921,13 @@ To talk to bots, use *${prefix}botz _[text]_*
 `
                 let btn = [{
                                 urlButton: {
-                                    displayText: 'Group HanBotz',
+                                    displayText: 'Join',
                                     url: 'https://chat.whatsapp.com/I2Hmr4RNYOHFIRNvZHBFjX'
                                 }
                             }, {
                                 urlButton: {
                                     displayText: 'Report Bug / Error',
-                                    url: 'wa.me/6285731855426?text=bang%20ada%20bug/error'
+                                    url: 'wa.me/6285731855426'
                                 }
                             }, {
                                 quickReplyButton: {
@@ -3174,12 +3205,12 @@ case 'zerocraft': {
 	        break
 // Movie & Story
                 case 'lk21':
+                if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
                     if (args.length == 0) return m.reply(`Example: ${prefix + command} Transformer`)
                     query = args.join(" ")
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/lk21?apikey=${apikey}&query=${query}`)
                     get_result = get_result.result
                     ini_txt = `Title : ${get_result.title}\n`
-                    ini_txt += `Link : ${get_result.link}\n`
                     ini_txt += `Genre : ${get_result.genre}\n`
                     ini_txt += `Views : ${get_result.views}\n`
                     ini_txt += `Duration : ${get_result.duration}\n`
@@ -3193,8 +3224,10 @@ case 'zerocraft': {
                     ini_txt += `Link Download : ${get_result.link_dl}`
                     thumbnail = (`${get_result.thumbnail}`)
                     hanbotz.sendMessage(m.chat, { image: { url: thumbnail }, caption: ini_txt }, { quoted: m })
+                    db.users[m.sender].limit -= 1 // -1 limit
                     break
                 case 'drakorongoing':
+                if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/drakorongoing?apikey=${apikey}`)
                     get_result = get_result.result
                     ini_txt = "Ongoing Drakor\n\n"
@@ -3207,8 +3240,10 @@ case 'zerocraft': {
                         ini_txt += `Genre : ${x.genre.join(", ")}\n\n`
                     }
                     m.reply(ini_txt)
+                    db.users[m.sender].limit -= 1 // -1 limit
                     break
                 case 'wattpad':
+                if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
                     if (args.length == 0) return m.reply(`Example: ${prefix + command} https://www.wattpad.com/707367860-kumpulan-quote-tere-liye-tere-liye-quote-quote`)
                     ini_url = args[0]
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/wattpad?apikey=${apikey}&url=${ini_url}`)
@@ -3226,8 +3261,10 @@ case 'zerocraft': {
                     ini_txt += `Story : \n${get_result.story}`
                     thumbnail = (`${get_result.photo}`)
                     hanbotz.sendMessage(m.chat, { image: { url: thumbnail }, caption: ini_txt }, { quoted: m })
+                    db.users[m.sender].limit -= 1 // -1 limit
                     break
                 case 'wattpadsearch':
+                if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
                     if (args.length == 0) return m.reply(`Example: ${prefix + command} Tere Liye`)
                     query = args.join(" ")
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/wattpadsearch?apikey=${apikey}&query=${query}`)
@@ -3242,16 +3279,20 @@ case 'zerocraft': {
                         ini_txt += `Coment count: ${x.commentCount}\n\n`
                     }
                     m.reply(ini_txt)
+                    db.users[m.sender].limit -= 1 // -1 limit
                     break
                 case 'cerpen':
+                if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/cerpen?apikey=${apikey}`)
                     get_result = get_result.result
                     ini_txt = `Title : ${get_result.title}\n`
                     ini_txt += `Creator : ${get_result.creator}\n`
                     ini_txt += `Story :\n${get_result.cerpen}`
                     m.reply(ini_txt)
+                    db.users[m.sender].limit -= 1 // -1 limit
                     break
                 case 'ceritahoror':
+                if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/ceritahoror?apikey=${apikey}`)
                     get_result = get_result.result
                     ini_txt = `Title : ${get_result.title}\n`
@@ -3259,13 +3300,17 @@ case 'zerocraft': {
                     ini_txt += `Story :\n${get_result.story}\n`
                     thumbnail = (`${get_result.thumbnail}`)
                     hanbotz.sendMessage(m.chat, { image: { url: thumbnail }, caption: ini_txt }, { quoted: m })
+                    db.users[m.sender].limit -= 1 // -1 limit
                     break
 case 'faktaunik':
                 case 'katabijak':
+                if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/random/${command}?apikey=${apikey}`)
                     m.reply(get_result.result)
+                    db.users[m.sender].limit -= 1 // -1 limit
                     break
 case 'kusonime':
+if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
                     if (args.length == 0) return m.reply(`Example: ${prefix + command} https://kusonime.com/nanatsu-no-taizai-bd-batch-subtitle-indonesia/`)
                     ini_url = args[0]
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/kusonime?apikey=${apikey}&url=${ini_url}`)
@@ -3291,8 +3336,10 @@ case 'kusonime':
                     }
                     ini_buffer = (`${get_result.thumbnail}`)
                     hanbotz.sendMessage(m.chat, { image: { url: ini_buffer }, caption: ini_txt }, { quoted: m })
+                    db.users[m.sender].limit -= 1 // -1 limit
                     break
                 case 'kusonimesearch':
+                if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
                     if (args.length == 0) return m.reply(`Example: ${prefix + command} Gotoubun No Hanayome`)
                     query = args.join(" ")
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/kusonimesearch?apikey=${apikey}&query=${query}`)
@@ -3318,74 +3365,11 @@ case 'kusonime':
                     }
                     ini_buffer = (`${get_result.thumbnail}`)
                     hanbotz.sendMessage(m.chat, { image: { url: ini_buffer }, caption: ini_txt }, { quoted: m })
+                    db.users[m.sender].limit -= 1 // -1 limit
                     break
-                case 'otakudesu':
-                    if (args.length == 0) return m.reply(`Example: ${prefix + command} https://otakudesu.tv/lengkap/pslcns-sub-indo/`)
-                    ini_url = args[0]
-                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/otakudesu?apikey=${apikey}&url=${ini_url}`)
-                    get_result = get_result.result
-                    ini_txt = `Title : ${get_result.title}\n`
-                    ini_txt += `Japanese : ${get_result.japanese}\n`
-                    ini_txt += `Judul : ${get_result.judul}\n`
-                    ini_txt += `Type : ${get_result.type}\n`
-                    ini_txt += `Episode : ${get_result.episodes}\n`
-                    ini_txt += `Aired : ${get_result.aired}\n`
-                    ini_txt += `Producers : ${get_result.producers}\n`
-                    ini_txt += `Genre : ${get_result.genres}\n`
-                    ini_txt += `Duration : ${get_result.duration}\n`
-                    ini_txt += `Studios : ${get_result.status}\n`
-                    ini_txt += `Rating : ${get_result.rating}\n`
-                    ini_txt += `Credit : ${get_result.credit}\n`
-                    get_link = get_result.link_dl
-                    for (var x in get_link) {
-                        ini_txt += `\n\n*${get_link[x].title}*\n`
-                        for (var y in get_link[x].link_dl) {
-                            ini_info = get_link[x].link_dl[y]
-                            ini_txt += `\n\`\`\`Reso : \`\`\`${ini_info.reso}\n`
-                            ini_txt += `\`\`\`Size : \`\`\`${ini_info.size}\n`
-                            ini_txt += `\`\`\`Link : \`\`\`\n`
-                            down_link = ini_info.link_dl
-                            for (var z in down_link) {
-                                ini_txt += `${z} - ${down_link[z]}\n`
-                            }
-                        }
-                    }
-                    m.reply(ini_txt)
-                    break
-                case 'otakudesusearch':
-                    if (args.length == 0) return m.reply(`Example: ${prefix + command} Gotoubun No Hanayome`)
-                    query = args.join(" ")
-                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/otakudesusearch?apikey=${apikey}&query=${query}`)
-                    get_result = get_result.result
-                    ini_txt = `Title : ${get_result.title}\n`
-                    ini_txt += `Japanese : ${get_result.japanese}\n`
-                    ini_txt += `Judul : ${get_result.judul}\n`
-                    ini_txt += `Type : ${get_result.type}\n`
-                    ini_txt += `Episode : ${get_result.episodes}\n`
-                    ini_txt += `Aired : ${get_result.aired}\n`
-                    ini_txt += `Producers : ${get_result.producers}\n`
-                    ini_txt += `Genre : ${get_result.genres}\n`
-                    ini_txt += `Duration : ${get_result.duration}\n`
-                    ini_txt += `Studios : ${get_result.status}\n`
-                    ini_txt += `Rating : ${get_result.rating}\n`
-                    ini_txt += `Credit : ${get_result.credit}\n`
-                    get_link = get_result.link_dl
-                    for (var x in get_link) {
-                        ini_txt += `\n\n*${get_link[x].title}*\n`
-                        for (var y in get_link[x].link_dl) {
-                            ini_info = get_link[x].link_dl[y]
-                            ini_txt += `\n\`\`\`Reso : \`\`\`${ini_info.reso}\n`
-                            ini_txt += `\`\`\`Size : \`\`\`${ini_info.size}\n`
-                            ini_txt += `\`\`\`Link : \`\`\`\n`
-                            down_link = ini_info.link_dl
-                            for (var z in down_link) {
-                                ini_txt += `${z} - ${down_link[z]}\n`
-                            }
-                        }
-                    }
-                    m.reply(ini_txt)
-                    break
+                
                 case 'nhentai':
+                if (!isPremium) throw `Fitur Khusus Premium`
                     if (args.length == 0) return m.reply(`Example: ${prefix + command} 344253`)
                     henid = args[0]
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/nhentai/${henid}?apikey=${apikey}`)
@@ -3406,6 +3390,7 @@ case 'kusonime':
                     m.reply(ini_txt)
                     break
                 case 'nhentaipdf':
+                if (!isPremium) throw `Fitur Khusus Premium`
                     if (args.length == 0) return m.reply(`Example: ${prefix + command} 344253`)
                     henid = args[0]
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/nhentaipdf/${henid}?apikey=${apikey}`)
@@ -3414,6 +3399,7 @@ case 'kusonime':
                     hanbotz.sendMessage(m.chat, {document: ini_buffer, mimetype: 'application/pdf', fileName: `${henid}.pdf`}, {quoted:m})
                     break
                 case 'nhentaisearch':
+                if (!isPremium) throw `Fitur Khusus Premium`
                     if (args.length == 0) return m.reply(`Example: ${prefix + command} Gotoubun No Hanayome`)
                     query = args.join(" ")
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/nhentaisearch?apikey=${apikey}&query=${query}`)
@@ -3431,6 +3417,7 @@ case 'kusonime':
                     m.reply(ini_txt)
                     break
                 case 'nekopoi':
+                if (!isPremium) throw `Fitur Khusus Premium`
                     if (args.length == 0) return m.reply(`Example: ${prefix + command} https://nekopoi.care/isekai-harem-monogatari-episode-4-subtitle-indonesia/`)
                     ini_url = args[0]
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/nekopoi?apikey=${apikey}&url=${ini_url}`)
@@ -3452,6 +3439,7 @@ case 'kusonime':
                     hanbotz.sendMessage(m.chat, { image: { url: ini_buffer }, caption: ini_txt }, { quoted: m })
                     break
                 case 'nekopoisearch':
+                if (!isPremium) throw `Fitur Khusus Premium`
                     if (args.length == 0) return m.reply(`Example: ${prefix + command} Isekai Harem`)
                     query = args.join(" ")
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/nekopoisearch?apikey=${apikey}&query=${query}`)
@@ -3465,6 +3453,7 @@ case 'kusonime':
                     m.reply(ini_txt)
                     break
 case 'xhamstersearch':
+if (!isPremium) throw `Fitur Khusus Premium`
                     if (args.length == 0) return m.reply(`Example: ${prefix + command} Japanese`)
                     query = args.join(" ")
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/xhamstersearch?apikey=${apikey}&query=${query}`)
@@ -3479,6 +3468,7 @@ case 'xhamstersearch':
                     m.reply(ini_txt)
                     break
                 case 'xhamster':
+                if (!isPremium) throw `Fitur Khusus Premium`
                     if (args.length == 0) return m.reply(`Example: ${prefix + command} https://xhamster.com/videos/party-with-friends-end-in-awesome-fucking-5798407`)
                     query = args.join(" ")
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/xhamster?apikey=${apikey}&url=${query}`)
@@ -3501,6 +3491,7 @@ case 'xhamstersearch':
                     hanbotz.sendMessage(m.chat, { image: { url: thumbnail }, caption: ini_txt }, { quoted: m })
                     break
                 case 'xnxxsearch':
+                if (!isPremium) throw `Fitur Khusus Premium`
                     if (args.length == 0) return m.reply(`Example: ${prefix + command} Japanese`)
                     query = args.join(" ")
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/xnxxsearch?apikey=${apikey}&query=${query}`)
@@ -3517,6 +3508,7 @@ case 'xhamstersearch':
                     m.reply(ini_txt)
                     break
                 case 'xnxx':
+                if (!isPremium) throw `Fitur Khusus Premium`
                     if (args.length == 0) return m.reply(`Example: ${prefix + command} https://www.xnxx.com/video-uy5a73b/mom_is_horny_-_brooklyn`)
                     query = args.join(" ")
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/xnxx?apikey=${apikey}&url=${query}`)
@@ -3541,6 +3533,7 @@ case 'xhamstersearch':
 
                     // AniManga //
                 case 'character':
+                if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
                     if (args.length == 0) return m.reply(`Example: ${prefix + command} Miku Nakano`)
                     query = args.join(" ")
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/character?apikey=${apikey}&query=${query}`)
@@ -3557,8 +3550,10 @@ case 'xhamstersearch':
                     ini_txt += `\nDescription : \n${get_result.description.replace(/__/g, "_")}`
                     thumbnail = (`${get_result.image.large}`)
                     hanbotz.sendMessage(m.chat, { image: { url: thumbnail }, caption: ini_txt }, { quoted: m })
+                    db.users[m.sender].limit -= 1 // -1 limit
                     break
                 case 'manga':
+                if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
                     if (args.length == 0) return m.reply(`Example: ${prefix + command} Gotoubun No Hanayome`)
                     query = args.join(" ")
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/manga?apikey=${apikey}&query=${query}`)
@@ -3586,8 +3581,10 @@ case 'xhamstersearch':
                     ini_txt += `\nDescription : ${get_result.description}`
                     thumbnail = (`${get_result.coverImage.large}`)
                     hanbotz.sendMessage(m.chat, { image: { url: thumbnail }, caption: ini_txt }, { quoted: m })
+                    db.users[m.sender].limit -= 1 // -1 limit
                     break
                 case 'anime':
+                if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
                     if (args.length == 0) return m.reply(`Example: ${prefix + command} Gotoubun No Hanayome`)
                     query = args.join(" ")
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/anime?apikey=${apikey}&query=${query}`)
@@ -3617,6 +3614,7 @@ case 'xhamstersearch':
                     ini_txt += `\nDescription : ${get_result.description}`
                     thumbnail = (`${get_result.coverImage.large}`)
                     hanbotz.sendMessage(m.chat, { image: { url: thumbnail }, caption: ini_txt }, { quoted: m })
+                    db.users[m.sender].limit -= 1 // -1 limit
                     break
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
             default:
