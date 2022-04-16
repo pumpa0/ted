@@ -51,6 +51,7 @@ let tebaklirik = db.game.lirik = []
 let tebaktebakan = db.game.tebakan = []
 let vote = db.others.vote = []
 
+apikey = `HanBotzApi`
 readmore = `͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏`
 
 module.exports = hanbotz = async (hanbotz, m, chatUpdate, store) => {
@@ -160,14 +161,14 @@ module.exports = hanbotz = async (hanbotz, m, chatUpdate, store) => {
 	  // Anti Link
         if (db.chats[m.chat].antilink) {
         if (budy.match(`chat.whatsapp.com`)) {
-        m.reply(`「 ANTI LINK 」\n\nKamu terdeteksi mengirim link group, maaf kamu akan di kick !`)
         if (!isBotAdmins) return m.reply(`Bot gak admin T_T`)
         let gclink = (`https://chat.whatsapp.com/`+await hanbotz.groupInviteCode(m.chat))
         let isLinkThisGc = new RegExp(gclink, 'i')
         let isgclink = isLinkThisGc.test(m.text)
-        if (isgclink) return m.reply(`Tapi Boong`)
-        if (isAdmins) return m.reply(`Eh Admin, Gak Jadi Deh`)
-        if (isCreator) return m.reply(`Owner Sendiri Masa Di Kick`)
+        if (isgclink) return 
+        if (isAdmins) return 
+        if (isCreator) return 
+        m.reply(`「 ANTI LINK 」\n\nKamu terdeteksi mengirim link group, maaf kamu akan di kick !`)
         hanbotz.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
         }
         }
@@ -208,13 +209,12 @@ module.exports = hanbotz = async (hanbotz, m, chatUpdate, store) => {
                 room.terjawab[index] = m.sender
             }
             let isWin = room.terjawab.length === room.terjawab.filter(v => v).length
-            let caption = `
-Jawablah Pertanyaan Berikut :\n${room.soal}\n\n\nTerdapat ${room.jawaban.length} Jawaban ${room.jawaban.find(v => v.includes(' ')) ? `(beberapa Jawaban Terdapat Spasi)` : ''}
-${isWin ? `Semua Jawaban Terjawab` : isSurender ? 'Menyerah!' : ''}
+            let caption = `*Jawablah Pertanyaan Berikut* :\n${room.soal}\n\n*Terdapat ${room.jawaban.length} Jawaban* ${room.jawaban.find(v => v.includes(' ')) ? `(beberapa Jawaban Terdapat Spasi)` : ''}
+${isWin ? `*Semua Jawaban Terjawab*` : isSurender ? '\nMenyerah!' : ''}
 ${Array.from(room.jawaban, (jawaban, index) => {
         return isSurender || room.terjawab[index] ? `(${index + 1}) ${jawaban} ${room.terjawab[index] ? '@' + room.terjawab[index].split('@')[0] : ''}`.trim() : false
     }).filter(v => v).join('\n')}
-    ${isSurender ? '' : `Perfect Player`}`.trim()
+    ${isSurender ? '' : `\nMasih Terdapat Jawaban Tersisa\nKetik *nyerah* Untuk Menyerah`}`.trim()
             hanbotz.sendText(m.chat, caption, m, { contextInfo: { mentionedJid: parseMention(caption) }}).then(mes => { return _family100['family100'+m.chat].pesan = mesg }).catch(_ => _)
             if (isWin || isSurender) delete _family100['family100'+m.chat]
         }
@@ -565,11 +565,17 @@ Silahkan @${m.mentionedJid[0].split`@`[0]} untuk ketik terima/tolak`
             }
             break
 	    case 'donasi': case 'sewabot': case 'sewa': case 'buypremium': case 'donate': 
-	sawer = `*Donate For HanBotz*
+	sawer = `\n*Donate For HanBotz*
 https://saweria.co/HanBotz
 
-_sewa bot hubungi owner_
-wa.me/6285731855426`
+*Mendapatkan :*
+- Bot Join 1 Grup Bebas
+- Unlock Premium Area
+- Unlimited Limit
+
+*Owner*
+wa.me/6285731855426
+`
 m.reply(sawer)
             break
             
@@ -2582,6 +2588,8 @@ __________________________
 • ${prefix}tebak [option]
 • ${prefix}math [mode]
 • ${prefix}suitpvp [@tag]
+• ${prefix}tictactoe [@tag]
+• ${prefix}family100
 
 𝗣𝗥𝗜𝗠𝗕𝗢𝗡
 • ${prefix}nomorhoki
@@ -2782,6 +2790,7 @@ __________________________
 • ${prefix}mememaker
 
 𝗥𝗔𝗡𝗗𝗢𝗠
+• ${prefix}lirik
 • ${prefix}couple
 __________________________
 
@@ -2886,12 +2895,12 @@ To talk to bots, use *${prefix}botz _[text]_*
                                 }
                             }, {
                                 urlButton: {
-                                    displayText: 'Owner',
-                                    url: 'wa.me/6285731855426'
+                                    displayText: 'Report Bug / Error',
+                                    url: 'wa.me/6285731855426?text=bang%20ada%20bug/error'
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: 'Donasi',
+                                    displayText: 'Donate',
                                     id: 'donasi'
                                 }  
                             }]
@@ -2926,19 +2935,13 @@ case 'attp': {
                 hanbotz.sendMessage(m.chat, { sticker: { url: anu }}, { quoted: m })
                 }
                 break
-case 'ttp': {
-	if (!text) throw `text nya mana`
-	let anu = (`https://zenzapi.xyz/api/image/ttp?text=${text}&apikey=ApiHanBotz`)
-                hanbotz.sendMessage(m.chat, { image: { url: anu }}, { quoted: m })
-                }
-                break
 case 'mememaker': case 'smeme': case 'stikermeme': case 'stickermeme': case 'memegen': {
 	if (!text) throw `text nya mana?\nContoh: *${command} han botz [link]*\n\nNote: untuk mendapatkan link gambar, gunakan *.tourl*`
 	p1 = (args[0])
 	p2 = (args[1])
 	p3 = (args[2])
 	let anu = (`https://zenzapi.xyz/api/image/meme?text=${p1}&text2=${p2}&image=${p3}&apikey=ApiHanBotz`)
-	hanbotz.sendMessage(m.chat, { image: { url: anu }, caption: `to sticker use *.s*`}, { quoted: m })
+	hanbotz.sendMessage(m.chat, { image: { url: anu }, caption: `HanBotz`}, { quoted: m })
             }
             break
              // Textprome //
@@ -3158,7 +3161,7 @@ case 'bj':
                     hanbotz.sendMessage(m.chat, { image: { url: yame }, caption: `Stay Halal` }, { quoted: m })
                     break
 case 'lirik':
-                    if (args.length == 0) return reply(`Example: ${prefix + command} Melukis Senja`)
+                    if (args.length == 0) return m.reply(`Example: ${prefix + command} Melukis Senja`)
                     query = args.join(" ")
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/lirik?apikey=HanBotzApi&query=${query}`)
                     m.reply(get_result.result)
@@ -3169,8 +3172,455 @@ case 'zerocraft': {
 	m.reply(zcra)
 	}
 	        break
+// Movie & Story
+                case 'lk21':
+                    if (args.length == 0) return m.reply(`Example: ${prefix + command} Transformer`)
+                    query = args.join(" ")
+                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/lk21?apikey=${apikey}&query=${query}`)
+                    get_result = get_result.result
+                    ini_txt = `Title : ${get_result.title}\n`
+                    ini_txt += `Link : ${get_result.link}\n`
+                    ini_txt += `Genre : ${get_result.genre}\n`
+                    ini_txt += `Views : ${get_result.views}\n`
+                    ini_txt += `Duration : ${get_result.duration}\n`
+                    ini_txt += `Tahun : ${get_result.tahun}\n`
+                    ini_txt += `Rating : ${get_result.rating}\n`
+                    ini_txt += `Desc : ${get_result.desc}\n`
+                    ini_txt += `Actors : ${get_result.actors.join(", ")}\n`
+                    ini_txt += `Location : ${get_result.location}\n`
+                    ini_txt += `Date Release : ${get_result.date_release}\n`
+                    ini_txt += `Language : ${get_result.language}\n`
+                    ini_txt += `Link Download : ${get_result.link_dl}`
+                    thumbnail = (`${get_result.thumbnail}`)
+                    hanbotz.sendMessage(m.chat, { image: { url: thumbnail }, caption: ini_txt }, { quoted: m })
+                    break
+                case 'drakorongoing':
+                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/drakorongoing?apikey=${apikey}`)
+                    get_result = get_result.result
+                    ini_txt = "Ongoing Drakor\n\n"
+                    for (var x of get_result) {
+                        ini_txt += `Title : ${x.title}\n`
+                        ini_txt += `Link : ${x.link}\n`
+                        ini_txt += `Thumbnail : ${x.thumbnail}\n`
+                        ini_txt += `Year : ${x.category}\n`
+                        ini_txt += `Total Episode : ${x.total_episode}\n`
+                        ini_txt += `Genre : ${x.genre.join(", ")}\n\n`
+                    }
+                    m.reply(ini_txt)
+                    break
+                case 'wattpad':
+                    if (args.length == 0) return m.reply(`Example: ${prefix + command} https://www.wattpad.com/707367860-kumpulan-quote-tere-liye-tere-liye-quote-quote`)
+                    ini_url = args[0]
+                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/wattpad?apikey=${apikey}&url=${ini_url}`)
+                    get_result = get_result.result
+                    ini_txt = `Title : ${get_result.title}\n`
+                    ini_txt += `Rating : ${get_result.rating}\n`
+                    ini_txt += `Motify date : ${get_result.modifyDate}\n`
+                    ini_txt += `Create date: ${get_result.createDate}\n`
+                    ini_txt += `Word : ${get_result.word}\n`
+                    ini_txt += `Comment : ${get_result.comment}\n`
+                    ini_txt += `Vote : ${get_result.vote}\n`
+                    ini_txt += `Reader : ${get_result.reader}\n`
+                    ini_txt += `Pages : ${get_result.pages}\n`
+                    ini_txt += `Description : ${get_result.desc}\n\n`
+                    ini_txt += `Story : \n${get_result.story}`
+                    thumbnail = (`${get_result.photo}`)
+                    hanbotz.sendMessage(m.chat, { image: { url: thumbnail }, caption: ini_txt }, { quoted: m })
+                    break
+                case 'wattpadsearch':
+                    if (args.length == 0) return m.reply(`Example: ${prefix + command} Tere Liye`)
+                    query = args.join(" ")
+                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/wattpadsearch?apikey=${apikey}&query=${query}`)
+                    get_result = get_result.result
+                    ini_txt = "Wattpad Seach : \n"
+                    for (var x of get_result) {
+                        ini_txt += `Title : ${x.title}\n`
+                        ini_txt += `Url : ${x.url}\n`
+                        ini_txt += `Part : ${x.parts}\n`
+                        ini_txt += `Motify date : ${x.modifyDate}\n`
+                        ini_txt += `Create date: ${x.createDate}\n`
+                        ini_txt += `Coment count: ${x.commentCount}\n\n`
+                    }
+                    m.reply(ini_txt)
+                    break
+                case 'cerpen':
+                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/cerpen?apikey=${apikey}`)
+                    get_result = get_result.result
+                    ini_txt = `Title : ${get_result.title}\n`
+                    ini_txt += `Creator : ${get_result.creator}\n`
+                    ini_txt += `Story :\n${get_result.cerpen}`
+                    m.reply(ini_txt)
+                    break
+                case 'ceritahoror':
+                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/ceritahoror?apikey=${apikey}`)
+                    get_result = get_result.result
+                    ini_txt = `Title : ${get_result.title}\n`
+                    ini_txt += `Desc : ${get_result.desc}\n`
+                    ini_txt += `Story :\n${get_result.story}\n`
+                    thumbnail = (`${get_result.thumbnail}`)
+                    hanbotz.sendMessage(m.chat, { image: { url: thumbnail }, caption: ini_txt }, { quoted: m })
+                    break
+case 'faktaunik':
+                case 'katabijak':
+                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/random/${command}?apikey=${apikey}`)
+                    m.reply(get_result.result)
+                    break
+case 'kusonime':
+                    if (args.length == 0) return m.reply(`Example: ${prefix + command} https://kusonime.com/nanatsu-no-taizai-bd-batch-subtitle-indonesia/`)
+                    ini_url = args[0]
+                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/kusonime?apikey=${apikey}&url=${ini_url}`)
+                    get_result = get_result.result
+                    ini_txt = `Title : ${get_result.title}\n`
+                    ini_txt += `Japanese : ${get_result.japanese}\n`
+                    ini_txt += `Genre : ${get_result.genre}\n`
+                    ini_txt += `Seasons : ${get_result.seasons}\n`
+                    ini_txt += `Producers : ${get_result.producers}\n`
+                    ini_txt += `Type : ${get_result.type}\n`
+                    ini_txt += `Status : ${get_result.status}\n`
+                    ini_txt += `Total Episode : ${get_result.total_episode}\n`
+                    ini_txt += `Score : ${get_result.score}\n`
+                    ini_txt += `Duration : ${get_result.duration}\n`
+                    ini_txt += `Released On : ${get_result.released_on}\n`
+                    ini_txt += `Desc : ${get_result.desc}\n`
+                    link_dl = get_result.link_dl
+                    for (var x in link_dl) {
+                        ini_txt += `\n${x}\n`
+                        for (var y in link_dl[x]) {
+                            ini_txt += `${y} - ${link_dl[x][y]}\n`
+                        }
+                    }
+                    ini_buffer = (`${get_result.thumbnail}`)
+                    hanbotz.sendMessage(m.chat, { image: { url: ini_buffer }, caption: ini_txt }, { quoted: m })
+                    break
+                case 'kusonimesearch':
+                    if (args.length == 0) return m.reply(`Example: ${prefix + command} Gotoubun No Hanayome`)
+                    query = args.join(" ")
+                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/kusonimesearch?apikey=${apikey}&query=${query}`)
+                    get_result = get_result.result
+                    ini_txt = `Title : ${get_result.title}\n`
+                    ini_txt += `Japanese : ${get_result.japanese}\n`
+                    ini_txt += `Genre : ${get_result.genre}\n`
+                    ini_txt += `Seasons : ${get_result.seasons}\n`
+                    ini_txt += `Producers : ${get_result.producers}\n`
+                    ini_txt += `Type : ${get_result.type}\n`
+                    ini_txt += `Status : ${get_result.status}\n`
+                    ini_txt += `Total Episode : ${get_result.total_episode}\n`
+                    ini_txt += `Score : ${get_result.score}\n`
+                    ini_txt += `Duration : ${get_result.duration}\n`
+                    ini_txt += `Released On : ${get_result.released_on}\n`
+                    ini_txt += `Desc : ${get_result.desc}\n`
+                    link_dl = get_result.link_dl
+                    for (var x in link_dl) {
+                        ini_txt += `\n${x}\n`
+                        for (var y in link_dl[x]) {
+                            ini_txt += `${y} - ${link_dl[x][y]}\n`
+                        }
+                    }
+                    ini_buffer = (`${get_result.thumbnail}`)
+                    hanbotz.sendMessage(m.chat, { image: { url: ini_buffer }, caption: ini_txt }, { quoted: m })
+                    break
+                case 'otakudesu':
+                    if (args.length == 0) return m.reply(`Example: ${prefix + command} https://otakudesu.tv/lengkap/pslcns-sub-indo/`)
+                    ini_url = args[0]
+                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/otakudesu?apikey=${apikey}&url=${ini_url}`)
+                    get_result = get_result.result
+                    ini_txt = `Title : ${get_result.title}\n`
+                    ini_txt += `Japanese : ${get_result.japanese}\n`
+                    ini_txt += `Judul : ${get_result.judul}\n`
+                    ini_txt += `Type : ${get_result.type}\n`
+                    ini_txt += `Episode : ${get_result.episodes}\n`
+                    ini_txt += `Aired : ${get_result.aired}\n`
+                    ini_txt += `Producers : ${get_result.producers}\n`
+                    ini_txt += `Genre : ${get_result.genres}\n`
+                    ini_txt += `Duration : ${get_result.duration}\n`
+                    ini_txt += `Studios : ${get_result.status}\n`
+                    ini_txt += `Rating : ${get_result.rating}\n`
+                    ini_txt += `Credit : ${get_result.credit}\n`
+                    get_link = get_result.link_dl
+                    for (var x in get_link) {
+                        ini_txt += `\n\n*${get_link[x].title}*\n`
+                        for (var y in get_link[x].link_dl) {
+                            ini_info = get_link[x].link_dl[y]
+                            ini_txt += `\n\`\`\`Reso : \`\`\`${ini_info.reso}\n`
+                            ini_txt += `\`\`\`Size : \`\`\`${ini_info.size}\n`
+                            ini_txt += `\`\`\`Link : \`\`\`\n`
+                            down_link = ini_info.link_dl
+                            for (var z in down_link) {
+                                ini_txt += `${z} - ${down_link[z]}\n`
+                            }
+                        }
+                    }
+                    m.reply(ini_txt)
+                    break
+                case 'otakudesusearch':
+                    if (args.length == 0) return m.reply(`Example: ${prefix + command} Gotoubun No Hanayome`)
+                    query = args.join(" ")
+                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/otakudesusearch?apikey=${apikey}&query=${query}`)
+                    get_result = get_result.result
+                    ini_txt = `Title : ${get_result.title}\n`
+                    ini_txt += `Japanese : ${get_result.japanese}\n`
+                    ini_txt += `Judul : ${get_result.judul}\n`
+                    ini_txt += `Type : ${get_result.type}\n`
+                    ini_txt += `Episode : ${get_result.episodes}\n`
+                    ini_txt += `Aired : ${get_result.aired}\n`
+                    ini_txt += `Producers : ${get_result.producers}\n`
+                    ini_txt += `Genre : ${get_result.genres}\n`
+                    ini_txt += `Duration : ${get_result.duration}\n`
+                    ini_txt += `Studios : ${get_result.status}\n`
+                    ini_txt += `Rating : ${get_result.rating}\n`
+                    ini_txt += `Credit : ${get_result.credit}\n`
+                    get_link = get_result.link_dl
+                    for (var x in get_link) {
+                        ini_txt += `\n\n*${get_link[x].title}*\n`
+                        for (var y in get_link[x].link_dl) {
+                            ini_info = get_link[x].link_dl[y]
+                            ini_txt += `\n\`\`\`Reso : \`\`\`${ini_info.reso}\n`
+                            ini_txt += `\`\`\`Size : \`\`\`${ini_info.size}\n`
+                            ini_txt += `\`\`\`Link : \`\`\`\n`
+                            down_link = ini_info.link_dl
+                            for (var z in down_link) {
+                                ini_txt += `${z} - ${down_link[z]}\n`
+                            }
+                        }
+                    }
+                    m.reply(ini_txt)
+                    break
+                case 'nhentai':
+                    if (args.length == 0) return m.reply(`Example: ${prefix + command} 344253`)
+                    henid = args[0]
+                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/nhentai/${henid}?apikey=${apikey}`)
+                    get_result = get_result.result
+                    ini_txt = `Title Romaji : ${get_result.title_romaji}\n`
+                    ini_txt += `Title Native : ${get_result.title_native}\n`
+                    ini_txt += `Read Online : ${get_result.read}\n`
+                    get_info = get_result.info
+                    ini_txt += `Parodies : ${get_info.parodies}\n`
+                    ini_txt += `Character : ${get_info.characters.join(", ")}\n`
+                    ini_txt += `Tags : ${get_info.tags.join(", ")}\n`
+                    ini_txt += `Artist : ${get_info.artists}\n`
+                    ini_txt += `Group : ${get_info.groups}\n`
+                    ini_txt += `Languager : ${get_info.languages.join(", ")}\n`
+                    ini_txt += `Categories : ${get_info.categories}\n`
+                    ini_txt += `Pages : ${get_info.pages}\n`
+                    ini_txt += `Uploaded : ${get_info.uploaded}\n`
+                    m.reply(ini_txt)
+                    break
+                case 'nhentaipdf':
+                    if (args.length == 0) return m.reply(`Example: ${prefix + command} 344253`)
+                    henid = args[0]
+                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/nhentaipdf/${henid}?apikey=${apikey}`)
+                    get_result = get_result.result
+                    ini_buffer = (`${get_result}`)
+                    hanbotz.sendMessage(m.chat, {document: ini_buffer, mimetype: 'application/pdf', fileName: `${henid}.pdf`}, {quoted:m})
+                    break
+                case 'nhentaisearch':
+                    if (args.length == 0) return m.reply(`Example: ${prefix + command} Gotoubun No Hanayome`)
+                    query = args.join(" ")
+                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/nhentaisearch?apikey=${apikey}&query=${query}`)
+                    get_result = get_result.result
+                    ini_txt = "Result : \n"
+                    for (var x of get_result) {
+                        ini_txt += `Id : ${x.id}\n`
+                        ini_txt += `Title English : ${x.title_english}\n`
+                        ini_txt += `Title Japanese : ${x.title_japanese}\n`
+                        ini_txt += `Native : ${x.title_native}\n`
+                        ini_txt += `Upload : ${x.date_upload}\n`
+                        ini_txt += `Page : ${x.page}\n`
+                        ini_txt += `Favourite : ${x.favourite}\n\n`
+                    }
+                    m.reply(ini_txt)
+                    break
+                case 'nekopoi':
+                    if (args.length == 0) return m.reply(`Example: ${prefix + command} https://nekopoi.care/isekai-harem-monogatari-episode-4-subtitle-indonesia/`)
+                    ini_url = args[0]
+                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/nekopoi?apikey=${apikey}&url=${ini_url}`)
+                    get_result = get_result.result
+                    ini_txt = `Title : ${get_result.anime}\n`
+                    ini_txt += `Porducers : ${get_result.producers}\n`
+                    ini_txt += `Duration : ${get_result.duration}\n`
+                    ini_txt += `Size : ${get_result.size}\n`
+                    ini_txt += `Sinopsis : ${get_result.sinopsis}\n`
+                    link = get_result.link
+                    for (var x in link) {
+                        ini_txt += `\n${link[x].name}\n`
+                        link_dl = link[x].link
+                        for (var y in link_dl) {
+                            ini_txt += `${y} - ${link_dl[y]}\n`
+                        }
+                    }
+                    ini_buffer = (`${get_result.thumb}`)
+                    hanbotz.sendMessage(m.chat, { image: { url: ini_buffer }, caption: ini_txt }, { quoted: m })
+                    break
+                case 'nekopoisearch':
+                    if (args.length == 0) return m.reply(`Example: ${prefix + command} Isekai Harem`)
+                    query = args.join(" ")
+                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/nekopoisearch?apikey=${apikey}&query=${query}`)
+                    get_result = get_result.result
+                    ini_txt = ""
+                    for (var x of get_result) {
+                        ini_txt += `Title : ${x.title}\n`
+                        ini_txt += `Link : ${x.link}\n`
+                        ini_txt += `Thumbnail : ${x.thumbnail}\n\n`
+                    }
+                    m.reply(ini_txt)
+                    break
+case 'xhamstersearch':
+                    if (args.length == 0) return m.reply(`Example: ${prefix + command} Japanese`)
+                    query = args.join(" ")
+                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/xhamstersearch?apikey=${apikey}&query=${query}`)
+                    get_result = get_result.result
+                    ini_txt = ""
+                    for (var x of get_result) {
+                        ini_txt += `Title : ${x.title}\n`
+                        ini_txt += `Views : ${x.views}\n`
+                        ini_txt += `Duration : ${x.duration}\n`
+                        ini_txt += `Link : ${x.link}\n\n`
+                    }
+                    m.reply(ini_txt)
+                    break
+                case 'xhamster':
+                    if (args.length == 0) return m.reply(`Example: ${prefix + command} https://xhamster.com/videos/party-with-friends-end-in-awesome-fucking-5798407`)
+                    query = args.join(" ")
+                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/xhamster?apikey=${apikey}&url=${query}`)
+                    get_result = get_result.result
+                    ini_txt = `Title : ${get_result.title}\n`
+                    ini_txt += `Duration : ${get_result.duration}\n`
+                    ini_txt += `Uploader : ${get_result.author}\n`
+                    ini_txt += `Upload : ${get_result.upload}\n`
+                    ini_txt += `View : ${get_result.views}\n`
+                    ini_txt += `Rating : ${get_result.rating}\n`
+                    ini_txt += `Like : ${get_result.likes}\n`
+                    ini_txt += `Dislike : ${get_result.dislikes}\n`
+                    ini_txt += `Comment : ${get_result.comments}\n`
+                    ini_txt += "Link : \n"
+                    link = get_result.link
+                    for (var x of link) {
+                        ini_txt += `${x.type} - ${x.link}\n\n`
+                    }
+                    thumbnail = (`${get_result.thumbnail}`)
+                    hanbotz.sendMessage(m.chat, { image: { url: thumbnail }, caption: ini_txt }, { quoted: m })
+                    break
+                case 'xnxxsearch':
+                    if (args.length == 0) return m.reply(`Example: ${prefix + command} Japanese`)
+                    query = args.join(" ")
+                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/xnxxsearch?apikey=${apikey}&query=${query}`)
+                    get_result = get_result.result
+                    ini_txt = ""
+                    for (var x of get_result) {
+                        ini_txt += `Title : ${x.title}\n`
+                        ini_txt += `Views : ${x.views}\n`
+                        ini_txt += `Duration : ${x.duration}\n`
+                        ini_txt += `Uploader : ${x.uploader}\n`
+                        ini_txt += `Link : ${x.link}\n`
+                        ini_txt += `Thumbnail : ${x.thumbnail}\n\n`
+                    }
+                    m.reply(ini_txt)
+                    break
+                case 'xnxx':
+                    if (args.length == 0) return m.reply(`Example: ${prefix + command} https://www.xnxx.com/video-uy5a73b/mom_is_horny_-_brooklyn`)
+                    query = args.join(" ")
+                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/xnxx?apikey=${apikey}&url=${query}`)
+                    get_result = get_result.result
+                    ini_txt = `Title : ${get_result.title}\n`
+                    ini_txt += `Duration : ${get_result.duration}\n`
+                    ini_txt += `View : ${get_result.view}\n`
+                    ini_txt += `Rating : ${get_result.rating}\n`
+                    ini_txt += `Like : ${get_result.like}\n`
+                    ini_txt += `Dislike : ${get_result.dislike}\n`
+                    ini_txt += `Comment : ${get_result.comment}\n`
+                    ini_txt += `Tag : ${get_result.tag.join(", ")}\n`
+                    ini_txt += `Description : ${get_result.description}\n`
+                    ini_txt += "Link : \n"
+                    ini_link = get_result.link
+                    for (var x of ini_link) {
+                        ini_txt += `${x.type} - ${x.link}\n\n`
+                    }
+                    thumbnail = (`${get_result.thumbnail}`)
+                    hanbotz.sendMessage(m.chat, { image: { url: thumbnail }, caption: ini_txt }, { quoted: m })
+                    break
+
+                    // AniManga //
+                case 'character':
+                    if (args.length == 0) return m.reply(`Example: ${prefix + command} Miku Nakano`)
+                    query = args.join(" ")
+                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/character?apikey=${apikey}&query=${query}`)
+                    get_result = get_result.result
+                    ini_txt = `Id : ${get_result.id}\n`
+                    ini_txt += `Name : ${get_result.name.full}\n`
+                    ini_txt += `Native : ${get_result.name.native}\n`
+                    ini_txt += `Favorites : ${get_result.favourites}\n`
+                    ini_txt += `Media : \n`
+                    ini_media = get_result.media.nodes
+                    for (var x of ini_media) {
+                        ini_txt += `- ${x.title.romaji} (${x.title.native})\n`
+                    }
+                    ini_txt += `\nDescription : \n${get_result.description.replace(/__/g, "_")}`
+                    thumbnail = (`${get_result.image.large}`)
+                    hanbotz.sendMessage(m.chat, { image: { url: thumbnail }, caption: ini_txt }, { quoted: m })
+                    break
+                case 'manga':
+                    if (args.length == 0) return m.reply(`Example: ${prefix + command} Gotoubun No Hanayome`)
+                    query = args.join(" ")
+                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/manga?apikey=${apikey}&query=${query}`)
+                    get_result = get_result.result
+                    ini_txt = `Id : ${get_result.id}\n`
+                    ini_txt += `Id MAL : ${get_result.idMal}\n`
+                    ini_txt += `Title : ${get_result.title.romaji}\n`
+                    ini_txt += `English : ${get_result.title.english}\n`
+                    ini_txt += `Native : ${get_result.title.native}\n`
+                    ini_txt += `Format : ${get_result.format}\n`
+                    ini_txt += `Chapters : ${get_result.chapters}\n`
+                    ini_txt += `Volume : ${get_result.volumes}\n`
+                    ini_txt += `Status : ${get_result.status}\n`
+                    ini_txt += `Source : ${get_result.source}\n`
+                    ini_txt += `Start Date : ${get_result.startDate.day} - ${get_result.startDate.month} - ${get_result.startDate.year}\n`
+                    ini_txt += `End Date : ${get_result.endDate.day} - ${get_result.endDate.month} - ${get_result.endDate.year}\n`
+                    ini_txt += `Genre : ${get_result.genres.join(", ")}\n`
+                    ini_txt += `Synonyms : ${get_result.synonyms.join(", ")}\n`
+                    ini_txt += `Score : ${get_result.averageScore}%\n`
+                    ini_txt += `Characters : \n`
+                    ini_character = get_result.characters.nodes
+                    for (var x of ini_character) {
+                        ini_txt += `- ${x.name.full} (${x.name.native})\n`
+                    }
+                    ini_txt += `\nDescription : ${get_result.description}`
+                    thumbnail = (`${get_result.coverImage.large}`)
+                    hanbotz.sendMessage(m.chat, { image: { url: thumbnail }, caption: ini_txt }, { quoted: m })
+                    break
+                case 'anime':
+                    if (args.length == 0) return m.reply(`Example: ${prefix + command} Gotoubun No Hanayome`)
+                    query = args.join(" ")
+                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/anime?apikey=${apikey}&query=${query}`)
+                    get_result = get_result.result
+                    ini_txt = `Id : ${get_result.id}\n`
+                    ini_txt += `Id MAL : ${get_result.idMal}\n`
+                    ini_txt += `Title : ${get_result.title.romaji}\n`
+                    ini_txt += `English : ${get_result.title.english}\n`
+                    ini_txt += `Native : ${get_result.title.native}\n`
+                    ini_txt += `Format : ${get_result.format}\n`
+                    ini_txt += `Episodes : ${get_result.episodes}\n`
+                    ini_txt += `Duration : ${get_result.duration} mins.\n`
+                    ini_txt += `Status : ${get_result.status}\n`
+                    ini_txt += `Season : ${get_result.season}\n`
+                    ini_txt += `Season Year : ${get_result.seasonYear}\n`
+                    ini_txt += `Source : ${get_result.source}\n`
+                    ini_txt += `Start Date : ${get_result.startDate.day} - ${get_result.startDate.month} - ${get_result.startDate.year}\n`
+                    ini_txt += `End Date : ${get_result.endDate.day} - ${get_result.endDate.month} - ${get_result.endDate.year}\n`
+                    ini_txt += `Genre : ${get_result.genres.join(", ")}\n`
+                    ini_txt += `Synonyms : ${get_result.synonyms.join(", ")}\n`
+                    ini_txt += `Score : ${get_result.averageScore}%\n`
+                    ini_txt += `Characters : \n`
+                    ini_character = get_result.characters.nodes
+                    for (var x of ini_character) {
+                        ini_txt += `- ${x.name.full} (${x.name.native})\n`
+                    }
+                    ini_txt += `\nDescription : ${get_result.description}`
+                    thumbnail = (`${get_result.coverImage.large}`)
+                    hanbotz.sendMessage(m.chat, { image: { url: thumbnail }, caption: ini_txt }, { quoted: m })
+                    break
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
             default:
+            
                 if (budy.startsWith('=>')) {
                     if (!isCreator) return m.reply(mess.owner)
                     function Return(sul) {
