@@ -1,8 +1,3 @@
-/**
-   * Create By Han Ardnt.
-   * Contact Me on wa.me/6288292024190
-   * Follow https://github.com/HanArdnt
-*/
 
 require('./config')
 const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType } = require('@adiwajshing/baileys')
