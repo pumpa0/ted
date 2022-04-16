@@ -78,9 +78,10 @@ async function starthanbotz() {
                 } catch {
                     ppgroup = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
                 }
-
+                ini_user = hanbotz.contacts[num]
+welcm = `https://hardianto.xyz/api/tools/welcomer?nama=${ini_user}&namaGb=${metadata.subject}&pepeGb=${ppgroup}&totalMem=${metadata.participants.length}&pepeUser=${ppuser}&bege=https://telegra.ph/file/89a6260f0a6720240e698.jpg&apikey=hardianto`
                 if (anu.action == 'add') {
-                    hanbotz.sendMessage(anu.id, { image: { url: ppuser }, contextInfo: { mentionedJid: [num] }, caption: `Welcome To ${metadata.subject} @${num.split("@")[0]}` })
+                    hanbotz.sendMessage(anu.id, { image: { url: welcm }, contextInfo: { mentionedJid: [num] }, caption: `Welcome To ${metadata.subject} @${num.split("@")[0]}` })
                 } else if (anu.action == 'remove') {
                     hanbotz.sendMessage(anu.id, { image: { url: ppuser }, contextInfo: { mentionedJid: [num] }, caption: `@${num.split("@")[0]} Leaving To ${metadata.subject}` })
                 }
