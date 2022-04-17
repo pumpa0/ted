@@ -1,3 +1,8 @@
+/**
+   * Create By Han Ardnt.
+   * Contact Me on wa.me/6288292024190
+   * Follow https://github.com/HanArdnt
+*/
 
 require('./config')
 const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType } = require('@adiwajshing/baileys')
@@ -2910,6 +2915,7 @@ __________________________
 • ${prefix}bcall [text]
 • ${prefix}setppbot [image]
 • ${prefix}setexif
+__________________________
 
 To talk to bots, use *${prefix}botz _[text]_*
 *Example*: ${prefix}botz halo
@@ -2922,7 +2928,7 @@ To talk to bots, use *${prefix}botz _[text]_*
                             }, {
                                 urlButton: {
                                     displayText: 'Report Bug / Error',
-                                    url: 'wa.me/6285731855426'
+                                    url: 'http://wa.me/6285731855426'
                                 }
                             }, {
                                 quickReplyButton: {
@@ -2935,21 +2941,21 @@ To talk to bots, use *${prefix}botz _[text]_*
 	        break
 case 'botz': {
 	if (!text) throw `ya, ada apa?`
-	let anu = await fetchJson(`https://zenzapi.xyz/api/simisimi?text=${text}&apikey=ApiHanBotz`)
+	let anu = await fetchJson(`https://zenzapis.xyz/api/simisimi?text=${text}&apikey=ApiHanBotz`)
 	jawabni = (`${anu.result.message}`)
 	m.reply(jawabni)
 	}
 	break
 case 'darkjoke': {
 	if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
-                let anu = (`https://zenzapi.xyz/api/random/darkjoke?apikey=ApiHanBotz`)
+                let anu = (`https://zenzapis.xyz/api/random/darkjoke?apikey=ApiHanBotz`)
                 hanbotz.sendMessage(m.chat, { image: { url: anu }, caption: `DarkJoke` }, { quoted: m })
                 db.users[m.sender].limit -= 1 // -1 limit
             }
 	    break
 case 'meme': {
 	if (!isPremium && global.db.users[m.sender].limit < 1) return m.reply(mess.endLimit) // respon ketika limit habis
-                let anu = (`https://zenzapi.xyz/api/random/memeindo?apikey=ApiHanBotz`)
+                let anu = (`https://zenzapis.xyz/api/random/memeindo?apikey=ApiHanBotz`)
                 hanbotz.sendMessage(m.chat, { image: { url: anu }, caption: `Meme` }, { quoted: m })
                 db.users[m.sender].limit -= 1 // -1 limit
             }
@@ -2957,7 +2963,7 @@ case 'meme': {
 case 'attp': {
 	if (!text) throw `text nya mana`
 	m.reply(`Wait...`)
-	let anu = (`https://zenzapi.xyz/api/image/attp?text=${text}&apikey=ApiHanBotz`)
+	let anu = (`https://zenzapis.xyz/api/image/attp?text=${text}&apikey=ApiHanBotz`)
                 hanbotz.sendMessage(m.chat, { sticker: { url: anu }}, { quoted: m })
                 }
                 break
@@ -2966,7 +2972,7 @@ case 'mememaker': case 'smeme': case 'stikermeme': case 'stickermeme': case 'mem
 	p1 = (args[0])
 	p2 = (args[1])
 	p3 = (args[2])
-	let anu = (`https://zenzapi.xyz/api/image/meme?text=${p1}&text2=${p2}&image=${p3}&apikey=ApiHanBotz`)
+	let anu = (`https://zenzapis.xyz/api/image/meme?text=${p1}&text2=${p2}&image=${p3}&apikey=ApiHanBotz`)
 	hanbotz.sendMessage(m.chat, { image: { url: anu }, caption: `HanBotz`}, { quoted: m })
             }
             break
@@ -3112,7 +3118,7 @@ break
                     break
 case 'wikipedia': 
 if (!text) throw `Masukkan Query`
-let anu = await fetchJson(`https://zenzapi.xyz/api/wikipedia?query=${text}&apikey=ApiHanBotz`)
+let anu = await fetchJson(`https://zenzapis.xyz/api/wikipedia?query=${text}&apikey=ApiHanBotz`)
 wikip = (`${anu.result.isi}`)
 judulnya = (`${anu.result.judul}`)
 m.reply(`*Query*: ${judulnya}\n\n*Penjelasan*: ${wikip}`)
